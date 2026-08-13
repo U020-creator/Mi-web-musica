@@ -4,349 +4,490 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MusicAu</title>
+<title>Para Melisa ❤️</title>
 
 <style>
 *{
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     margin:0;
-    font-family:Arial,sans-serif;
-    background:#fff7df;
-    color:#222;
+    font-family:Georgia, serif;
+    color:white;
+    background:#07071a;
+}
+
+/* CIELO */
+
+body{
+    background:
+    radial-gradient(circle at 20% 20%, #ffffff 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 15%, #ffffff 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 70%, #ffffff 0 1px, transparent 2px),
+    radial-gradient(circle at 85% 65%, #ffffff 0 1px, transparent 2px),
+    linear-gradient(180deg,#050518,#111044,#28145c);
+    background-size:220px 220px,300px 300px,250px 250px,350px 350px,100% 100%;
 }
 
 /* PORTADA */
 
-header{
-    min-height:350px;
-    padding:30px 20px;
-    text-align:center;
-    color:white;
+.hero{
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
-
-    background:
-    linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.35)),
-    linear-gradient(180deg,#16c1d8,#55d6be,#ffd166);
-}
-
-header h1{
-    font-size:58px;
-    margin:0;
-}
-
-header p{
-    font-size:20px;
-    margin:10px 0 25px;
-}
-
-.buscador{
-    width:95%;
-    max-width:650px;
-    margin:auto;
-    display:flex;
-    background:white;
-    border-radius:30px;
-    padding:5px;
-}
-
-.buscador input{
-    flex:1;
-    border:0;
-    outline:none;
-    padding:14px 18px;
-    font-size:16px;
-    border-radius:30px;
-}
-
-.buscador button{
-    border:0;
-    border-radius:25px;
-    padding:12px 18px;
-    background:#ff7200;
-    color:white;
-    font-weight:bold;
-}
-
-/* CONTENIDO */
-
-.contenedor{
-    max-width:1100px;
-    margin:auto;
-    padding:20px;
-}
-
-h2{
-    margin-top:35px;
-}
-
-/* TARJETAS */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:18px;
-}
-
-.card{
-    background:white;
-    padding:12px;
-    border-radius:18px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.portada{
-    aspect-ratio:1;
-    border-radius:14px;
-    display:flex;
     align-items:center;
-    justify-content:center;
-    font-size:55px;
-    background:linear-gradient(135deg,#00c6ff,#ffd166,#ff7b00);
+    text-align:center;
+    padding:30px 20px;
 }
 
-.card h3{
-    margin-bottom:5px;
+.estrella{
+    font-size:35px;
+    animation:brillar 2s infinite alternate;
 }
 
-.card p{
-    color:#777;
+@keyframes brillar{
+    from{opacity:.4;transform:scale(.9)}
+    to{opacity:1;transform:scale(1.2)}
 }
 
-.card button{
-    width:100%;
-    padding:11px;
-    border:0;
-    border-radius:25px;
-    background:#ff7200;
+.hero h1{
+    font-size:58px;
+    margin:15px 0 5px;
+    color:#ffd6f5;
+    text-shadow:0 0 25px #ff8ed8;
+}
+
+.hero h2{
+    font-size:25px;
+    font-weight:normal;
+    color:#f7c9ff;
+}
+
+.hero p{
+    max-width:600px;
+    line-height:1.7;
+    font-size:18px;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 25px;
+    border-radius:30px;
+    background:#ff72c6;
     color:white;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 0 20px #ff72c6;
+}
+
+/* SECCIONES */
+
+.seccion{
+    max-width:850px;
+    margin:auto;
+    padding:70px 22px;
+    text-align:center;
+}
+
+.titulo{
+    font-size:34px;
+    color:#ffc8ed;
+    margin-bottom:30px;
+}
+
+/* CARTA */
+
+.carta{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:25px;
+    padding:30px;
+    line-height:1.9;
+    font-size:18px;
+    box-shadow:0 0 30px rgba(255,105,200,.12);
+    backdrop-filter:blur(8px);
+}
+
+.carta .firma{
+    margin-top:30px;
+    font-size:23px;
+    color:#ffb9e6;
+}
+
+/* CONTADOR */
+
+.contador{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.tiempo{
+    background:rgba(255,255,255,.08);
+    padding:20px 10px;
+    border-radius:18px;
+}
+
+.numero{
+    display:block;
+    font-size:30px;
+    color:#ffb9e6;
     font-weight:bold;
 }
 
-/* YOUTUBE */
+.etiqueta{
+    color:#bbb;
+}
 
-.youtube{
-    margin-top:35px;
+/* CANCION */
+
+.cancion{
+    background:rgba(255,255,255,.08);
+    border-radius:25px;
+    padding:30px;
+}
+
+.cancion h3{
+    font-size:25px;
+    color:#ffd0ed;
+}
+
+.cancion p{
+    color:#ccc;
+}
+
+.cancion a{
+    display:inline-block;
+    margin:15px;
+    padding:13px 22px;
+    border-radius:25px;
+    background:#ff72c6;
+    color:white;
+    text-decoration:none;
+}
+
+/* QR */
+
+.qr{
+    margin-top:25px;
     background:white;
     padding:15px;
-    border-radius:20px;
-}
-
-.youtube iframe{
-    width:100%;
-    height:315px;
-    border:0;
     border-radius:15px;
+    width:210px;
+    max-width:80%;
 }
 
-/* ARTISTAS */
+/* FOTOS */
 
-.artistas{
-    display:flex;
-    gap:20px;
-    overflow-x:auto;
-    padding:10px 0;
-}
-
-.artista{
-    min-width:105px;
-    text-align:center;
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
 }
 
 .foto{
-    width:90px;
-    height:90px;
-    margin:auto;
-    border-radius:50%;
+    height:180px;
+    border-radius:20px;
+    border:2px dashed rgba(255,255,255,.3);
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:40px;
-    background:linear-gradient(135deg,#16c1d8,#ff7200);
+    color:#aaa;
+    background:rgba(255,255,255,.05);
 }
 
-/* PIE */
+/* FINAL */
+
+.final{
+    min-height:60vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.final h2{
+    font-size:40px;
+    color:#ffc5eb;
+}
+
+.corazones{
+    font-size:35px;
+    letter-spacing:10px;
+}
 
 footer{
-    margin-top:50px;
-    padding:50px 20px;
-    background:#222;
-    color:#aaa;
     text-align:center;
+    padding:30px;
+    color:#777;
+}
+
+/* MOVIL */
+
+@media(max-width:600px){
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero h2{
+    font-size:21px;
+}
+
+.contador{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.numero{
+    font-size:24px;
+}
+
+.carta{
+    padding:22px;
+}
+
+.galeria{
+    grid-template-columns:1fr;
+}
+
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<section class="hero">
 
-<h1>☀️ MusicAu</h1>
+<div class="estrella">✦</div>
 
-<p>La música que acompaña tu verano 🎵</p>
+<h1>Para Melisa ❤️</h1>
 
-<div class="buscador">
+<h2>Mi persona favorita en todo el universo</h2>
 
-<input
-id="busqueda"
-type="text"
-placeholder="🔎 Busca una canción o artista..."
->
+<p>
+Hay millones de estrellas en el cielo,
+pero para mí ninguna brilla como tú.
+</p>
 
-<button onclick="buscarYouTube()">
-Buscar
-</button>
+<a class="boton" href="#carta">
+Leer mi carta 💌
+</a>
 
-</div>
-
-</header>
+</section>
 
 
-<div class="contenedor">
+<section class="seccion" id="carta">
 
-<h2>🔥 Música de verano</h2>
+<h2 class="titulo">💌 Una carta para ti</h2>
 
-<div class="grid">
+<div class="carta">
 
-<div class="card">
-<div class="portada">🌴</div>
-<h3>Summer Hits</h3>
-<p>Éxitos del verano</p>
+<p>
+Melisa,
+</p>
 
-<button onclick="buscarCancion('summer hits')">
-▶ Buscar
-</button>
-</div>
+<p>
+Desde que llegaste a mi vida, muchas cosas cambiaron.
+Hay momentos que antes parecían normales y que ahora
+tienen un significado completamente diferente porque
+puedo compartirlos contigo.
+</p>
 
+<p>
+Me encanta tenerte a mi lado, poder hablar contigo,
+reírnos juntos, compartir nuestros días y simplemente
+saber que estás ahí.
+</p>
 
-<div class="card">
-<div class="portada">🌊</div>
-<h3>Beach Music</h3>
-<p>Música para la playa</p>
+<p>
+No sé qué nos deparará el futuro, pero sí sé algo:
+quiero seguir creando recuerdos contigo, seguir
+conociéndote cada día un poquito más y seguir
+eligiéndote.
+</p>
 
-<button onclick="buscarCancion('beach music')">
-▶ Buscar
-</button>
-</div>
+<p>
+Si tuviera que elegir nuevamente a alguien para
+compartir esta parte de mi vida, volvería a elegirte
+a ti.
+</p>
 
+<p>
+Gracias por ser tú, por cada momento, cada sonrisa
+y cada recuerdo que hemos creado juntos.
+</p>
 
-<div class="card">
-<div class="portada">☀️</div>
-<h3>Latin Hits</h3>
-<p>Éxitos latinos</p>
+<p>
+Te quiero muchísimo, Melisa.
+❤️
+</p>
 
-<button onclick="buscarCancion('latin hits')">
-▶ Buscar
-</button>
-</div>
-
-
-<div class="card">
-<div class="portada">🎧</div>
-<h3>Party</h3>
-<p>Música para fiestas</p>
-
-<button onclick="buscarCancion('party music')">
-▶ Buscar
-</button>
-</div>
-
-</div>
-
-
-<h2>🎤 Artistas destacados</h2>
-
-<div class="artistas">
-
-<div class="artista">
-<div class="foto">🎤</div>
-<p>Bad Bunny</p>
-</div>
-
-<div class="artista">
-<div class="foto">🎵</div>
-<p>Feid</p>
-</div>
-
-<div class="artista">
-<div class="foto">⭐</div>
-<p>Karol G</p>
-</div>
-
-<div class="artista">
-<div class="foto">🎧</div>
-<p>Rauw Alejandro</p>
-</div>
-
-<div class="artista">
-<div class="foto">🔥</div>
-<p>Myke Towers</p>
+<div class="firma">
+Con todo mi amor,<br>
+Daniel ❤️
 </div>
 
 </div>
 
+</section>
 
-<h2>📺 Escucha en MusicAu</h2>
 
-<div class="youtube">
+<section class="seccion">
 
-<iframe
-src="https://www.youtube.com/embed/jfKfPfyJRdk"
-title="YouTube Music"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
+<h2 class="titulo">✨ Desde que comenzó nuestra historia</h2>
 
+<p>21 de diciembre de 2025</p>
+
+<div class="contador">
+
+<div class="tiempo">
+<span class="numero" id="dias">0</span>
+<span class="etiqueta">Días</span>
+</div>
+
+<div class="tiempo">
+<span class="numero" id="horas">0</span>
+<span class="etiqueta">Horas</span>
+</div>
+
+<div class="tiempo">
+<span class="numero" id="minutos">0</span>
+<span class="etiqueta">Minutos</span>
 </div>
 
 </div>
+
+</section>
+
+
+<section class="seccion">
+
+<h2 class="titulo">🎵 Nuestra canción</h2>
+
+<div class="cancion">
+
+<h3>La Velocidad de la Luz</h3>
+
+<p>Los Bunkers</p>
+
+<p>
+Una canción que quiero que siempre recuerdes
+como una pequeña parte de nuestra historia.
+</p>
+
+<a href="https://www.youtube.com/watch?v=TF-nDMnTARM"
+target="_blank">
+▶ Escuchar en YouTube
+</a>
+
+<br>
+
+<img
+class="qr"
+src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DTF-nDMnTARM"
+alt="QR de nuestra canción">
+
+<p>
+📱 Escanea este código para escuchar nuestra canción.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="seccion">
+
+<h2 class="titulo">📸 Nuestros recuerdos</h2>
+
+<div class="galeria">
+
+<div class="foto">📷 Aquí irá una foto nuestra</div>
+
+<div class="foto">📷 Aquí irá otra foto</div>
+
+<div class="foto">📷 Nuestro recuerdo favorito</div>
+
+<div class="foto">📷 Otro momento especial</div>
+
+</div>
+
+<p style="color:#aaa;margin-top:25px;">
+Después podemos poner tus fotos reales aquí ❤️
+</p>
+
+</section>
+
+
+<section class="final">
+
+<div>
+
+<div class="corazones">♡ ✦ ♡</div>
+
+<h2>
+Te elegiría una y otra vez.
+</h2>
+
+<p>
+Porque entre todas las estrellas,
+mi lugar favorito sigue siendo contigo.
+</p>
+
+<div class="corazones">♡ ✦ ♡</div>
+
+</div>
+
+</section>
 
 
 <footer>
 
-<h2>MusicAu 🎵</h2>
-
-<p>Tu música, tu verano.</p>
-
-<p>© 2026 MusicAu</p>
+Para Melisa ❤️<br>
+21.12.2025
 
 </footer>
 
 
 <script>
 
-function buscarYouTube(){
+const inicio = new Date("2025-12-21T00:00:00");
 
-let texto =
-document.getElementById("busqueda").value.trim();
+function actualizar(){
 
-if(texto===""){
-    alert("Escribe una canción o artista");
-    return;
-}
+const ahora = new Date();
 
-let url =
-"https://www.youtube.com/results?search_query="
-+ encodeURIComponent(texto);
+const diferencia = ahora - inicio;
 
-window.open(url,"_blank");
+const dias = Math.floor(
+diferencia / (1000 * 60 * 60 * 24)
+);
 
-}
+const horas = Math.floor(
+(diferencia / (1000 * 60 * 60)) % 24
+);
 
+const minutos = Math.floor(
+(diferencia / (1000 * 60)) % 60
+);
 
-function buscarCancion(nombre){
-
-let url =
-"https://www.youtube.com/results?search_query="
-+ encodeURIComponent(nombre);
-
-window.open(url,"_blank");
+document.getElementById("dias").textContent = dias;
+document.getElementById("horas").textContent = horas;
+document.getElementById("minutos").textContent = minutos;
 
 }
+
+actualizar();
+
+setInterval(actualizar,60000);
 
 </script>
 
