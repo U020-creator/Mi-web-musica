@@ -3,19 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Para Melisa Daniela Ochoa Salazar</title>
 
 <style>
-
-/* =========================================================
-   BASE
-========================================================= */
-
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -23,136 +17,62 @@ html{
 }
 
 body{
-    min-height:100vh;
-    overflow-x:hidden;
-
+    background:#120711;
     color:#fff;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    background:#100711;
+    font-family:Georgia,"Times New Roman",serif;
+    overflow-x:hidden;
 }
 
-
-/* =========================================================
-   FONDO ROSADO CÓSMICO
-========================================================= */
+/* =========================
+   FONDO
+========================= */
 
 .space{
     position:fixed;
     inset:0;
-    z-index:-20;
+    z-index:-10;
     overflow:hidden;
-
     background:
-        radial-gradient(
-            ellipse at 20% 15%,
-            rgba(222,77,157,.28),
-            transparent 42%
-        ),
-        radial-gradient(
-            ellipse at 85% 30%,
-            rgba(151,75,181,.24),
-            transparent 45%
-        ),
-        radial-gradient(
-            ellipse at 50% 85%,
-            rgba(221,71,139,.20),
-            transparent 45%
-        ),
-        linear-gradient(
-            180deg,
-            #170814,
-            #0d0610 55%,
-            #120711
-        );
+        radial-gradient(circle at 15% 15%,rgba(255,78,165,.18),transparent 35%),
+        radial-gradient(circle at 85% 35%,rgba(166,83,196,.18),transparent 38%),
+        radial-gradient(circle at 50% 90%,rgba(255,83,165,.14),transparent 40%),
+        linear-gradient(180deg,#190a16,#0e060e 60%,#160812);
 }
 
 .nebula{
     position:absolute;
+    width:600px;
+    height:400px;
     border-radius:50%;
     filter:blur(100px);
-    opacity:.35;
-
-    animation:
-        nebulaFloat
-        28s
-        ease-in-out
-        infinite
-        alternate;
+    opacity:.25;
+    animation:floatNebula 25s ease-in-out infinite alternate;
 }
 
 .nebula.one{
-    width:620px;
-    height:430px;
-
-    left:-250px;
+    background:#e43d91;
+    left:-300px;
     top:5%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            #d94798,
-            transparent 70%
-        );
 }
 
 .nebula.two{
-    width:650px;
-    height:500px;
-
-    right:-280px;
-    top:35%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            #9e57c7,
-            transparent 70%
-        );
-
-    animation-delay:-9s;
+    background:#9850c4;
+    right:-300px;
+    top:40%;
+    animation-delay:-8s;
 }
 
 .nebula.three{
-    width:700px;
-    height:400px;
-
+    background:#db478f;
     left:20%;
-    bottom:-260px;
-
-    background:
-        radial-gradient(
-            ellipse,
-            #dc4b9b,
-            transparent 70%
-        );
-
-    animation-delay:-17s;
+    bottom:-300px;
+    animation-delay:-15s;
 }
 
-@keyframes nebulaFloat{
-
-    from{
-        transform:
-            translate3d(0,0,0)
-            scale(1);
-    }
-
-    to{
-        transform:
-            translate3d(40px,-25px,0)
-            scale(1.08);
-    }
+@keyframes floatNebula{
+    from{transform:translate(0,0) scale(1);}
+    to{transform:translate(35px,-25px) scale(1.08);}
 }
-
-
-/* =========================================================
-   ESTRELLAS
-========================================================= */
 
 #stars{
     position:absolute;
@@ -161,133 +81,68 @@ body{
 
 .star{
     position:absolute;
-
     border-radius:50%;
-
     background:#fff;
-
-    box-shadow:
-        0 0 7px
-        rgba(255,210,240,.8);
-
-    animation:
-        twinkle
-        var(--duration)
-        ease-in-out
-        infinite;
-
-    animation-delay:
-        var(--delay);
+    box-shadow:0 0 7px rgba(255,210,240,.8);
+    animation:twinkle var(--duration) ease-in-out infinite;
+    animation-delay:var(--delay);
 }
 
 @keyframes twinkle{
-
-    0%,100%{
-        opacity:.18;
-        transform:scale(.8);
-    }
-
-    50%{
-        opacity:.8;
-        transform:scale(1.15);
-    }
+    0%,100%{opacity:.15;}
+    50%{opacity:.75;}
 }
-
-
-/* =========================================================
-   ESTRELLAS FUGACES
-========================================================= */
 
 .shooting-star{
     position:absolute;
-
-    width:130px;
+    width:120px;
     height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.85)
-        );
-
+    background:linear-gradient(90deg,transparent,#fff);
     transform:rotate(-32deg);
-
     opacity:0;
 }
 
 .shooting-star.go{
-    animation:
-        shooting
-        1.5s
-        linear
-        forwards;
+    animation:shooting 1.4s linear forwards;
 }
 
 @keyframes shooting{
-
     0%{
         opacity:0;
-        transform:
-            translate(0,0)
-            rotate(-32deg);
+        transform:translate(0,0) rotate(-32deg);
     }
-
-    15%{
-        opacity:.9;
-    }
-
+    15%{opacity:.9;}
     100%{
         opacity:0;
-        transform:
-            translate(-360px,220px)
-            rotate(-32deg);
+        transform:translate(-330px,210px) rotate(-32deg);
     }
 }
 
-
-/* =========================================================
-   BARRA SUPERIOR
-========================================================= */
+/* =========================
+   PROGRESO
+========================= */
 
 .progress{
     position:fixed;
-
     top:0;
     left:0;
-
     width:0;
     height:3px;
-
     z-index:1000;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ff74bc,
-            #e8a0ff
-        );
-
-    box-shadow:
-        0 0 15px
-        rgba(255,100,190,.75);
+    background:linear-gradient(90deg,#ff65ad,#d59aff);
+    box-shadow:0 0 15px rgba(255,90,180,.7);
 }
 
-
-/* =========================================================
+/* =========================
    SECCIONES
-========================================================= */
+========================= */
 
 section{
     min-height:88vh;
-
     display:flex;
-    align-items:center;
     justify-content:center;
-
-    padding:
-        72px 20px;
-
+    align-items:center;
+    padding:60px 18px;
     position:relative;
 }
 
@@ -298,994 +153,623 @@ section{
 
 .reveal{
     opacity:0;
-
-    transform:
-        translateY(25px);
-
+    transform:translateY(25px);
     transition:
         opacity .9s ease,
-        transform .9s
-        cubic-bezier(.2,.7,.2,1);
+        transform .9s cubic-bezier(.2,.7,.2,1);
 }
 
 .reveal.visible{
     opacity:1;
-
-    transform:
-        translateY(0);
+    transform:translateY(0);
 }
 
-
-/* =========================================================
+/* =========================
    TEXTOS
-========================================================= */
+========================= */
 
 .chapter{
-    margin-bottom:14px;
-
-    color:#e99ac7;
-
-    font-family:
-        Arial,
-        sans-serif;
-
+    color:#e999c3;
+    font-family:Arial,sans-serif;
     font-size:10px;
-
     letter-spacing:4px;
-
     text-transform:uppercase;
+    margin-bottom:14px;
 }
 
 .title{
-    margin-bottom:18px;
-
-    color:#ffd1ea;
-
-    font-size:
-        clamp(
-            32px,
-            7vw,
-            53px
-        );
-
-    line-height:1.15;
-
+    color:#ffd0e8;
+    font-size:clamp(32px,7vw,52px);
     font-weight:normal;
-
-    text-shadow:
-        0 0 25px
-        rgba(255,100,180,.16);
+    line-height:1.15;
+    margin-bottom:18px;
 }
 
 .subtitle{
     max-width:650px;
-
-    margin:
-        0 auto;
-
+    margin:auto;
     color:#cbbbc8;
-
     font-size:16px;
-
     line-height:1.8;
 }
 
-
-/* =========================================================
-   BOTÓN
-========================================================= */
-
 .next{
     display:inline-flex;
-
     align-items:center;
-    justify-content:center;
-
     gap:10px;
-
-    margin-top:30px;
-
-    padding:
-        13px 25px;
-
-    border:
-        1px solid
-        rgba(255,190,225,.20);
-
+    margin-top:28px;
+    padding:13px 25px;
+    border:1px solid rgba(255,190,225,.18);
     border-radius:50px;
-
-    background:
-        rgba(255,255,255,.055);
-
+    background:rgba(255,255,255,.05);
     color:#fff;
-
     text-decoration:none;
-
     font-size:14px;
-
-    backdrop-filter:
-        blur(12px);
-
-    transition:
-        transform .3s ease,
-        background .3s ease,
-        box-shadow .3s ease;
+    backdrop-filter:blur(12px);
+    transition:.3s;
 }
 
 .next:hover{
-    transform:
-        translateY(-3px);
-
-    background:
-        rgba(255,105,180,.12);
-
-    box-shadow:
-        0 10px 30px
-        rgba(255,80,170,.12);
+    transform:translateY(-3px);
+    background:rgba(255,100,180,.12);
 }
 
 .arrow{
-    animation:
-        arrow
-        1.8s
-        ease-in-out
-        infinite;
+    animation:arrow 1.8s ease-in-out infinite;
 }
 
 @keyframes arrow{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(4px);
-    }
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(4px);}
 }
 
-
-/* =========================================================
+/* =========================
    INICIO
-========================================================= */
-
-.hero{
-    padding-top:20px;
-}
+========================= */
 
 .hero-date{
-    color:#eaa5cb;
-
+    color:#e9a1c9;
     font-family:Arial,sans-serif;
-
     font-size:11px;
-
     letter-spacing:6px;
 }
 
+.love-heart{
+    height:110px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:5px;
+}
+
+.heart{
+    color:#ff6eae;
+    font-family:Arial,sans-serif;
+    font-size:82px;
+    line-height:1;
+    text-shadow:
+        0 0 8px rgba(255,90,170,.8),
+        0 0 28px rgba(255,90,170,.5),
+        0 0 65px rgba(255,90,170,.25);
+    animation:heartBeat 2.2s ease-in-out infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{transform:scale(1);}
+    10%{transform:scale(1.12);}
+    18%{transform:scale(1);}
+    28%{transform:scale(1.07);}
+    40%{transform:scale(1);}
+}
+
 .hero h1{
-    margin:
-        22px 0 14px;
-
-    font-size:
-        clamp(
-            43px,
-            9vw,
-            76px
-        );
-
+    margin:15px 0;
+    font-size:clamp(43px,9vw,76px);
     line-height:1.02;
-
     font-weight:normal;
-
-    background:
-        linear-gradient(
-            90deg,
-            #fff,
-            #ffc6e6,
-            #e5b0f4,
-            #fff
-        );
-
+    background:linear-gradient(90deg,#fff,#ffc4e4,#e0a5f2,#fff);
     background-size:250%;
-
     -webkit-background-clip:text;
-
     color:transparent;
-
-    animation:
-        gradientMove
-        8s
-        ease
-        infinite;
+    animation:gradientMove 8s ease infinite;
 }
 
 @keyframes gradientMove{
-
-    0%,100%{
-        background-position:0%;
-    }
-
-    50%{
-        background-position:100%;
-    }
+    0%,100%{background-position:0%;}
+    50%{background-position:100%;}
 }
 
 .hero h2{
-    margin-bottom:18px;
-
-    color:#eec9df;
-
-    font-weight:normal;
-
+    color:#edc4dc;
     font-size:23px;
+    font-weight:normal;
+    margin-bottom:18px;
 }
 
 .hero-description{
     max-width:650px;
-
     margin:auto;
-
     color:#cdbdca;
-
     font-size:17px;
-
     line-height:1.9;
 }
 
-
-/* =========================================================
+/* =========================
    CARTA
-========================================================= */
+========================= */
 
 .letter{
-    padding:
-        32px 34px;
-
+    padding:32px 34px;
     text-align:left;
-
-    border:
-        1px solid
-        rgba(255,190,225,.12);
-
+    border:1px solid rgba(255,190,225,.12);
     border-radius:25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.075),
-            rgba(255,255,255,.025)
-        );
-
-    backdrop-filter:
-        blur(14px);
-
-    box-shadow:
-        0 20px 70px
-        rgba(0,0,0,.25);
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.075),
+        rgba(255,255,255,.025)
+    );
+    backdrop-filter:blur(14px);
+    box-shadow:0 20px 70px rgba(0,0,0,.25);
 }
 
 .letter p{
-    margin-bottom:20px;
-
     color:#eadce7;
-
     font-size:17px;
-
     line-height:1.9;
+    margin-bottom:20px;
 }
 
 .letter .opening{
     color:#ffc0e3;
-
     font-size:25px;
 }
 
 .signature{
-    margin-top:32px;
-
     text-align:center;
-
     color:#ffc0e3!important;
-
     font-size:22px!important;
+    margin-top:32px;
 }
 
-
-/* =========================================================
-   CONTADOR MODERNO
-========================================================= */
+/* =========================
+   CONTADOR
+========================= */
 
 .time-wrapper{
-    margin:
-        30px auto 0;
-
     width:min(760px,100%);
-
-    padding:
-        25px;
-
+    margin:30px auto 0;
+    padding:25px;
     border-radius:30px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,170,215,.09),
-            rgba(255,255,255,.035)
-        );
-
-    border:
-        1px solid
-        rgba(255,190,225,.14);
-
-    box-shadow:
-        0 25px 70px
-        rgba(0,0,0,.25);
-
-    backdrop-filter:
-        blur(16px);
+    background:linear-gradient(
+        135deg,
+        rgba(255,170,215,.09),
+        rgba(255,255,255,.035)
+    );
+    border:1px solid rgba(255,190,225,.14);
+    box-shadow:0 25px 70px rgba(0,0,0,.25);
+    backdrop-filter:blur(16px);
 }
 
 .time-title{
-    margin-bottom:22px;
-
     color:#d7c2d1;
-
     font-family:Arial,sans-serif;
-
     font-size:11px;
-
     letter-spacing:3px;
-
     text-transform:uppercase;
+    margin-bottom:22px;
 }
 
 .counter{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:10px;
 }
 
 .time{
-    position:relative;
-
-    padding:
-        20px 8px;
-
+    padding:20px 8px;
     border-radius:20px;
-
-    background:
-        rgba(0,0,0,.17);
+    background:rgba(0,0,0,.17);
 }
 
 .time-number{
     display:block;
-
     color:#ffd0e8;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size:
-        clamp(
-            27px,
-            6vw,
-            42px
-        );
-
+    font-family:Arial,sans-serif;
+    font-size:clamp(27px,6vw,42px);
     font-weight:300;
-
-    letter-spacing:1px;
-
-    font-variant-numeric:
-        tabular-nums;
-
-    transition:
-        transform .2s ease;
+    font-variant-numeric:tabular-nums;
+    transition:transform .2s ease;
 }
 
 .time-number.tick{
-    transform:
-        translateY(-2px);
+    transform:translateY(-2px);
 }
 
 .time-label{
     display:block;
-
     margin-top:7px;
-
     color:#968694;
-
     font-family:Arial,sans-serif;
-
     font-size:10px;
-
     letter-spacing:2px;
-
     text-transform:uppercase;
 }
 
 .counter-message{
     margin-top:22px;
-
     color:#bfaeba;
-
     font-size:14px;
-
     line-height:1.7;
 }
 
-
-/* =========================================================
+/* =========================
    RAZONES
-========================================================= */
+========================= */
 
 .reason{
     width:min(680px,100%);
-
-    margin:
-        28px auto 0;
-
-    padding:
-        35px 28px;
-
+    margin:28px auto 0;
+    padding:35px 28px;
     border-radius:27px;
-
-    background:
-        rgba(255,255,255,.055);
-
-    border:
-        1px solid
-        rgba(255,190,225,.12);
-
-    backdrop-filter:
-        blur(14px);
-
-    transition:
-        opacity .35s ease,
-        transform .35s ease;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,190,225,.12);
+    backdrop-filter:blur(14px);
+    transition:.35s;
 }
 
 .reason.out{
     opacity:0;
-
-    transform:
-        translateY(12px);
+    transform:translateY(12px);
 }
 
 .reason-number{
     color:#d98bb8;
-
     font-family:Arial,sans-serif;
-
     font-size:10px;
-
     letter-spacing:3px;
 }
 
 .reason-text{
-    margin:
-        23px auto;
-
+    margin:23px auto;
     max-width:560px;
-
     color:#f2dce9;
-
     font-size:21px;
-
     line-height:1.75;
 }
 
 .reason-button{
     border:0;
-
-    padding:
-        12px 24px;
-
+    padding:12px 24px;
     border-radius:50px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #e75a9e,
-            #a467bf
-        );
-
+    background:linear-gradient(90deg,#e75a9e,#a467bf);
     color:white;
-
     font-family:Georgia,serif;
-
     cursor:pointer;
-
     transition:.3s;
 }
 
 .reason-button:hover{
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 8px 25px
-        rgba(230,80,160,.2);
+    transform:translateY(-2px);
+    box-shadow:0 8px 25px rgba(230,80,160,.25);
 }
 
+/* =========================
+   DISCOS
+========================= */
 
-/* =========================================================
-   GALAXIAS INTERACTIVAS
-========================================================= */
-
-.galaxy-stage{
+.vinyl-stage{
     position:relative;
-
-    width:min(780px,100%);
-
+    width:min(800px,100%);
     height:450px;
-
-    margin:
-        28px auto 0;
-
+    margin:30px auto 0;
     overflow:hidden;
-
     border-radius:35px;
-
     background:
-        radial-gradient(
-            ellipse at 25% 35%,
-            rgba(226,77,163,.22),
-            transparent 28%
-        ),
-        radial-gradient(
-            ellipse at 75% 65%,
-            rgba(128,78,184,.22),
-            transparent 30%
-        ),
-        radial-gradient(
-            ellipse at 50% 50%,
-            rgba(255,255,255,.025),
-            transparent 50%
-        ),
-        #09050d;
-
-    border:
-        1px solid
-        rgba(255,190,225,.12);
-
+        radial-gradient(circle at 25% 35%,rgba(226,77,163,.16),transparent 28%),
+        radial-gradient(circle at 75% 65%,rgba(128,78,184,.16),transparent 30%),
+        #0b060d;
+    border:1px solid rgba(255,190,225,.12);
     box-shadow:
-        inset 0 0 70px
-        rgba(0,0,0,.45),
-
-        0 25px 80px
-        rgba(0,0,0,.3);
+        inset 0 0 70px rgba(0,0,0,.5),
+        0 25px 80px rgba(0,0,0,.3);
 }
 
-.galaxy{
+.vinyl{
     position:absolute;
+    border:0;
+    background:none;
+    color:#c7afbf;
+    cursor:pointer;
+    transition:transform .45s ease,color .35s ease;
+}
 
+.vinyl:hover{
+    color:#ffd2e8;
+    transform:translateY(-8px) scale(1.07);
+}
+
+.vinyl-disc{
+    width:155px;
+    height:155px;
+    border-radius:50%;
+    position:relative;
+    background:
+        repeating-radial-gradient(
+            circle,
+            #080609 0px,
+            #080609 2px,
+            #171017 3px,
+            #090609 5px
+        );
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.07),
+        0 15px 45px rgba(0,0,0,.45),
+        0 0 35px rgba(255,90,175,.18);
+    animation:vinylSpin 8s linear infinite;
+}
+
+.vinyl-disc::before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.vinyl-disc::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:5px;
+    height:5px;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    background:#fff;
+    box-shadow:0 0 8px rgba(255,160,210,.8);
+}
+
+.vinyl-center{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:48px;
+    height:48px;
     display:flex;
-
     align-items:center;
     justify-content:center;
-
-    border:0;
-
     border-radius:50%;
-
-    cursor:pointer;
-
-    transition:
-        transform .45s ease,
-        filter .45s ease;
-}
-
-.galaxy:hover{
-    transform:
-        scale(1.1);
-}
-
-.galaxy::before{
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:50%;
-
-    background:
-        conic-gradient(
-            from 20deg,
-            transparent,
-            rgba(255,125,197,.5),
-            transparent,
-            rgba(176,110,225,.5),
-            transparent
-        );
-
-    filter:
-        blur(5px);
-
-    animation:
-        galaxySpin
-        12s
-        linear
-        infinite;
-}
-
-.galaxy::after{
-    content:"";
-
-    position:absolute;
-
-    width:25%;
-    height:25%;
-
-    border-radius:50%;
-
-    background:#fff1fa;
-
-    box-shadow:
-        0 0 25px
-        #ff9ed3,
-        0 0 60px
-        rgba(255,120,200,.5);
-}
-
-@keyframes galaxySpin{
-
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-.galaxy span{
-    position:relative;
-
-    z-index:2;
-
+    background:radial-gradient(circle,#f18bbd,#a74e86);
     color:white;
-
     font-family:Arial,sans-serif;
-
-    font-size:10px;
-
-    letter-spacing:2px;
-
-    opacity:.8;
+    font-size:11px;
+    font-weight:bold;
+    box-shadow:0 0 15px rgba(255,100,180,.35);
 }
 
-.galaxy.a{
-    width:170px;
-    height:170px;
+@keyframes vinylSpin{
+    from{transform:rotate(0);}
+    to{transform:rotate(360deg);}
+}
 
+.vinyl span{
+    display:block;
+    margin-top:14px;
+    font-family:Arial,sans-serif;
+    font-size:9px;
+    letter-spacing:3px;
+}
+
+.vinyl-one{
     left:7%;
-    top:14%;
+    top:12%;
 }
 
-.galaxy.b{
-    width:210px;
-    height:210px;
-
+.vinyl-two{
     right:7%;
     top:8%;
 }
 
-.galaxy.c{
-    width:145px;
-    height:145px;
-
-    left:40%;
-    bottom:4%;
+.vinyl-three{
+    left:31%;
+    bottom:3%;
 }
 
-.galaxy.d{
-    width:120px;
-    height:120px;
-
-    left:10%;
+.vinyl-four{
+    right:12%;
     bottom:5%;
 }
 
-.galaxy.e{
-    width:130px;
-    height:130px;
-
-    right:17%;
-    bottom:6%;
-}
-
-.galaxy-message{
-    min-height:75px;
-
+.vinyl-message{
+    min-height:78px;
     width:min(680px,100%);
-
-    margin:
-        18px auto 0;
-
-    padding:
-        17px 22px;
-
+    margin:18px auto 0;
+    padding:17px 24px;
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     text-align:center;
-
     border-radius:20px;
-
-    background:
-        rgba(255,255,255,.045);
-
-    border:
-        1px solid
-        rgba(255,190,225,.1);
-
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,190,225,.1);
     color:#f0dce8;
-
     font-size:16px;
-
     line-height:1.7;
-
-    transition:
-        opacity .35s ease,
-        transform .35s ease;
+    transition:.35s;
 }
 
-.galaxy-message.change{
+.vinyl-message.change{
     opacity:0;
-
-    transform:
-        translateY(8px);
+    transform:translateY(8px);
 }
 
-
-/* =========================================================
+/* =========================
    MÚSICA
-========================================================= */
+========================= */
 
 .music-card{
     width:min(650px,100%);
-
-    margin:
-        28px auto 0;
-
-    padding:
-        35px 25px;
-
+    margin:28px auto 0;
+    padding:35px 25px;
     border-radius:30px;
-
-    background:
-        rgba(255,255,255,.055);
-
-    border:
-        1px solid
-        rgba(255,190,225,.12);
-
-    backdrop-filter:
-        blur(14px);
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,190,225,.12);
+    backdrop-filter:blur(14px);
 }
 
 .disc{
     width:145px;
     height:145px;
-
     margin:auto;
-
     border-radius:50%;
-
     background:
         radial-gradient(
             circle,
-            #090609 0 8%,
+            #080609 0 8%,
             #ff82bd 9% 12%,
             #130b12 13% 35%,
             #e55c9f 36% 38%,
             #08050a 39% 100%
         );
-
-    box-shadow:
-        0 0 40px
-        rgba(255,90,175,.25);
-
-    animation:
-        discSpin
-        9s
-        linear
-        infinite;
+    box-shadow:0 0 40px rgba(255,90,175,.25);
+    animation:discSpin 9s linear infinite;
 }
 
 @keyframes discSpin{
-    to{
-        transform:rotate(360deg);
-    }
+    to{transform:rotate(360deg);}
 }
 
 .music-card h3{
     margin-top:25px;
-
     color:#ffd0e7;
-
     font-size:25px;
-
     font-weight:normal;
 }
 
 .music-card p{
     margin-top:7px;
-
     color:#a99aa6;
-
     line-height:1.7;
 }
 
 .music-button{
     display:inline-block;
-
     margin-top:22px;
-
-    padding:
-        12px 24px;
-
+    padding:12px 24px;
     border-radius:50px;
-
     background:#e85da2;
-
     color:white;
-
     text-decoration:none;
-
     transition:.3s;
 }
 
 .music-button:hover{
-    transform:
-        translateY(-2px);
+    transform:translateY(-2px);
 }
 
 .qr{
     width:150px;
-
     margin-top:22px;
-
     padding:8px;
-
     border-radius:12px;
-
-    background:white;
+    background:#fff;
 }
 
-
-/* =========================================================
+/* =========================
    RECUERDOS
-========================================================= */
+========================= */
 
 .gallery{
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:14px;
-
     margin-top:28px;
 }
 
 .photo{
     min-height:180px;
-
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     flex-direction:column;
-
     gap:10px;
-
     border-radius:23px;
-
-    border:
-        1px dashed
-        rgba(255,190,225,.15);
-
-    background:
-        rgba(255,255,255,.04);
-
+    border:1px dashed rgba(255,190,225,.15);
+    background:rgba(255,255,255,.04);
     color:#9c8f9a;
-
     transition:.4s;
 }
 
 .photo:hover{
-    transform:
-        translateY(-4px);
-
-    background:
-        rgba(255,120,190,.07);
+    transform:translateY(-4px);
+    background:rgba(255,120,190,.07);
 }
 
 .photo-icon{
-    font-size:30px;
+    font-size:28px;
 }
 
-
-/* =========================================================
+/* =========================
    FINAL
-========================================================= */
+========================= */
+
+.final-heart{
+    color:#ff72b5;
+    font-size:65px;
+    text-shadow:
+        0 0 20px rgba(255,90,170,.6),
+        0 0 50px rgba(255,90,170,.25);
+    animation:heartBeat 2.2s ease-in-out infinite;
+    margin-bottom:20px;
+}
 
 .final-title{
-    font-size:
-        clamp(
-            38px,
-            8vw,
-            67px
-        );
-
+    font-size:clamp(38px,8vw,67px);
     line-height:1.15;
-
     color:#ffd1e8;
-
     font-weight:normal;
 }
 
 .final-text{
     max-width:650px;
-
-    margin:
-        20px auto 0;
-
+    margin:20px auto 0;
     color:#d2c0cd;
-
     font-size:18px;
-
     line-height:2;
 }
 
 .final-name{
     margin-top:30px;
-
     color:#ffb7dc;
-
     font-size:20px;
 }
 
 .final-date{
     margin-top:10px;
-
     color:#81727e;
-
     font-family:Arial,sans-serif;
-
     font-size:10px;
-
     letter-spacing:4px;
 }
 
-
-/* =========================================================
+/* =========================
    RESPONSIVE
-========================================================= */
+========================= */
 
 @media(max-width:650px){
 
     section{
         min-height:auto;
-
-        padding:
-            65px 16px;
+        padding:58px 16px;
     }
 
     .counter{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .letter{
-        padding:
-            26px 21px;
+        padding:26px 21px;
     }
 
     .letter p{
@@ -1296,82 +780,66 @@ section{
         font-size:19px;
     }
 
-    .galaxy-stage{
+    .vinyl-stage{
         height:420px;
     }
 
-    .galaxy.a{
-        width:130px;
-        height:130px;
-        left:2%;
+    .vinyl-disc{
+        width:120px;
+        height:120px;
     }
 
-    .galaxy.b{
-        width:150px;
-        height:150px;
+    .vinyl-one{
+        left:0;
+    }
+
+    .vinyl-two{
         right:0;
     }
 
-    .galaxy.c{
-        width:125px;
-        height:125px;
-        left:35%;
+    .vinyl-three{
+        left:25%;
     }
 
-    .galaxy.d{
-        width:100px;
-        height:100px;
-        left:5%;
-    }
-
-    .galaxy.e{
-        width:105px;
-        height:105px;
-        right:7%;
+    .vinyl-four{
+        right:2%;
     }
 
     .gallery{
         grid-template-columns:1fr;
     }
-}
 
+    .heart{
+        font-size:70px;
+    }
+}
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================================================
-     FONDO
-========================================================= -->
-
 <div class="space">
-
     <div class="nebula one"></div>
-
     <div class="nebula two"></div>
-
     <div class="nebula three"></div>
-
     <div id="stars"></div>
-
 </div>
-
 
 <div class="progress" id="progress"></div>
 
-
 <main>
 
-
-<!-- =========================================================
+<!-- =========================
      INICIO
-========================================================= -->
+========================= -->
 
 <section id="inicio">
 
 <div class="container hero reveal">
+
+    <div class="love-heart">
+        <div class="heart">♥</div>
+    </div>
 
     <div class="hero-date">
         21 · 12 · 2025
@@ -1387,19 +855,16 @@ section{
     </h2>
 
     <p class="hero-description">
-        Entre millones de estrellas y miles de caminos,
-        la vida tuvo una casualidad muy bonita:
-        hacer que nuestros caminos se encontraran.
+        Entre millones de personas, miles de caminos
+        y una cantidad infinita de casualidades,
+        la vida hizo que nuestros caminos se cruzaran.
+        Y de todas las casualidades que pudieron ocurrir,
+        encontrarte fue mi favorita. ❤️
     </p>
 
-    <a
-        class="next"
-        href="#carta">
-
+    <a class="next" href="#carta">
         Comenzar nuestra historia
-
         <span class="arrow">↓</span>
-
     </a>
 
 </div>
@@ -1407,9 +872,9 @@ section{
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      CARTA
-========================================================= -->
+========================= -->
 
 <section id="carta">
 
@@ -1423,7 +888,6 @@ section{
         Tengo algo que decirte
     </h2>
 
-
     <div class="letter">
 
         <p class="opening">
@@ -1434,9 +898,9 @@ section{
             No sé exactamente en qué momento comenzaste
             a convertirte en alguien tan importante para mí.
             Creo que simplemente sucedió poco a poco,
-            entre conversaciones, risas y momentos que
-            terminaron significando mucho más de lo que
-            imaginábamos.
+            entre conversaciones, risas, miradas y pequeños
+            momentos que terminaron significando mucho más
+            de lo que imaginábamos. ❤️
         </p>
 
         <p>
@@ -1446,12 +910,12 @@ section{
         </p>
 
         <p>
-            Me gusta pensar que el amor también está
+            Me gusta pensar que el amor también vive
             en las cosas pequeñas. En querer saber cómo
             estuvo tu día. En pensar en ti cuando escucho
             una canción. En querer contarte algo apenas
             sucede. En compartir contigo incluso esos
-            momentos que parecen completamente normales.
+            momentos que parecen completamente normales. 💕
         </p>
 
         <p>
@@ -1467,18 +931,18 @@ section{
             Me encanta tu forma de ser y todos esos
             pequeños detalles que te hacen ser tú.
             Hay cosas que quizás ni siquiera notas,
-            pero que yo sí guardo.
+            pero que yo sí guardo dentro de mis recuerdos.
         </p>
 
         <p>
-            Quiero seguir conociéndote. Quiero seguir
-            descubriendo tus sueños, tus planes,
-            tus gustos y todas esas pequeñas cosas
-            que todavía me quedan por conocer.
+            Quiero seguir conociéndote. Quiero descubrir
+            tus sueños, tus planes, tus gustos, tus
+            pensamientos y todas esas pequeñas cosas
+            que todavía me quedan por conocer. ✨
         </p>
 
         <p>
-            También quiero seguir creando recuerdos.
+            Quiero seguir creando recuerdos contigo.
             Tener fotografías que algún día podamos
             mirar y recordar exactamente cómo éramos
             en ese momento.
@@ -1494,14 +958,14 @@ section{
         <p>
             Si algún día volvemos a esta página después
             de mucho tiempo, quiero que podamos mirar
-            estas palabras y recordar todo lo que
-            comenzó aquel día.
+            estas palabras y recordar todo lo que comenzó
+            aquel día.
         </p>
 
         <p>
             Gracias por llegar a mi vida.
             Gracias por cada conversación, cada sonrisa,
-            cada momento y cada recuerdo.
+            cada momento y cada recuerdo que hemos creado.
         </p>
 
         <p>
@@ -1516,6 +980,7 @@ section{
             Y aunque estas palabras nunca puedan explicar
             completamente todo lo que siento, espero que
             al leerlas puedas entender al menos una parte.
+            ❤️
         </p>
 
         <p class="signature">
@@ -1525,15 +990,9 @@ section{
 
     </div>
 
-
-    <a
-        class="next"
-        href="#tiempo">
-
-        Seguir nuestra historia
-
+    <a class="next" href="#tiempo">
+        Ver cuánto tiempo llevamos
         <span class="arrow">↓</span>
-
     </a>
 
 </div>
@@ -1541,9 +1000,9 @@ section{
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      CONTADOR
-========================================================= -->
+========================= -->
 
 <section id="tiempo">
 
@@ -1559,9 +1018,8 @@ section{
 
     <p class="subtitle">
         Cada segundo cuenta porque cada segundo forma
-        parte de nuestra historia.
+        parte de nuestra historia. ❤️
     </p>
-
 
     <div class="time-wrapper">
 
@@ -1569,97 +1027,40 @@ section{
             Tiempo juntos
         </div>
 
-
         <div class="counter">
 
             <div class="time">
-
-                <span
-                    class="time-number"
-                    id="days">
-
-                    0
-
-                </span>
-
-                <span class="time-label">
-                    días
-                </span>
-
+                <span class="time-number" id="days">0</span>
+                <span class="time-label">días</span>
             </div>
 
-
             <div class="time">
-
-                <span
-                    class="time-number"
-                    id="hours">
-
-                    00
-
-                </span>
-
-                <span class="time-label">
-                    horas
-                </span>
-
+                <span class="time-number" id="hours">00</span>
+                <span class="time-label">horas</span>
             </div>
 
-
             <div class="time">
-
-                <span
-                    class="time-number"
-                    id="minutes">
-
-                    00
-
-                </span>
-
-                <span class="time-label">
-                    minutos
-                </span>
-
+                <span class="time-number" id="minutes">00</span>
+                <span class="time-label">minutos</span>
             </div>
 
-
             <div class="time">
-
-                <span
-                    class="time-number"
-                    id="seconds">
-
-                    00
-
-                </span>
-
-                <span class="time-label">
-                    segundos
-                </span>
-
+                <span class="time-number" id="seconds">00</span>
+                <span class="time-label">segundos</span>
             </div>
 
         </div>
 
-
         <div class="counter-message">
-
             Y mientras este contador sigue avanzando,
-            también sigue creciendo nuestra historia.
-
+            también sigue creciendo nuestra historia. 💗
         </div>
 
     </div>
 
-
-    <a
-        class="next"
-        href="#razones">
-
+    <a class="next" href="#razones">
         Algunas razones
-
         <span class="arrow">↓</span>
-
     </a>
 
 </div>
@@ -1667,9 +1068,9 @@ section{
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      RAZONES
-========================================================= -->
+========================= -->
 
 <section id="razones">
 
@@ -1680,57 +1081,34 @@ section{
     </div>
 
     <h2 class="title">
-        Algunas razones
+        Algunas razones por las que te quiero
     </h2>
 
     <p class="subtitle">
-        Podría escribir muchas más, pero quiero que
-        algunas aparezcan una por una.
+        Podría escribir cientos, pero algunas quiero
+        que aparezcan una por una. ❤️
     </p>
 
+    <div class="reason" id="reasonCard">
 
-    <div
-        class="reason"
-        id="reasonCard">
-
-        <div
-            class="reason-number"
-            id="reasonNumber">
-
+        <div class="reason-number" id="reasonNumber">
             RAZÓN 01
-
         </div>
 
-
-        <div
-            class="reason-text"
-            id="reasonText">
-
+        <div class="reason-text" id="reasonText">
             Porque tu sonrisa puede cambiar
-            completamente mi día.
-
+            completamente mi día. 💗
         </div>
 
-
-        <button
-            class="reason-button"
-            onclick="nextReason()">
-
+        <button class="reason-button" onclick="nextReason()">
             Otra razón
-
         </button>
 
     </div>
 
-
-    <a
-        class="next"
-        href="#galaxias">
-
-        Entrar a nuestro cielo
-
+    <a class="next" href="#discos">
+        Nuestra música
         <span class="arrow">↓</span>
-
     </a>
 
 </div>
@@ -1738,105 +1116,68 @@ section{
 </section>
 
 
-<!-- =========================================================
-     GALAXIAS
-========================================================= -->
+<!-- =========================
+     DISCOS
+========================= -->
 
-<section id="galaxias">
+<section id="discos">
 
 <div class="container reveal">
 
     <div class="chapter">
-        Nuestro cielo
+        Nuestra banda sonora
     </div>
 
     <h2 class="title">
-        Un cielo lleno de recuerdos
+        Canciones que me hacen pensar en ti
     </h2>
 
     <p class="subtitle">
-        Hay partes de este cielo que guardan algo
-        que quiero decirte. Toca una galaxia.
+        Hay canciones que simplemente escuchamos...
+        y hay otras que terminan convirtiéndose
+        en recuerdos. 🎶
     </p>
 
+    <div class="vinyl-stage">
 
-    <div class="galaxy-stage">
-
-        <button
-            class="galaxy a"
-            onclick="galaxyMessage(0)">
-
-            <span>
-                TOCA
-            </span>
-
+        <button class="vinyl vinyl-one" onclick="vinylMessage(0)">
+            <div class="vinyl-disc">
+                <div class="vinyl-center">M</div>
+            </div>
+            <span>PARA TI</span>
         </button>
 
-
-        <button
-            class="galaxy b"
-            onclick="galaxyMessage(1)">
-
-            <span>
-                TOCA
-            </span>
-
+        <button class="vinyl vinyl-two" onclick="vinylMessage(1)">
+            <div class="vinyl-disc">
+                <div class="vinyl-center">D</div>
+            </div>
+            <span>NUESTRA</span>
         </button>
 
-
-        <button
-            class="galaxy c"
-            onclick="galaxyMessage(2)">
-
-            <span>
-                TOCA
-            </span>
-
+        <button class="vinyl vinyl-three" onclick="vinylMessage(2)">
+            <div class="vinyl-disc">
+                <div class="vinyl-center">♥</div>
+            </div>
+            <span>RECUERDO</span>
         </button>
 
-
-        <button
-            class="galaxy d"
-            onclick="galaxyMessage(3)">
-
-            <span>
-                TOCA
-            </span>
-
-        </button>
-
-
-        <button
-            class="galaxy e"
-            onclick="galaxyMessage(4)">
-
-            <span>
-                TOCA
-            </span>
-
+        <button class="vinyl vinyl-four" onclick="vinylMessage(3)">
+            <div class="vinyl-disc">
+                <div class="vinyl-center">M+D</div>
+            </div>
+            <span>SIEMPRE</span>
         </button>
 
     </div>
 
-
-    <div
-        class="galaxy-message"
-        id="galaxyMessage">
-
-        Toca una galaxia para descubrir
-        un mensaje para ti.
-
+    <div class="vinyl-message" id="vinylMessage">
+        Toca un disco para descubrir
+        algo que quiero decirte. ❤️
     </div>
 
-
-    <a
-        class="next"
-        href="#musica">
-
+    <a class="next" href="#musica">
         Nuestra canción
-
         <span class="arrow">↓</span>
-
     </a>
 
 </div>
@@ -1844,9 +1185,9 @@ section{
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      CANCIÓN
-========================================================= -->
+========================= -->
 
 <section id="musica">
 
@@ -1859,7 +1200,6 @@ section{
     <h2 class="title">
         Nuestra canción
     </h2>
-
 
     <div class="music-card">
 
@@ -1874,45 +1214,33 @@ section{
         </p>
 
         <p>
-            Una canción que quiero que forme
-            parte de nuestra historia.
+            Una canción que ahora también forma
+            parte de nuestra historia. 🎶
         </p>
-
 
         <a
             class="music-button"
             href="https://www.youtube.com/"
             target="_blank">
-
             Escuchar en YouTube
-
         </a>
 
-
         <br>
-
 
         <img
             class="qr"
             src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fwww.youtube.com%2F"
             alt="Código QR">
 
-
         <p style="font-size:12px">
-            Escanéame
+            Escanéame ❤️
         </p>
 
     </div>
 
-
-    <a
-        class="next"
-        href="#recuerdos">
-
+    <a class="next" href="#recuerdos">
         Nuestros recuerdos
-
         <span class="arrow">↓</span>
-
     </a>
 
 </div>
@@ -1920,9 +1248,9 @@ section{
 </section>
 
 
-<!-- =========================================================
-     RECUERDOS
-========================================================= -->
+<!-- =========================
+     FOTOS
+========================= -->
 
 <section id="recuerdos">
 
@@ -1933,70 +1261,41 @@ section{
     </div>
 
     <h2 class="title">
-        Los momentos que faltan por guardar
+        Los momentos que todavía nos faltan
     </h2>
 
     <p class="subtitle">
-        Estos espacios están esperando nuestras fotos.
+        Estos espacios están esperando nuestras
+        fotografías. 📸
     </p>
-
 
     <div class="gallery">
 
         <div class="photo">
-
-            <div class="photo-icon">
-                ✦
-            </div>
-
+            <div class="photo-icon">♥</div>
             Nuestro primer recuerdo
-
         </div>
 
-
         <div class="photo">
-
-            <div class="photo-icon">
-                ✦
-            </div>
-
+            <div class="photo-icon">♥</div>
             Un momento especial
-
         </div>
 
-
         <div class="photo">
-
-            <div class="photo-icon">
-                ✦
-            </div>
-
+            <div class="photo-icon">♥</div>
             Una aventura juntos
-
         </div>
 
-
         <div class="photo">
-
-            <div class="photo-icon">
-                ✦
-            </div>
-
+            <div class="photo-icon">♥</div>
             Un recuerdo para siempre
-
         </div>
 
     </div>
 
-
-    <a
-        class="next"
-        href="#final">
-
-        Llegar al final
-
+    <a class="next" href="#final">
+        Una última cosa
         <span class="arrow">↓</span>
-
     </a>
 
 </div>
@@ -2004,45 +1303,46 @@ section{
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      FINAL
-========================================================= -->
+========================= -->
 
 <section id="final">
 
 <div class="container reveal">
 
+    <div class="final-heart">
+        ♥
+    </div>
+
     <div class="chapter">
         Para ti
     </div>
-
 
     <h2 class="final-title">
         Entre todas las estrellas,
         siempre te elegiría a ti.
     </h2>
 
-
     <p class="final-text">
         Quizás el universo sea demasiado grande
         para entenderlo completamente, pero hay algo
         que tengo bastante claro: entre todos los
         caminos posibles, me alegra muchísimo que
-        el nuestro se haya cruzado.
+        el nuestro se haya cruzado. ❤️
     </p>
-
 
     <p class="final-text">
         Y si nuestra historia todavía está comenzando,
-        entonces espero que nos queden muchísimas
-        páginas por escribir.
+        espero que nos queden muchísimas páginas por
+        escribir, canciones por escuchar, fotografías
+        por tomar, lugares por conocer y recuerdos
+        por guardar.
     </p>
-
 
     <div class="final-name">
         Melisa Daniela Ochoa Salazar
     </div>
-
 
     <div class="final-date">
         21 · 12 · 2025
@@ -2052,40 +1352,30 @@ section{
 
 </section>
 
-
 </main>
 
 
 <script>
 
-/* =========================================================
+/* =========================
    ESTRELLAS
-========================================================= */
+========================= */
 
-const stars =
-    document.getElementById("stars");
+const stars=document.getElementById("stars");
 
-for(let i=0;i<120;i++){
+for(let i=0;i<110;i++){
 
-    const star =
-        document.createElement("div");
+    const star=document.createElement("div");
 
     star.className="star";
 
-    const size =
-        Math.random()*2+0.6;
+    const size=Math.random()*2+0.6;
 
-    star.style.width=
-        size+"px";
+    star.style.width=size+"px";
+    star.style.height=size+"px";
 
-    star.style.height=
-        size+"px";
-
-    star.style.left=
-        Math.random()*100+"%";
-
-    star.style.top=
-        Math.random()*100+"%";
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
 
     star.style.setProperty(
         "--duration",
@@ -2101,474 +1391,327 @@ for(let i=0;i<120;i++){
 }
 
 
-/* =========================================================
+/* =========================
    ESTRELLAS FUGACES
-========================================================= */
+========================= */
 
 function shootingStar(){
 
-    const star=
-        document.createElement("div");
+    const star=document.createElement("div");
 
-    star.className=
-        "shooting-star";
+    star.className="shooting-star";
 
-    star.style.left=
-        (65+Math.random()*35)+"%";
+    star.style.left=(65+Math.random()*35)+"%";
+    star.style.top=Math.random()*55+"%";
 
-    star.style.top=
-        Math.random()*55+"%";
-
-    document
-        .querySelector(".space")
-        .appendChild(star);
+    document.querySelector(".space").appendChild(star);
 
     requestAnimationFrame(()=>{
-
         star.classList.add("go");
-
     });
 
     setTimeout(()=>{
-
         star.remove();
-
-    },1600);
+    },1500);
 }
 
-setInterval(
-    shootingStar,
-    7000
+setInterval(shootingStar,7000);
+
+
+/* =========================
+   ANIMACIONES AL BAJAR
+========================= */
+
+const observer=new IntersectionObserver(
+    entries=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add("visible");
+            }
+        });
+    },
+    {threshold:.10}
 );
 
-
-/* =========================================================
-   REVEAL
-========================================================= */
-
-const observer=
-    new IntersectionObserver(
-        entries=>{
-
-            entries.forEach(entry=>{
-
-                if(entry.isIntersecting){
-
-                    entry.target
-                        .classList
-                        .add("visible");
-
-                }
-
-            });
-
-        },
-        {
-            threshold:.10
-        }
-    );
-
-document
-    .querySelectorAll(".reveal")
-    .forEach(el=>{
-        observer.observe(el);
-    });
+document.querySelectorAll(".reveal").forEach(el=>{
+    observer.observe(el);
+});
 
 
-/* =========================================================
+/* =========================
    BARRA DE PROGRESO
-========================================================= */
+========================= */
 
 window.addEventListener(
     "scroll",
     ()=>{
-
-        const scroll=
-            window.scrollY;
+        const scroll=window.scrollY;
 
         const height=
-            document.documentElement
-            .scrollHeight
-            -
+            document.documentElement.scrollHeight-
             window.innerHeight;
 
         const percent=
             height>0
-            ?
-            (scroll/height)*100
-            :
-            0;
+            ?scroll/height*100
+            :0;
 
-        document
-            .getElementById("progress")
-            .style.width=
+        document.getElementById("progress").style.width=
             percent+"%";
-
     },
-    {
-        passive:true
-    }
+    {passive:true}
 );
 
 
-/* =========================================================
-   CONTADOR EN TIEMPO REAL
-========================================================= */
+/* =========================
+   CONTADOR
+========================= */
 
 const startDate=
-    new Date(
-        "2025-12-21T00:00:00"
-    );
+    new Date("2025-12-21T00:00:00");
 
-const counterElements={
-
-    days:
-        document.getElementById("days"),
-
-    hours:
-        document.getElementById("hours"),
-
-    minutes:
-        document.getElementById("minutes"),
-
-    seconds:
-        document.getElementById("seconds")
-
+const counter={
+    days:document.getElementById("days"),
+    hours:document.getElementById("hours"),
+    minutes:document.getElementById("minutes"),
+    seconds:document.getElementById("seconds")
 };
 
-
-function updateCounter(){
-
-    const now=
-        new Date();
-
-    const difference=
-        Math.max(
-            0,
-            now-startDate
-        );
-
-
-    const days=
-        Math.floor(
-            difference/
-            86400000
-        );
-
-
-    const hours=
-        Math.floor(
-            difference/
-            3600000
-        )%24;
-
-
-    const minutes=
-        Math.floor(
-            difference/
-            60000
-        )%60;
-
-
-    const seconds=
-        Math.floor(
-            difference/
-            1000
-        )%60;
-
-
-    updateNumber(
-        counterElements.days,
-        days
-    );
-
-    updateNumber(
-        counterElements.hours,
-        hours,
-        true
-    );
-
-    updateNumber(
-        counterElements.minutes,
-        minutes,
-        true
-    );
-
-    updateNumber(
-        counterElements.seconds,
-        seconds,
-        true
-    );
-
-}
-
-
-function updateNumber(
-    element,
-    value,
-    pad=false
-){
+function updateNumber(element,value,pad=false){
 
     const newValue=
         pad
-        ?
-        String(value).padStart(2,"0")
-        :
-        String(value);
+        ?String(value).padStart(2,"0")
+        :String(value);
 
+    if(element.textContent!==newValue){
 
-    if(
-        element.textContent
-        !==
-        newValue
-    ){
-
-        element.classList
-            .add("tick");
-
+        element.classList.add("tick");
 
         setTimeout(()=>{
 
-            element.textContent=
-                newValue;
+            element.textContent=newValue;
+            element.classList.remove("tick");
 
-            element.classList
-                .remove("tick");
-
-        },100);
-
+        },80);
     }
-
 }
 
+function updateCounter(){
+
+    const now=new Date();
+
+    const difference=Math.max(
+        0,
+        now-startDate
+    );
+
+    const days=Math.floor(
+        difference/86400000
+    );
+
+    const hours=Math.floor(
+        difference/3600000
+    )%24;
+
+    const minutes=Math.floor(
+        difference/60000
+    )%60;
+
+    const seconds=Math.floor(
+        difference/1000
+    )%60;
+
+    updateNumber(counter.days,days);
+    updateNumber(counter.hours,hours,true);
+    updateNumber(counter.minutes,minutes,true);
+    updateNumber(counter.seconds,seconds,true);
+}
 
 updateCounter();
 
-setInterval(
-    updateCounter,
-    250
-);
+setInterval(updateCounter,250);
 
 
-/* =========================================================
+/* =========================
    RAZONES
-========================================================= */
+========================= */
 
 const reasons=[
 
-    "Porque tu sonrisa puede cambiar completamente mi día.",
+"Porque tu sonrisa puede cambiar completamente mi día. ❤️",
 
-    "Porque contigo hasta los momentos más simples terminan siendo especiales.",
+"Porque contigo hasta los momentos más simples terminan siendo especiales. 💕",
 
-    "Porque me encanta la forma en que eres tú misma.",
+"Porque me encanta la forma en que eres tú misma. ✨",
 
-    "Porque siempre encuentro una razón para pensar en ti.",
+"Porque siempre encuentro una razón para pensar en ti. ❤️",
 
-    "Porque me haces querer ser una mejor versión de mí.",
+"Porque me haces querer ser una mejor versión de mí. 💗",
 
-    "Porque tus pequeños detalles significan muchísimo para mí.",
+"Porque tus pequeños detalles significan muchísimo para mí. 🌷",
 
-    "Porque me encanta escuchar tu voz.",
+"Porque me encanta escuchar tu voz. ❤️",
 
-    "Porque cada recuerdo contigo tiene un lugar especial.",
+"Porque cada recuerdo contigo tiene un lugar especial. ✨",
 
-    "Porque me haces sonreír incluso sin intentarlo.",
+"Porque me haces sonreír incluso sin intentarlo. 💕",
 
-    "Porque me gusta imaginar todo lo que todavía nos queda por vivir.",
+"Porque me gusta imaginar todo lo que todavía nos queda por vivir. 🌙",
 
-    "Porque contigo aprendí que los momentos sencillos también pueden convertirse en recuerdos inolvidables.",
+"Porque contigo aprendí que los momentos sencillos también pueden convertirse en recuerdos inolvidables. ❤️",
 
-    "Porque me encanta cuando nos reímos juntos.",
+"Porque me encanta cuando nos reímos juntos. 💗",
 
-    "Porque haces que incluso un día normal pueda sentirse diferente.",
+"Porque haces que incluso un día normal pueda sentirse diferente. ✨",
 
-    "Porque eres alguien que quiero cuidar y valorar.",
+"Porque eres alguien que quiero cuidar y valorar. ❤️",
 
-    "Porque me gusta saber que estás en mi vida.",
+"Porque me gusta saber que estás en mi vida. 💕",
 
-    "Porque cada día puedo descubrir algo nuevo de ti.",
+"Porque cada día puedo descubrir algo nuevo de ti. 🌷",
 
-    "Porque algunas canciones ahora tienen tu nombre en mis recuerdos.",
+"Porque algunas canciones ahora tienen tu nombre en mis recuerdos. 🎶",
 
-    "Porque eres parte de muchos de mis pensamientos más bonitos.",
+"Porque eres parte de muchos de mis pensamientos más bonitos. ❤️",
 
-    "Porque tu felicidad también me importa muchísimo.",
+"Porque tu felicidad también me importa muchísimo. 💗",
 
-    "Porque quiero seguir creando recuerdos contigo.",
+"Porque quiero seguir creando recuerdos contigo. ✨",
 
-    "Porque me haces sentir afortunado.",
+"Porque me haces sentir afortunado. ❤️",
 
-    "Porque quiero conocer todos esos lugares que todavía nos faltan.",
+"Porque quiero conocer todos esos lugares que todavía nos faltan. 🌎",
 
-    "Porque me encanta tu manera de ser.",
+"Porque me encanta tu manera de ser. 💕",
 
-    "Porque quiero seguir descubriendo tus sueños.",
+"Porque quiero seguir descubriendo tus sueños. ✨",
 
-    "Porque me importa lo que sientes.",
+"Porque me importa lo que sientes. ❤️",
 
-    "Porque quiero verte cumplir tus metas.",
+"Porque quiero verte cumplir tus metas. 💗",
 
-    "Porque me gusta imaginar nuestras futuras aventuras.",
+"Porque me gusta imaginar nuestras futuras aventuras. 🌙",
 
-    "Porque eres parte de una etapa muy bonita de mi vida.",
+"Porque eres parte de una etapa muy bonita de mi vida. ❤️",
 
-    "Porque eres una de mis personas favoritas.",
+"Porque eres una de mis personas favoritas. 💕",
 
-    "Porque me gusta cuando simplemente estamos juntos.",
+"Porque me gusta cuando simplemente estamos juntos. ✨",
 
-    "Porque haces que el tiempo pase demasiado rápido.",
+"Porque haces que el tiempo pase demasiado rápido. ❤️",
 
-    "Porque nuestra historia todavía tiene muchísimo por descubrir.",
+"Porque nuestra historia todavía tiene muchísimo por descubrir. 💗",
 
-    "Porque todavía nos quedan fotografías que tomar.",
+"Porque todavía nos quedan fotografías que tomar. 📸",
 
-    "Porque todavía nos quedan lugares por conocer.",
+"Porque todavía nos quedan lugares por conocer. 🌎",
 
-    "Porque todavía nos quedan canciones por dedicar.",
+"Porque todavía nos quedan canciones por dedicar. 🎶",
 
-    "Porque todavía nos quedan muchas risas por compartir.",
+"Porque todavía nos quedan muchas risas por compartir. 💕",
 
-    "Porque encontrarte fue una casualidad que agradezco muchísimo.",
+"Porque encontrarte fue una casualidad que agradezco muchísimo. ❤️",
 
-    "Porque quiero seguir sumando días a nuestro contador.",
+"Porque quiero seguir sumando días a nuestro contador. ✨",
 
-    "Porque me gusta pensar en todo lo que hemos vivido desde aquel día.",
+"Porque me gusta pensar en todo lo que hemos vivido desde aquel día. 💗",
 
-    "Porque quiero seguir aprendiendo contigo.",
+"Porque quiero seguir aprendiendo contigo. ❤️",
 
-    "Porque quiero seguir sorprendiéndote.",
+"Porque quiero seguir sorprendiéndote. 💕",
 
-    "Porque quiero seguir escuchando tus historias.",
+"Porque quiero seguir escuchando tus historias. ✨",
 
-    "Porque quiero seguir compartiendo mis historias contigo.",
+"Porque quiero seguir compartiendo mis historias contigo. ❤️",
 
-    "Porque me importa estar presente en los momentos importantes.",
+"Porque me importa estar presente en los momentos importantes. 💗",
 
-    "Porque me gusta imaginar nuestro futuro.",
+"Porque me gusta imaginar nuestro futuro. 🌙",
 
-    "Porque quiero que algún día podamos mirar atrás y recordar todo esto.",
+"Porque quiero que algún día podamos mirar atrás y recordar todo esto. ❤️",
 
-    "Porque entre tantas personas tuve la suerte de encontrarte.",
+"Porque entre tantas personas tuve la suerte de encontrarte. 💕",
 
-    "Porque si pudiera volver al 21 de diciembre de 2025, volvería a elegirte.",
+"Porque si pudiera volver al 21 de diciembre de 2025, volvería a elegirte. ✨",
 
-    "Porque todavía me quedan muchísimas razones para quererte.",
+"Porque todavía me quedan muchísimas razones para quererte. ❤️",
 
-    "Porque simplemente eres tú."
+"Porque simplemente eres tú. 💗"
 
 ];
 
 let reasonIndex=0;
 
-
 function nextReason(){
 
     const card=
-        document.getElementById(
-            "reasonCard"
-        );
+        document.getElementById("reasonCard");
 
     card.classList.add("out");
-
 
     setTimeout(()=>{
 
         reasonIndex++;
 
-        if(
-            reasonIndex>=
-            reasons.length
-        ){
-
+        if(reasonIndex>=reasons.length){
             reasonIndex=0;
-
         }
 
-
-        document
-            .getElementById(
-                "reasonNumber"
-            )
+        document.getElementById("reasonNumber")
             .textContent=
             "RAZÓN "+
-            String(
-                reasonIndex+1
-            ).padStart(2,"0");
+            String(reasonIndex+1).padStart(2,"0");
 
-
-        document
-            .getElementById(
-                "reasonText"
-            )
+        document.getElementById("reasonText")
             .textContent=
             reasons[reasonIndex];
 
-
-        card.classList.remove(
-            "out"
-        );
+        card.classList.remove("out");
 
     },350);
 }
 
 
-/* =========================================================
-   MENSAJES DE LAS GALAXIAS
-========================================================= */
+/* =========================
+   DISCOS
+========================= */
 
-const galaxyMessages=[
+const vinylMessages=[
 
-    "Melisa, si pudiera guardar una sola estrella para recordar este momento, elegiría una que brillara como tú. ❤️",
+"Melisa, hay canciones que duran unos minutos, pero contigo quiero crear recuerdos que duren toda la vida. ❤️",
 
-    "Nuestro universo todavía es pequeño, pero tiene algo enorme: todos los recuerdos que nos quedan por crear. ✨",
+"Si nuestra historia tuviera una banda sonora, quiero que estuviera llena de canciones que algún día podamos escuchar y decir: esta fue nuestra época. 🎶",
 
-    "A veces pienso que encontrarte entre tantas personas fue una de esas casualidades que parecen escritas por el destino. 💫",
+"Hay melodías que ahora me recuerdan a ti, porque algunas personas llegan a nuestra vida y cambian hasta la forma en que escuchamos una canción. 💕",
 
-    "Si alguna vez miras las estrellas y piensas en esta página, recuerda que en algún lugar hay alguien pensando en ti. 🌙",
-
-    "Entre millones de caminos posibles, me alegra muchísimo que el nuestro haya terminado cruzándose. 💕"
+"Entre todas las canciones del mundo, mi favorita siempre será aquella que me haga pensar en ti. ✨"
 
 ];
 
-let lastGalaxy=-1;
+let lastVinyl=-1;
 
-
-function galaxyMessage(index){
+function vinylMessage(index){
 
     const box=
-        document.getElementById(
-            "galaxyMessage"
-        );
+        document.getElementById("vinylMessage");
 
-
-    if(
-        index===lastGalaxy
-    ){
-
+    if(index===lastVinyl){
         index=
-            (index+1)
-            %
-            galaxyMessages.length;
-
+            (index+1)%
+            vinylMessages.length;
     }
 
+    lastVinyl=index;
 
-    lastGalaxy=index;
-
-
-    box.classList.add(
-        "change"
-    );
-
+    box.classList.add("change");
 
     setTimeout(()=>{
 
         box.textContent=
-            galaxyMessages[index];
+            vinylMessages[index];
 
-        box.classList.remove(
-            "change"
-        );
+        box.classList.remove("change");
 
     },350);
 }
