@@ -2,15 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Para Melisa Daniela Ochoa Salazar ❤️</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html{
 scroll-behavior:smooth;
@@ -18,78 +15,65 @@ scroll-behavior:smooth;
 
 body{
 margin:0;
-background:#01020b;
-color:#fff;
+background:#02030d;
+color:white;
 font-family:Georgia,serif;
 overflow-x:hidden;
 }
 
-/* =====================================================
+/* =========================
    UNIVERSO
-===================================================== */
+========================= */
 
 #universe{
 position:fixed;
 inset:0;
-z-index:-50;
+z-index:-10;
 overflow:hidden;
 background:
-radial-gradient(
-ellipse at 50% 20%,
-#27105c 0%,
-#0d0730 35%,
-#030413 70%,
-#01020b 100%
-);
-transition:background 2s ease;
+radial-gradient(circle at 50% 20%,#21104d 0%,#0c0824 38%,#030411 75%,#01020a 100%);
 }
 
 .nebula{
 position:absolute;
-width:80vw;
-height:80vw;
 border-radius:50%;
-filter:blur(70px);
-opacity:.28;
-mix-blend-mode:screen;
-animation:nebulaMove 22s ease-in-out infinite alternate;
+filter:blur(90px);
+opacity:.18;
+animation:nebula 35s ease-in-out infinite alternate;
 }
 
-.nebula.one{
-background:#8a27c9;
-left:-30vw;
-top:-25vw;
+.n1{
+width:650px;
+height:650px;
+background:#8b35c9;
+left:-280px;
+top:-250px;
 }
 
-.nebula.two{
-background:#244fd1;
-right:-35vw;
-top:25%;
-animation-delay:-8s;
+.n2{
+width:600px;
+height:600px;
+background:#3158c9;
+right:-300px;
+top:35%;
+animation-delay:-12s;
 }
 
-.nebula.three{
-background:#db3c9d;
+.n3{
+width:550px;
+height:550px;
+background:#d33c91;
 left:20%;
-bottom:-55vw;
-animation-delay:-14s;
+bottom:-400px;
+animation-delay:-20s;
 }
 
-@keyframes nebulaMove{
-0%{
-transform:translate(0,0) scale(1);
-}
-50%{
-transform:translate(7vw,-5vh) scale(1.15);
-}
-100%{
-transform:translate(-5vw,8vh) scale(.95);
-}
+@keyframes nebula{
+from{transform:translate(0,0) scale(1)}
+to{transform:translate(40px,-35px) scale(1.08)}
 }
 
-/* =====================================================
-   ESTRELLAS GENERADAS
-===================================================== */
+/* ESTRELLAS */
 
 #stars{
 position:absolute;
@@ -99,44 +83,30 @@ inset:0;
 .star{
 position:absolute;
 border-radius:50%;
-background:#fff;
-box-shadow:0 0 8px rgba(255,255,255,.9);
-animation:starPulse var(--duration) ease-in-out infinite;
+background:white;
+box-shadow:0 0 7px rgba(255,255,255,.8);
+animation:pulse var(--speed) ease-in-out infinite;
 animation-delay:var(--delay);
 }
 
-@keyframes starPulse{
-0%,100%{
-opacity:.15;
-transform:scale(.5);
-}
-50%{
-opacity:1;
-transform:scale(1.7);
-}
+@keyframes pulse{
+0%,100%{opacity:.25}
+50%{opacity:.9}
 }
 
-/* =====================================================
-   ESTRELLAS FUGACES
-===================================================== */
+/* ESTRELLAS FUGACES */
 
-.shootingStar{
+.meteor{
 position:absolute;
-width:220px;
+width:150px;
 height:2px;
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.2),
-#fff
-);
+background:linear-gradient(90deg,transparent,#fff);
 transform:rotate(-35deg);
 opacity:0;
 }
 
-.shootingStar.active{
-animation:meteor 1.8s linear forwards;
+.meteor.go{
+animation:meteor 1.6s linear forwards;
 }
 
 @keyframes meteor{
@@ -144,490 +114,306 @@ animation:meteor 1.8s linear forwards;
 transform:translate(0,0) rotate(-35deg);
 opacity:0;
 }
-10%{
-opacity:1;
-}
+15%{opacity:.9}
 100%{
-transform:translate(-550px,380px) rotate(-35deg);
+transform:translate(-400px,280px) rotate(-35deg);
 opacity:0;
 }
 }
 
-/* =====================================================
-   PARTICULAS
-===================================================== */
-
-#particles{
-position:absolute;
-inset:0;
-pointer-events:none;
-}
-
-.particle{
-position:absolute;
-color:#ffb9e8;
-font-size:12px;
-opacity:.5;
-animation:particleFloat var(--time) linear infinite;
-animation-delay:var(--delay);
-}
-
-@keyframes particleFloat{
-0%{
-transform:translateY(110vh) translateX(0) rotate(0);
-opacity:0;
-}
-15%{
-opacity:.7;
-}
-85%{
-opacity:.4;
-}
-100%{
-transform:translateY(-20vh) translateX(var(--move)) rotate(360deg);
-opacity:0;
-}
-}
-
-/* =====================================================
-   PLANETAS
-===================================================== */
-
-.planet{
-position:absolute;
-border-radius:50%;
-opacity:.45;
-filter:blur(1px);
-animation:planetFloat 30s ease-in-out infinite alternate;
-}
-
-.planet.one{
-width:45px;
-height:45px;
-background:
-radial-gradient(circle at 30% 30%,#fff,#9f7cff 35%,#28165c 75%);
-left:12%;
-top:55%;
-box-shadow:0 0 35px #7254e8;
-}
-
-.planet.two{
-width:22px;
-height:22px;
-background:#ff80cb;
-right:17%;
-top:68%;
-box-shadow:0 0 25px #ff69bd;
-animation-delay:-10s;
-}
-
-@keyframes planetFloat{
-from{
-transform:translateY(0) translateX(0);
-}
-to{
-transform:translateY(-80px) translateX(50px);
-}
-}
-
-/* =====================================================
-   LUNA
-===================================================== */
-
-.moon{
-position:absolute;
-width:120px;
-height:120px;
-right:7%;
-top:8%;
-border-radius:50%;
-background:#fff4d2;
-box-shadow:
-0 0 30px #fff4d2,
-0 0 100px rgba(255,230,180,.3);
-}
-
-.moon:after{
-content:"";
-position:absolute;
-width:120px;
-height:120px;
-border-radius:50%;
-background:#170b39;
-left:32px;
-top:-10px;
-}
-
-/* =====================================================
+/* =========================
    CONTENIDO
-===================================================== */
+========================= */
 
 main{
 position:relative;
-z-index:2;
 }
 
 section{
+min-height:100vh;
+padding:100px 20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 position:relative;
-max-width:950px;
-margin:auto;
-padding:120px 20px;
 }
 
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
+.container{
+width:min(850px,100%);
 text-align:center;
 }
 
-.heroContent{
-max-width:850px;
-transition:
-transform .5s ease,
-opacity .5s ease;
+/* =========================
+   PORTADA
+========================= */
+
+.hero{
+text-align:center;
 }
 
-.dateSmall{
+.date{
 font-size:12px;
-letter-spacing:7px;
-color:#ffb9e8;
+letter-spacing:6px;
+color:#ffb6e7;
 }
 
 .hero h1{
-font-size:clamp(42px,8vw,80px);
+font-size:clamp(42px,8vw,78px);
 line-height:1.05;
-margin:25px 0 15px;
+margin:25px 0;
 
-background:
-linear-gradient(
+background:linear-gradient(
 90deg,
 #fff,
-#ffb4e8,
-#d8baff,
+#ffb8e7,
+#d2b7ff,
 #fff
 );
 
 background-size:300%;
-
 -webkit-background-clip:text;
 color:transparent;
-
-animation:titleShine 5s ease infinite;
+animation:shine 6s ease infinite;
 }
 
-@keyframes titleShine{
-0%{background-position:0%}
+@keyframes shine{
+0%{background-position:0}
 50%{background-position:100%}
-100%{background-position:0%}
+100%{background-position:0}
 }
 
 .hero h2{
-font-size:25px;
+font-size:24px;
 font-weight:normal;
-color:#e5caff;
+color:#e5c9ff;
 }
 
 .hero p{
-max-width:650px;
-margin:25px auto;
 font-size:18px;
 line-height:1.8;
-color:#c8c4d2;
+color:#c6c1d0;
+max-width:650px;
+margin:25px auto 40px;
 }
 
-.primaryButton{
-display:inline-block;
-padding:16px 30px;
-border-radius:40px;
-background:
-linear-gradient(90deg,#ff58b8,#9565ff);
+/* =========================
+   BOTONES
+========================= */
+
+.next{
+display:inline-flex;
+align-items:center;
+gap:10px;
+margin-top:50px;
+padding:15px 28px;
+
+border:1px solid rgba(255,255,255,.15);
+border-radius:50px;
+
+background:rgba(255,255,255,.07);
 color:#fff;
+
+font-size:15px;
+font-family:Georgia,serif;
 text-decoration:none;
-border:0;
+
 cursor:pointer;
-font-size:16px;
-box-shadow:0 0 35px rgba(255,80,190,.4);
-transition:.4s;
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 0 25px rgba(255,90,190,.12);
+
+transition:
+transform .35s ease,
+background .35s ease,
+box-shadow .35s ease;
 }
 
-.primaryButton:hover{
-transform:translateY(-5px) scale(1.04);
-box-shadow:0 0 55px rgba(255,80,190,.65);
+.next:hover{
+transform:translateY(-5px);
+background:rgba(255,100,190,.15);
+box-shadow:0 0 40px rgba(255,90,190,.25);
 }
 
-/* =====================================================
+.arrow{
+animation:arrow 1.7s ease-in-out infinite;
+}
+
+@keyframes arrow{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(5px)}
+}
+
+/* =========================
    TITULOS
-===================================================== */
+========================= */
 
 .title{
-font-size:clamp(30px,6vw,43px);
-text-align:center;
-color:#ffc6ec;
-text-shadow:0 0 30px rgba(255,100,200,.3);
-margin-bottom:45px;
+font-size:clamp(32px,6vw,48px);
+color:#ffc5eb;
+margin-bottom:25px;
+text-shadow:0 0 25px rgba(255,100,200,.2);
 }
 
-/* =====================================================
-   REVEAL
-===================================================== */
-
-.reveal{
-opacity:0;
-transform:
-translateY(80px)
-scale(.96);
-transition:
-opacity 1s ease,
-transform 1.1s cubic-bezier(.2,.8,.2,1);
+.subtitle{
+color:#a9a4b4;
+font-size:16px;
 }
 
-.reveal.show{
-opacity:1;
-transform:
-translateY(0)
-scale(1);
-}
-
-/* =====================================================
-   SOBRE
-===================================================== */
-
-.envelopeWrapper{
-height:430px;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.envelope{
-width:310px;
-height:205px;
-position:relative;
-cursor:pointer;
-perspective:1000px;
-transition:transform .5s ease;
-}
-
-.envelope:hover{
-transform:translateY(-8px);
-}
-
-.envelopeBase{
-position:absolute;
-inset:0;
-border-radius:12px;
-background:
-linear-gradient(
-135deg,
-#ff83c9,
-#8252b6
-);
-box-shadow:
-0 30px 70px rgba(0,0,0,.45),
-0 0 45px rgba(255,90,190,.25);
-overflow:hidden;
-}
-
-.envelopeBase:before{
-content:"";
-position:absolute;
-inset:0;
-background:
-linear-gradient(
-135deg,
-transparent 49%,
-rgba(255,255,255,.12) 50%,
-transparent 51%
-),
-linear-gradient(
-225deg,
-transparent 49%,
-rgba(255,255,255,.1) 50%,
-transparent 51%
-);
-}
-
-.envelopePaper{
-position:absolute;
-left:18px;
-right:18px;
-bottom:10px;
-height:175px;
-background:#fff9fc;
-color:#493747;
-border-radius:8px;
-padding:22px;
-text-align:center;
-z-index:2;
-transition:
-transform 1.1s cubic-bezier(.2,.8,.2,1),
-opacity .6s;
-}
-
-.envelopeFlap{
-position:absolute;
-top:0;
-left:0;
-width:0;
-height:0;
-border-left:155px solid transparent;
-border-right:155px solid transparent;
-border-top:110px solid #ffb5e6;
-transform-origin:top center;
-transition:
-transform 1s cubic-bezier(.2,.8,.2,1);
-z-index:4;
-}
-
-.seal{
-position:absolute;
-left:50%;
-top:105px;
-transform:translate(-50%,-50%);
-font-size:43px;
-z-index:6;
-transition:
-opacity .5s,
-transform .7s;
-}
-
-.envelope.open .envelopeFlap{
-transform:rotateX(180deg);
-}
-
-.envelope.open .envelopePaper{
-transform:translateY(-125px);
-}
-
-.envelope.open .seal{
-opacity:0;
-transform:
-translate(-50%,-50%)
-scale(0);
-}
-
-.envelope.open{
-transform:translateY(-10px);
-}
-
-/* =====================================================
-   CARTA
-===================================================== */
+/* =========================
+   CARTA SIN SOBRE
+========================= */
 
 .letter{
-display:none;
+text-align:left;
+padding:40px;
+
 background:
 linear-gradient(
 145deg,
-rgba(255,255,255,.10),
+rgba(255,255,255,.09),
 rgba(255,255,255,.025)
 );
-border:1px solid rgba(255,255,255,.13);
-border-radius:30px;
-padding:35px;
-backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.12);
+border-radius:28px;
+
+backdrop-filter:blur(14px);
+
 box-shadow:
-0 30px 100px rgba(0,0,0,.4);
-}
-
-.letter.visible{
-display:block;
-animation:
-letterAppear 1.4s cubic-bezier(.2,.8,.2,1);
-}
-
-@keyframes letterAppear{
-from{
-opacity:0;
-transform:
-translateY(45px)
-scale(.96);
-}
-to{
-opacity:1;
-transform:
-translateY(0)
-scale(1);
-}
+0 25px 80px rgba(0,0,0,.35);
 }
 
 .letter p{
 font-size:18px;
 line-height:2;
-margin-bottom:25px;
+color:#eee1eb;
+margin:0 0 25px;
 }
 
-.opening{
-font-size:27px!important;
-color:#ffb9e8;
+.letter .opening{
+font-size:28px;
+color:#ffb8e5;
 }
 
 .signature{
 text-align:center;
-font-size:25px;
-color:#ffc4eb;
-margin-top:45px;
+font-size:25px!important;
+color:#ffc4e9!important;
+margin-top:45px!important;
 }
 
-/* =====================================================
+/* =========================
    CONTADOR
-===================================================== */
+========================= */
 
 .counter{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:14px;
+gap:15px;
+width:100%;
+margin-top:35px;
 }
 
-.timeBox{
-padding:28px 8px;
-border-radius:24px;
+.time{
+padding:30px 10px;
+border-radius:22px;
+
 background:rgba(255,255,255,.055);
 border:1px solid rgba(255,255,255,.1);
-backdrop-filter:blur(10px);
-transition:.5s;
+
+transition:.4s;
 }
 
-.timeBox:hover{
-transform:
-translateY(-10px)
-scale(1.03);
-box-shadow:0 20px 50px rgba(255,80,190,.12);
+.time:hover{
+transform:translateY(-7px);
 }
 
 .number{
 display:block;
-font-size:34px;
+font-size:35px;
+color:#ffb7e6;
 font-weight:bold;
-color:#ffb9e8;
 }
 
 .label{
+color:#888;
 font-size:13px;
-color:#999;
 }
 
-/* =====================================================
-   MUSICA
-===================================================== */
+/* =========================
+   RAZONES
+========================= */
 
-.musicCard{
-padding:45px 25px;
-border-radius:35px;
+.reason{
+width:min(700px,100%);
+padding:45px 30px;
+
+border-radius:30px;
+
 background:
 linear-gradient(
 145deg,
-rgba(255,255,255,.1),
+rgba(255,255,255,.09),
 rgba(255,255,255,.025)
 );
+
+border:1px solid rgba(255,255,255,.11);
+
+transition:
+opacity .45s ease,
+transform .55s ease;
+}
+
+.reason.changing{
+opacity:0;
+transform:translateY(20px) scale(.97);
+}
+
+.reasonNumber{
+font-size:12px;
+letter-spacing:5px;
+color:#ff87c9;
+}
+
+.reasonText{
+font-size:24px;
+line-height:1.7;
+margin:30px 0;
+color:#f5dbea;
+}
+
+.reasonButton{
+border:0;
+padding:14px 25px;
+border-radius:40px;
+background:linear-gradient(90deg,#ff5db8,#9265ff);
+color:white;
+font-size:15px;
+cursor:pointer;
+transition:.3s;
+}
+
+.reasonButton:hover{
+transform:scale(1.05);
+}
+
+/* =========================
+   MUSICA
+========================= */
+
+.music{
+padding:45px 25px;
+border-radius:30px;
+
+background:rgba(255,255,255,.055);
 border:1px solid rgba(255,255,255,.1);
 }
 
 .record{
-width:180px;
-height:180px;
+width:170px;
+height:170px;
 margin:auto;
 border-radius:50%;
 
@@ -641,295 +427,169 @@ circle,
 #08070d 34% 100%
 );
 
-box-shadow:
-0 0 35px rgba(255,90,190,.4),
-0 0 100px rgba(255,90,190,.15);
+box-shadow:0 0 40px rgba(255,90,190,.3);
 
-animation:recordSpin 7s linear infinite;
+animation:spin 8s linear infinite;
 }
 
-@keyframes recordSpin{
-to{
-transform:rotate(360deg);
-}
+@keyframes spin{
+to{transform:rotate(360deg)}
 }
 
-.musicCard h3{
-font-size:29px;
+.music h3{
+font-size:28px;
 color:#ffd0ed;
+margin-bottom:5px;
+}
+
+.music p{
+color:#aaa;
 }
 
 .musicButton{
 display:inline-block;
-margin:20px;
-padding:14px 28px;
-border-radius:35px;
-background:#ff65bc;
+padding:14px 27px;
+margin:15px;
+border-radius:40px;
+background:#ff61b9;
 color:white;
 text-decoration:none;
-transition:.4s;
+transition:.3s;
 }
 
 .musicButton:hover{
-transform:scale(1.07);
+transform:scale(1.05);
 }
 
 .qr{
-width:210px;
-padding:14px;
+width:190px;
 background:white;
-border-radius:20px;
+padding:10px;
+border-radius:15px;
 }
 
-/* =====================================================
-   RAZONES
-===================================================== */
-
-.reasonStage{
-position:relative;
-min-height:330px;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.reasonCard{
-width:min(700px,100%);
-padding:45px 30px;
-border-radius:35px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.11),
-rgba(255,255,255,.025)
-);
-
-border:1px solid rgba(255,255,255,.12);
-
-box-shadow:
-0 30px 90px rgba(0,0,0,.3);
-
-transition:
-transform .7s cubic-bezier(.2,.8,.2,1),
-opacity .5s,
-filter .5s;
-}
-
-.reasonCard.leaving{
-opacity:0;
-transform:
-translateX(-100px)
-rotate(-4deg)
-scale(.92);
-filter:blur(5px);
-}
-
-.reasonCard.entering{
-animation:
-reasonEnter .8s cubic-bezier(.2,.8,.2,1);
-}
-
-@keyframes reasonEnter{
-from{
-opacity:0;
-transform:
-translateX(100px)
-rotate(4deg)
-scale(.92);
-filter:blur(5px);
-}
-to{
-opacity:1;
-transform:
-translateX(0)
-rotate(0)
-scale(1);
-filter:blur(0);
-}
-}
-
-.reasonNumber{
-font-size:13px;
-letter-spacing:5px;
-color:#ff8acb;
-}
-
-.reasonText{
-font-size:25px;
-line-height:1.7;
-color:#f8dff0;
-margin:30px 0;
-}
-
-.reasonButton{
-border:0;
-padding:14px 28px;
-border-radius:35px;
-background:
-linear-gradient(90deg,#ff62bd,#9c68ff);
-color:white;
-font-size:16px;
-cursor:pointer;
-box-shadow:0 0 25px rgba(255,90,190,.25);
-transition:.4s;
-}
-
-.reasonButton:hover{
-transform:scale(1.06);
-}
-
-/* =====================================================
-   GALERIA
-===================================================== */
+/* =========================
+   FOTOS
+========================= */
 
 .gallery{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:20px;
+gap:18px;
+width:100%;
 }
 
 .photo{
-height:240px;
-border-radius:28px;
+height:230px;
+border-radius:25px;
+
 display:flex;
 align-items:center;
 justify-content:center;
 flex-direction:column;
-gap:10px;
+gap:12px;
 
 background:
 linear-gradient(
 135deg,
-rgba(255,100,200,.09),
-rgba(100,80,255,.08)
+rgba(255,100,200,.08),
+rgba(100,80,255,.07)
 );
 
-border:1px dashed rgba(255,255,255,.18);
+border:1px dashed rgba(255,255,255,.15);
 
-transition:.6s;
+color:#aaa;
+
+transition:.5s;
 }
 
 .photo:hover{
-transform:
-translateY(-10px)
-rotate(1deg);
-box-shadow:
-0 25px 60px rgba(255,80,190,.15);
+transform:translateY(-7px);
 }
 
 .photo span{
-font-size:45px;
+font-size:42px;
 }
 
-/* =====================================================
+/* =========================
    SORPRESA
-===================================================== */
+========================= */
 
-.surpriseArea{
-text-align:center;
-padding-bottom:180px;
+.surprise{
+font-size:21px;
+line-height:2;
+color:#f0d8e9;
+max-width:700px;
 }
 
-.surpriseText{
-display:none;
-font-size:23px;
-line-height:1.9;
-color:#ffc5eb;
-margin-top:45px;
+.finalMessage{
+margin-top:40px;
+font-size:25px;
+color:#ffc2e8;
 }
 
-.surpriseText.show{
-display:block;
-animation:
-finalReveal 2s cubic-bezier(.2,.8,.2,1);
-}
+/* =========================
+   REVEAL
+========================= */
 
-@keyframes finalReveal{
-from{
+.reveal{
 opacity:0;
-transform:
-scale(.5)
-translateY(40px);
-filter:blur(15px);
+transform:translateY(35px);
+transition:
+opacity .9s ease,
+transform .9s ease;
 }
-to{
+
+.reveal.visible{
 opacity:1;
-transform:
-scale(1)
-translateY(0);
-filter:blur(0);
-}
+transform:translateY(0);
 }
 
-/* =====================================================
+/* =========================
    FINAL
-===================================================== */
-
-.final{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-}
+========================= */
 
 .final h2{
 font-size:clamp(40px,8vw,70px);
-color:#ffc6ec;
-text-shadow:
-0 0 30px rgba(255,90,190,.4);
+color:#ffc4eb;
+text-shadow:0 0 35px rgba(255,90,190,.3);
 }
 
 .final p{
 font-size:20px;
 line-height:2;
-color:#c9c4d0;
+color:#c7c2cd;
 }
 
-.finalStars{
-font-size:45px;
-letter-spacing:15px;
-color:#ffc3eb;
-animation:
-finalStarsPulse 3s infinite;
+.starsFinal{
+font-size:40px;
+letter-spacing:12px;
+color:#ffc4e9;
+animation:glow 3s infinite;
 }
 
-@keyframes finalStarsPulse{
+@keyframes glow{
 50%{
 text-shadow:
 0 0 20px #ff69bd,
-0 0 70px #ff69bd;
+0 0 50px #ff69bd;
 }
 }
 
 footer{
 padding:50px 20px;
 text-align:center;
-color:#777;
-border-top:1px solid rgba(255,255,255,.07);
+color:#666;
 }
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* =========================
+   MOBILE
+========================= */
 
-@media(max-width:600px){
-
-.moon{
-width:85px;
-height:85px;
-right:5%;
-}
-
-.moon:after{
-width:85px;
-height:85px;
-left:23px;
-}
+@media(max-width:650px){
 
 section{
-padding:90px 17px;
+padding:80px 17px;
 }
 
 .counter{
@@ -940,72 +600,55 @@ grid-template-columns:repeat(2,1fr);
 font-size:28px;
 }
 
-.gallery{
-grid-template-columns:1fr;
-}
-
-.photo{
-height:210px;
-}
-
-.envelope{
-width:270px;
-}
-
-.envelopeFlap{
-border-left-width:135px;
-border-right-width:135px;
-}
-
-.reasonText{
-font-size:20px;
-}
-
 .letter{
 padding:25px 20px;
 }
 
 .letter p{
 font-size:17px;
-line-height:1.9;
+line-height:1.85;
+}
+
+.reasonText{
+font-size:20px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.photo{
+height:200px;
 }
 
 }
-
 </style>
 </head>
-
 
 <body>
 
 <div id="universe">
 
-<div class="nebula one"></div>
-<div class="nebula two"></div>
-<div class="nebula three"></div>
+<div class="nebula n1"></div>
+<div class="nebula n2"></div>
+<div class="nebula n3"></div>
 
 <div id="stars"></div>
-<div id="particles"></div>
-
-<div class="planet one"></div>
-<div class="planet two"></div>
-
-<div class="moon"></div>
 
 </div>
 
 
 <main>
 
-<!-- =================================================
-PORTADA
-================================================= -->
+<!-- =========================
+     1 PORTADA
+========================= -->
 
-<section class="hero">
+<section class="hero" id="inicio">
 
-<div class="heroContent" id="heroContent">
+<div class="container">
 
-<div class="dateSmall">
+<div class="date">
 21 · 12 · 2025
 </div>
 
@@ -1019,15 +662,14 @@ Mi estrella favorita
 </h2>
 
 <p>
-Entre millones de estrellas,
+Entre millones de estrellas y miles de caminos,
 la vida tuvo una casualidad muy bonita:
 hacer que nuestros caminos se encontraran.
 </p>
 
-<a
-href="#carta"
-class="primaryButton">
-Comenzar nuestra historia ✨
+<a class="next" href="#carta">
+Comenzar nuestra historia
+<span class="arrow">↓</span>
 </a>
 
 </div>
@@ -1035,48 +677,23 @@ Comenzar nuestra historia ✨
 </section>
 
 
-<!-- =================================================
-CARTA
-================================================= -->
+<!-- =========================
+     2 CARTA
+========================= -->
 
-<section
-class="reveal"
-id="carta">
+<section id="carta">
+
+<div class="container reveal">
 
 <h2 class="title">
 💌 Tengo algo que decirte...
 </h2>
 
-<div class="envelopeWrapper">
+<p class="subtitle">
+Esto lo escribí pensando únicamente en ti.
+</p>
 
-<div
-class="envelope"
-id="envelope"
-onclick="openEnvelope()">
-
-<div class="envelopeBase"></div>
-
-<div class="envelopePaper">
-
-Una carta escrita<br>
-especialmente para ti ❤️
-
-</div>
-
-<div class="envelopeFlap"></div>
-
-<div class="seal">
-❤️
-</div>
-
-</div>
-
-</div>
-
-
-<div
-class="letter"
-id="letter">
+<div class="letter">
 
 <p class="opening">
 Mi querida Melisa:
@@ -1086,7 +703,7 @@ Mi querida Melisa:
 No sé exactamente en qué momento comenzaste
 a convertirte en alguien tan importante para mí.
 Quizás fue poco a poco, en cada conversación,
-en cada risa, en cada momento que compartimos
+en cada risa y en cada momento que compartimos
 sin pensar que algún día todos esos pequeños
 instantes terminarían significando tanto.
 </p>
@@ -1105,27 +722,26 @@ no imagino de la misma manera sin ti.
 
 <p>
 Me gusta pensar en nuestras conversaciones,
-en nuestras bromas, en las veces que nos hemos
-reído por cosas pequeñas y en esos momentos
-que quizás para otra persona parecerían normales,
+en nuestras bromas y en esos momentos que
+quizás para otra persona parecerían normales,
 pero que para mí terminaron convirtiéndose
 en recuerdos especiales.
 </p>
 
 <p>
-Porque creo que el amor también vive ahí.
-En querer saber cómo estuvo tu día.
-En pensar en ti cuando escucho una canción.
-En querer contarte algo apenas sucede.
-En extrañarte.
-En querer compartir contigo incluso
-las cosas más pequeñas.
+Porque creo que el amor también vive ahí:
+en querer saber cómo estuvo tu día,
+en pensar en ti cuando escucho una canción,
+en querer contarte algo apenas sucede,
+en extrañarte y en querer compartir contigo
+incluso las cosas más pequeñas.
 </p>
 
 <p>
-Me gusta tu forma de ser, tus detalles,
-tu manera de hacer que un momento normal
-pueda convertirse en algo que quiero recordar.
+Me gusta tu forma de ser y tus detalles.
+Me gusta cómo puedes hacer que un momento
+normal termine convirtiéndose en algo
+que quiero recordar.
 </p>
 
 <p>
@@ -1162,8 +778,8 @@ Y sinceramente, espero que así sea.
 </p>
 
 <p>
-No sé cuántas estrellas existen en el universo.
-Pero si tuviera que elegir una entre todas,
+No sé cuántas estrellas existen en el universo,
+pero si tuviera que elegir una entre todas,
 seguiría eligiéndote a ti.
 </p>
 
@@ -1197,72 +813,132 @@ estas palabras recuerdes que fueron escritas
 pensando únicamente en ti.
 </p>
 
-<div class="signature">
+<p class="signature">
 Con todo mi amor,<br>
 Daniel ❤️
+</p>
+
 </div>
+
+<a class="next" href="#tiempo">
+Continuar nuestra historia
+<span class="arrow">↓</span>
+</a>
 
 </div>
 
 </section>
 
 
-<!-- =================================================
-CONTADOR
-================================================= -->
+<!-- =========================
+     3 CONTADOR
+========================= -->
 
-<section class="reveal">
+<section id="tiempo">
+
+<div class="container reveal">
 
 <h2 class="title">
 ✨ Nuestro tiempo
 </h2>
 
-<p style="text-align:center;color:#999">
-Desde el 21 de diciembre de 2025 ❤️
+<p class="subtitle">
+Desde el 21 de diciembre de 2025
 </p>
 
 <div class="counter">
 
-<div class="timeBox">
+<div class="time">
 <span class="number" id="days">0</span>
 <span class="label">Días</span>
 </div>
 
-<div class="timeBox">
+<div class="time">
 <span class="number" id="hours">0</span>
 <span class="label">Horas</span>
 </div>
 
-<div class="timeBox">
+<div class="time">
 <span class="number" id="minutes">0</span>
 <span class="label">Minutos</span>
 </div>
 
-<div class="timeBox">
+<div class="time">
 <span class="number" id="seconds">0</span>
 <span class="label">Segundos</span>
 </div>
 
 </div>
 
-<p style="text-align:center;color:#999;margin-top:30px">
-Y seguimos sumando momentos...
+<p style="color:#888;margin-top:35px">
+Y cada segundo seguimos sumando nuestra historia. ❤️
 </p>
+
+<a class="next" href="#razones">
+Quiero enseñarte algo...
+<span class="arrow">↓</span>
+</a>
+
+</div>
 
 </section>
 
 
-<!-- =================================================
-MUSICA
-================================================= -->
+<!-- =========================
+     4 RAZONES
+========================= -->
 
-<section class="reveal">
+<section id="razones">
+
+<div class="container reveal">
+
+<h2 class="title">
+💕 Algunas razones
+</h2>
+
+<p class="subtitle">
+Aunque podría escribir muchas más...
+</p>
+
+<div class="reason" id="reason">
+
+<div class="reasonNumber" id="reasonNumber">
+RAZÓN #1
+</div>
+
+<div class="reasonText" id="reasonText">
+Porque tu sonrisa puede cambiar completamente mi día.
+</div>
+
+<button class="reasonButton" onclick="nextReason()">
+Siguiente razón ❤️
+</button>
+
+</div>
+
+<a class="next" href="#musica">
+Ahora escucha algo 🎵
+<span class="arrow">↓</span>
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     5 MUSICA
+========================= -->
+
+<section id="musica">
+
+<div class="container reveal">
 
 <h2 class="title">
 🎵 Una canción para ti
 </h2>
 
-<div class="musicCard" style="text-align:center">
+<div class="music">
 
 <div class="record"></div>
 
@@ -1274,7 +950,7 @@ La Velocidad de la Luz
 Los Bunkers
 </p>
 
-<p style="color:#999">
+<p>
 Una canción que ahora tiene un significado
 especial para nuestra historia.
 </p>
@@ -1283,9 +959,7 @@ especial para nuestra historia.
 class="musicButton"
 href="https://www.youtube.com/watch?v=TF-nDMnTARM"
 target="_blank">
-
-▶ Escuchar
-
+▶ Escuchar en YouTube
 </a>
 
 <br>
@@ -1293,68 +967,39 @@ target="_blank">
 <img
 class="qr"
 src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DTF-nDMnTARM"
-alt="Código QR">
+alt="QR">
+
+<p style="font-size:13px">
+Escanéame ❤️
+</p>
+
+</div>
+
+<a class="next" href="#recuerdos">
+Ver nuestros recuerdos
+<span class="arrow">↓</span>
+</a>
 
 </div>
 
 </section>
 
 
-<!-- =================================================
-RAZONES
-================================================= -->
+<!-- =========================
+     6 RECUERDOS
+========================= -->
 
-<section class="reveal">
+<section id="recuerdos">
 
-<h2 class="title">
-💕 Una razón a la vez
-</h2>
-
-<div class="reasonStage">
-
-<div
-class="reasonCard"
-id="reasonCard">
-
-<div
-class="reasonNumber"
-id="reasonNumber">
-RAZÓN #1
-</div>
-
-<div
-class="reasonText"
-id="reasonText">
-
-Porque tu sonrisa puede cambiar
-completamente mi día.
-
-</div>
-
-<button
-class="reasonButton"
-onclick="nextReason()">
-
-Siguiente razón ❤️
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =================================================
-FOTOS
-================================================= -->
-
-<section class="reveal">
+<div class="container reveal">
 
 <h2 class="title">
 📸 Nuestros recuerdos
 </h2>
+
+<p class="subtitle">
+Aquí pondremos nuestras fotos cuando me las envíes.
+</p>
 
 <div class="gallery">
 
@@ -1364,13 +1009,13 @@ Primera foto
 </div>
 
 <div class="photo">
-<span>💗</span>
-Nuestro recuerdo favorito
+<span>❤️</span>
+Nuestro momento favorito
 </div>
 
 <div class="photo">
 <span>✨</span>
-Un momento especial
+Un recuerdo especial
 </div>
 
 <div class="photo">
@@ -1380,35 +1025,29 @@ Una aventura juntos
 
 </div>
 
-<p style="text-align:center;color:#777;margin-top:25px">
-Estos espacios están esperando nuestras fotos. ❤️
-</p>
+<a class="next" href="#sorpresa">
+Todavía queda algo...
+<span class="arrow">↓</span>
+</a>
+
+</div>
 
 </section>
 
 
-<!-- =================================================
-SORPRESA
-================================================= -->
+<!-- =========================
+     7 SORPRESA
+========================= -->
 
-<section
-class="surpriseArea reveal">
+<section id="sorpresa">
+
+<div class="container reveal">
 
 <h2 class="title">
 🌠 Una última cosa...
 </h2>
 
-<button
-class="primaryButton"
-onclick="openSurprise()">
-
-Abrir sorpresa ❤️
-
-</button>
-
-<div
-class="surpriseText"
-id="surpriseText">
+<div class="surprise">
 
 <p>
 Melisa Daniela Ochoa Salazar...
@@ -1433,24 +1072,35 @@ que existen en este enorme universo...
 yo tuve la suerte de encontrarte a ti.
 </p>
 
-<p>
-❤️
-</p>
+</div>
+
+<button class="next" onclick="finalEffect()">
+Abrir mi última sorpresa ❤️
+</button>
+
+<a
+class="next"
+href="#final"
+id="finalButton"
+style="display:none">
+Ver el final ✨
+<span class="arrow">↓</span>
+</a>
 
 </div>
 
 </section>
 
 
-<!-- =================================================
-FINAL
-================================================= -->
+<!-- =========================
+     8 FINAL
+========================= -->
 
-<section class="final reveal">
+<section class="final" id="final">
 
-<div>
+<div class="container reveal">
 
-<div class="finalStars">
+<div class="starsFinal">
 ✦ ♡ ✦
 </div>
 
@@ -1472,7 +1122,7 @@ no es un lugar.
 Es donde estás tú. ❤️
 </p>
 
-<div class="finalStars">
+<div class="starsFinal">
 ♡ ✦ ♡
 </div>
 
@@ -1482,13 +1132,9 @@ Es donde estás tú. ❤️
 
 
 <footer>
-
 Para Melisa Daniela Ochoa Salazar ❤️
-
 <br><br>
-
 21 · 12 · 2025
-
 </footer>
 
 </main>
@@ -1496,224 +1142,119 @@ Para Melisa Daniela Ochoa Salazar ❤️
 
 <script>
 
-/* =====================================================
-ESTRELLAS
-===================================================== */
+/* =========================
+   ESTRELLAS
+========================= */
 
-const starsContainer=
-document.getElementById("stars");
+const stars=document.getElementById("stars");
 
-for(let i=0;i<230;i++){
+for(let i=0;i<115;i++){
 
-const star=
-document.createElement("div");
+const star=document.createElement("div");
 
 star.className="star";
 
-const size=
-Math.random()*3+1;
+const size=Math.random()*2.4+.7;
 
 star.style.width=size+"px";
 star.style.height=size+"px";
 
-star.style.left=
-Math.random()*100+"%";
-
-star.style.top=
-Math.random()*100+"%";
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
 
 star.style.setProperty(
-"--duration",
-(2+Math.random()*5)+"s"
+"--speed",
+(3+Math.random()*5)+"s"
 );
 
 star.style.setProperty(
 "--delay",
-(-Math.random()*5)+"s"
+(-Math.random()*6)+"s"
 );
 
-starsContainer.appendChild(star);
+stars.appendChild(star);
 
 }
 
 
-/* =====================================================
-PARTICULAS
-===================================================== */
+/* =========================
+   METEORITOS
+========================= */
 
-const particles=
-document.getElementById("particles");
+function meteor(){
 
-const symbols=[
-"✦",
-"✧",
-"♡",
-"·",
-"✦",
-"⋆"
-];
+const m=document.createElement("div");
 
-for(let i=0;i<35;i++){
+m.className="meteor";
 
-const p=
-document.createElement("div");
+m.style.left=(70+Math.random()*30)+"%";
+m.style.top=(Math.random()*60)+"%";
 
-p.className="particle";
-
-p.textContent=
-symbols[
-Math.floor(Math.random()*symbols.length)
-];
-
-p.style.left=
-Math.random()*100+"%";
-
-p.style.setProperty(
-"--time",
-(9+Math.random()*14)+"s"
-);
-
-p.style.setProperty(
-"--delay",
-(-Math.random()*15)+"s"
-);
-
-p.style.setProperty(
-"--move",
-(Math.random()*160-80)+"px"
-);
-
-particles.appendChild(p);
-
-}
-
-
-/* =====================================================
-ESTRELLAS FUGACES ALEATORIAS
-===================================================== */
-
-function createMeteor(){
-
-const meteor=
-document.createElement("div");
-
-meteor.className="shootingStar";
-
-meteor.style.left=
-(70+Math.random()*35)+"%";
-
-meteor.style.top=
-(Math.random()*70)+"%";
-
-document
-.getElementById("universe")
-.appendChild(meteor);
+document.getElementById("universe").appendChild(m);
 
 requestAnimationFrame(()=>{
-meteor.classList.add("active");
+m.classList.add("go");
 });
 
 setTimeout(()=>{
-meteor.remove();
-},2000);
+m.remove();
+},1700);
 
 }
 
 setInterval(
-createMeteor,
-Math.random()*4000+3000
+meteor,
+Math.random()*5000+5000
 );
 
 
-/* =====================================================
-CARTA
-===================================================== */
+/* =========================
+   CONTADOR
+========================= */
 
-let envelopeOpened=false;
-
-function openEnvelope(){
-
-if(envelopeOpened)return;
-
-envelopeOpened=true;
-
-const envelope=
-document.getElementById("envelope");
-
-const letter=
-document.getElementById("letter");
-
-envelope.classList.add("open");
-
-setTimeout(()=>{
-
-letter.classList.add("visible");
-
-},1100);
-
-}
-
-
-/* =====================================================
-CONTADOR
-===================================================== */
-
-const startDate=
-new Date("2025-12-21T00:00:00");
+const start=new Date("2025-12-21T00:00:00");
 
 function updateCounter(){
 
-const now=
-new Date();
+const now=new Date();
+const diff=now-start;
 
-const diff=
-now-startDate;
-
-const days=
-Math.floor(
+const days=Math.floor(
 diff/(1000*60*60*24)
 );
 
-const hours=
-Math.floor(
+const hours=Math.floor(
 (diff/(1000*60*60))%24
 );
 
-const minutes=
-Math.floor(
+const minutes=Math.floor(
 (diff/(1000*60))%60
 );
 
-const seconds=
-Math.floor(
+const seconds=Math.floor(
 (diff/1000)%60
 );
 
-document.getElementById("days")
-.textContent=days;
+document.getElementById("days").textContent=days;
 
-document.getElementById("hours")
-.textContent=
+document.getElementById("hours").textContent=
 String(hours).padStart(2,"0");
 
-document.getElementById("minutes")
-.textContent=
+document.getElementById("minutes").textContent=
 String(minutes).padStart(2,"0");
 
-document.getElementById("seconds")
-.textContent=
+document.getElementById("seconds").textContent=
 String(seconds).padStart(2,"0");
 
 }
 
 updateCounter();
-
 setInterval(updateCounter,1000);
 
 
-/* =====================================================
-RAZONES
-===================================================== */
+/* =========================
+   RAZONES
+========================= */
 
 const reasons=[
 
@@ -1729,21 +1270,21 @@ const reasons=[
 
 "Porque tus pequeños detalles significan muchísimo para mí.",
 
-"Porque contigo puedo compartir mis pensamientos.",
-
 "Porque me encanta escuchar tu voz.",
 
 "Porque cada recuerdo contigo tiene un lugar especial.",
 
-"Porque haces que extrañarte también sea bonito.",
+"Porque me haces sonreír incluso sin intentarlo.",
 
 "Porque me gusta imaginar nuestro futuro.",
 
 "Porque contigo aprendí que los pequeños momentos pueden valer muchísimo.",
 
-"Porque me haces sonreír incluso sin intentarlo.",
+"Porque me encanta cuando nos reímos juntos.",
 
-"Porque eres una persona que quiero cuidar.",
+"Porque tienes una forma especial de hacerme sentir acompañado.",
+
+"Porque eres alguien que quiero cuidar.",
 
 "Porque me gusta saber que estás en mi vida.",
 
@@ -1757,49 +1298,9 @@ const reasons=[
 
 "Porque contigo quiero seguir creando recuerdos.",
 
-"Porque me encanta cuando nos reímos juntos.",
-
-"Porque tienes una forma especial de hacerme sentir acompañado.",
-
-"Porque me gusta poder llamarte mi persona especial.",
-
-"Porque cada conversación contigo puede mejorar mi día.",
-
-"Porque eres alguien que quiero seguir conociendo.",
-
 "Porque me haces sentir afortunado.",
 
-"Porque contigo puedo disfrutar las cosas pequeñas.",
-
-"Porque tu forma de ser es única.",
-
 "Porque me gusta pensar en todas las cosas que todavía nos quedan por vivir.",
-
-"Porque cada momento contigo puede convertirse en un recuerdo.",
-
-"Porque me haces creer en las casualidades bonitas.",
-
-"Porque nuestro 21 de diciembre siempre tendrá un significado especial.",
-
-"Porque me gusta recordar cómo comenzó nuestra historia.",
-
-"Porque quiero seguir escribiendo nuevos capítulos contigo.",
-
-"Porque tu nombre tiene un lugar especial en mi corazón.",
-
-"Porque me gusta verte feliz.",
-
-"Porque quiero estar presente en tus momentos importantes.",
-
-"Porque contigo quiero seguir descubriendo lugares.",
-
-"Porque eres una de mis personas favoritas.",
-
-"Porque me gusta cuando simplemente estamos juntos.",
-
-"Porque haces que el tiempo pase demasiado rápido.",
-
-"Porque cada día contigo es una oportunidad para crear algo nuevo.",
 
 "Porque me encanta tu manera de ser.",
 
@@ -1809,21 +1310,15 @@ const reasons=[
 
 "Porque quiero verte cumplir tus metas.",
 
-"Porque me gusta imaginar todas nuestras futuras aventuras.",
+"Porque me gusta imaginar nuestras futuras aventuras.",
 
 "Porque eres parte de una etapa muy bonita de mi vida.",
 
-"Porque me haces sentir que tengo a alguien especial a mi lado.",
+"Porque me gusta poder llamarte mi persona especial.",
 
-"Porque me gusta cuidar los recuerdos que tenemos.",
+"Porque cada conversación contigo puede mejorar mi día.",
 
-"Porque contigo quiero seguir aprendiendo.",
-
-"Porque tu sonrisa merece ser vista muchas veces.",
-
-"Porque me encanta cuando compartimos nuestras pequeñas historias.",
-
-"Porque eres alguien que quiero conservar en mi vida.",
+"Porque eres una persona que quiero conservar en mi vida.",
 
 "Porque me gusta que podamos crear nuestro propio universo.",
 
@@ -1837,13 +1332,9 @@ const reasons=[
 
 "Porque contigo quiero seguir sumando días.",
 
-"Porque cada segundo del contador representa un momento más de nuestra historia.",
-
-"Porque me encanta tener una canción que pueda relacionar contigo.",
-
 "Porque algunas canciones ahora me recuerdan a ti.",
 
-"Porque me gusta cuando nuestras conversaciones duran más de lo esperado.",
+"Porque me encanta cuando nuestras conversaciones duran más de lo esperado.",
 
 "Porque eres alguien que me importa de verdad.",
 
@@ -1851,37 +1342,17 @@ const reasons=[
 
 "Porque quiero seguir haciendo cosas que te hagan sonreír.",
 
-"Porque tu felicidad puede alegrarme el día.",
-
-"Porque me gusta saber que puedo compartir mis cosas contigo.",
-
 "Porque quiero seguir descubriendo lugares contigo.",
 
-"Porque me gusta imaginar fotografías que todavía no existen.",
+"Porque eres una de mis personas favoritas.",
 
-"Porque algún día podremos mirar atrás y recordar todo esto.",
+"Porque me gusta cuando simplemente estamos juntos.",
 
-"Porque quiero que nuestra historia tenga muchos capítulos.",
+"Porque haces que el tiempo pase demasiado rápido.",
 
-"Porque cada capítulo puede ser diferente y aun así seguir siendo nuestro.",
+"Porque quiero seguir descubriendo tus sueños.",
 
-"Porque contigo quiero disfrutar el presente.",
-
-"Porque también quiero construir recuerdos para el futuro.",
-
-"Porque eres parte de mis pensamientos cuando veo las estrellas.",
-
-"Porque esta página existe solamente por ti.",
-
-"Porque quería crear algo que pudiera recordarte lo especial que eres.",
-
-"Porque me gusta poder escribir tu nombre aquí.",
-
-"Porque Melisa es un nombre que ahora significa muchísimo para mí.",
-
-"Porque quiero seguir celebrando nuestros momentos.",
-
-"Porque quiero seguir aprendiendo de ti.",
+"Porque quiero seguir aprendiendo contigo.",
 
 "Porque quiero seguir riéndome contigo.",
 
@@ -1890,8 +1361,6 @@ const reasons=[
 "Porque quiero seguir estando cuando necesites compañía.",
 
 "Porque quiero seguir compartiendo sueños contigo.",
-
-"Porque quiero seguir mirando hacia adelante contigo.",
 
 "Porque me gusta pensar que todavía tenemos muchísimo por descubrir.",
 
@@ -1911,147 +1380,75 @@ const reasons=[
 
 "Porque quiero vivirlos contigo.",
 
-"Porque entre tantas personas, tuve la suerte de encontrarte.",
+"Porque entre tantas personas tuve la suerte de encontrarte.",
 
 "Porque si pudiera volver al 21 de diciembre de 2025, volvería a elegirte.",
 
-"Porque después de todas estas razones, todavía me faltan muchas más.",
+"Porque después de todas estas razones todavía me faltan muchas más.",
 
 "Porque simplemente eres tú. ❤️"
 
 ];
 
-let reasonIndex=0;
+let index=0;
 
 function nextReason(){
 
-const card=
-document.getElementById("reasonCard");
+const card=document.getElementById("reason");
 
-card.classList.remove("entering");
-
-card.classList.add("leaving");
+card.classList.add("changing");
 
 setTimeout(()=>{
 
-reasonIndex++;
+index++;
 
-if(reasonIndex>=reasons.length){
-reasonIndex=0;
+if(index>=reasons.length){
+index=0;
 }
 
 document.getElementById("reasonNumber")
-.textContent=
-"RAZÓN #"+(reasonIndex+1);
+.textContent="RAZÓN #"+(index+1);
 
 document.getElementById("reasonText")
-.textContent=
-reasons[reasonIndex];
+.textContent=reasons[index];
 
-card.classList.remove("leaving");
+card.classList.remove("changing");
 
-void card.offsetWidth;
-
-card.classList.add("entering");
-
-},500);
+},450);
 
 }
 
 
-/* =====================================================
-SORPRESA
-===================================================== */
+/* =========================
+   SORPRESA FINAL
+========================= */
 
-function openSurprise(){
+function finalEffect(){
 
-const text=
-document.getElementById("surpriseText");
-
-text.classList.add("show");
-
-for(let i=0;i<45;i++){
+for(let i=0;i<12;i++){
 
 setTimeout(()=>{
-createMeteor();
-},i*70);
+meteor();
+},i*130);
 
 }
 
-}
-
-
-/* =====================================================
-SCROLL PARALLAX
-===================================================== */
-
-let ticking=false;
-
-window.addEventListener("scroll",()=>{
-
-if(!ticking){
-
-window.requestAnimationFrame(()=>{
-
-const scroll=
-window.scrollY;
-
-const hero=
-document.getElementById("heroContent");
-
-if(hero){
-
-hero.style.transform=
-`translateY(${scroll*.18}px)`;
-
-hero.style.opacity=
-Math.max(
-0,
-1-scroll/600
-);
+document.getElementById("finalButton").style.display="inline-flex";
 
 }
 
-document
-.querySelector(".nebula.one")
-.style.transform=
-`translateY(${scroll*.04}px)`;
 
-document
-.querySelector(".nebula.two")
-.style.transform=
-`translateY(${scroll*-.025}px)`;
+/* =========================
+   REVEAL
+========================= */
 
-document
-.querySelector(".nebula.three")
-.style.transform=
-`translateY(${scroll*.06}px)`;
-
-ticking=false;
-
-});
-
-ticking=true;
-
-}
-
-});
-
-
-/* =====================================================
-REVEAL DE SECCIONES
-===================================================== */
-
-const observer=
-new IntersectionObserver(
+const observer=new IntersectionObserver(
 entries=>{
 
 entries.forEach(entry=>{
 
 if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
+entry.target.classList.add("visible");
 }
 
 });
@@ -2064,9 +1461,7 @@ threshold:.12
 
 document
 .querySelectorAll(".reveal")
-.forEach(el=>{
-observer.observe(el);
-});
+.forEach(el=>observer.observe(el));
 
 </script>
 
