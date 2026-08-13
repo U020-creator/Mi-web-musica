@@ -1,208 +1,354 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MusicWave</title>
+<title>MusicAu</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b0b0f;
-            color: white;
-        }
+*{
+    box-sizing:border-box;
+}
 
-        header {
-            padding: 25px 20px;
-            background: #12121a;
-            text-align: center;
-        }
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#fff7df;
+    color:#222;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-        }
+/* ENCABEZADO */
 
-        header p {
-            color: #aaa;
-        }
+header{
+    min-height:320px;
+    padding:35px 20px;
+    text-align:center;
+    color:white;
+    background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.35)),
+    linear-gradient(180deg,#26c6da,#ffd166);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
 
-        .contenedor {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
+header h1{
+    font-size:55px;
+    margin:0;
+    font-weight:800;
+}
 
-        .buscador {
-            width: 100%;
-            padding: 15px;
-            border-radius: 25px;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            margin-bottom: 25px;
-        }
+header p{
+    font-size:20px;
+    margin:10px 0 25px;
+}
 
-        h2 {
-            margin-top: 25px;
-        }
+.buscador{
+    width:90%;
+    max-width:600px;
+    margin:auto;
+    padding:16px 20px;
+    border:0;
+    border-radius:30px;
+    font-size:16px;
+    outline:none;
+}
 
-        .canciones {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-        }
+/* CONTENIDO */
 
-        .cancion {
-            background: #171720;
-            border-radius: 15px;
-            padding: 15px;
-            transition: 0.2s;
-        }
+.contenedor{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 18px;
+}
 
-        .cancion:hover {
-            transform: translateY(-4px);
-        }
+h2{
+    margin-top:35px;
+}
 
-        .portada {
-            width: 100%;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, #6c2cff, #ff2c8a);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 45px;
-        }
+/* CANCIONES */
 
-        .cancion h3 {
-            margin-bottom: 5px;
-        }
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:18px;
+}
 
-        .cancion p {
-            margin-top: 0;
-            color: #999;
-        }
+.card{
+    background:white;
+    border-radius:18px;
+    padding:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.2s;
+}
 
-        button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 20px;
-            background: #7b35ff;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-        }
+.card:hover{
+    transform:translateY(-5px);
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #777;
-        }
-    </style>
+.portada{
+    width:100%;
+    aspect-ratio:1;
+    border-radius:14px;
+    background:linear-gradient(135deg,#ff7b00,#ffd166,#26c6da);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+}
+
+.card h3{
+    margin:12px 0 5px;
+}
+
+.card p{
+    margin:0 0 12px;
+    color:#777;
+}
+
+button{
+    width:100%;
+    padding:11px;
+    border:0;
+    border-radius:25px;
+    background:#ff7b00;
+    color:white;
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* ARTISTAS */
+
+.artistas{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    padding:10px 0 20px;
+}
+
+.artista{
+    min-width:110px;
+    text-align:center;
+}
+
+.foto-artista{
+    width:95px;
+    height:95px;
+    margin:auto;
+    border-radius:50%;
+    background:linear-gradient(135deg,#26c6da,#ff7b00);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+}
+
+/* REPRODUCTOR */
+
+.reproductor{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#171717;
+    color:white;
+    padding:14px 18px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    box-shadow:0 -5px 20px rgba(0,0,0,.2);
+}
+
+.reproductor button{
+    width:auto;
+    padding:10px 18px;
+    background:#ff7b00;
+}
+
+#cancionActual{
+    flex:1;
+}
+
+/* PIE */
+
+footer{
+    margin-top:50px;
+    padding:80px 20px 100px;
+    text-align:center;
+    background:#222;
+    color:#aaa;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>🎵 MusicWave</h1>
-    <p>Tu música, en un solo lugar</p>
+
+<h1>☀️ MusicAu</h1>
+
+<p>La música que acompaña tu verano 🎵</p>
+
+<input
+class="buscador"
+id="busqueda"
+type="text"
+placeholder="🔎 Buscar canción o artista..."
+onkeyup="buscar()"
+>
+
 </header>
+
 
 <div class="contenedor">
 
-    <input
-        class="buscador"
-        type="text"
-        placeholder="🔎 Buscar canción o artista..."
-        onkeyup="buscar()"
-        id="busqueda"
-    >
+<h2>🔥 Éxitos del verano</h2>
 
-    <h2>🔥 Canciones populares</h2>
+<div class="grid" id="canciones">
 
-    <div class="canciones" id="lista">
+<div class="card">
+<div class="portada">🌴</div>
+<h3>Summer Vibes</h3>
+<p>MusicAu</p>
+<button onclick="reproducir('Summer Vibes')">▶ Reproducir</button>
+</div>
 
-        <div class="cancion">
-            <div class="portada">🎧</div>
-            <h3>Mi Canción</h3>
-            <p>Artista</p>
-            <button onclick="reproducir('Mi Canción')">
-                ▶ Reproducir
-            </button>
-        </div>
+<div class="card">
+<div class="portada">🌊</div>
+<h3>Ocean</h3>
+<p>MusicAu</p>
+<button onclick="reproducir('Ocean')">▶ Reproducir</button>
+</div>
 
-        <div class="cancion">
-            <div class="portada">🎶</div>
-            <h3>Summer Vibes</h3>
-            <p>MusicWave</p>
-            <button onclick="reproducir('Summer Vibes')">
-                ▶ Reproducir
-            </button>
-        </div>
+<div class="card">
+<div class="portada">☀️</div>
+<h3>Sunshine</h3>
+<p>MusicAu</p>
+<button onclick="reproducir('Sunshine')">▶ Reproducir</button>
+</div>
 
-        <div class="cancion">
-            <div class="portada">🎤</div>
-            <h3>Night Music</h3>
-            <p>MusicWave</p>
-            <button onclick="reproducir('Night Music')">
-                ▶ Reproducir
-            </button>
-        </div>
-
-        <div class="cancion">
-            <div class="portada">💿</div>
-            <h3>Feel The Beat</h3>
-            <p>MusicWave</p>
-            <button onclick="reproducir('Feel The Beat')">
-                ▶ Reproducir
-            </button>
-        </div>
-
-    </div>
+<div class="card">
+<div class="portada">🏖️</div>
+<h3>Beach Party</h3>
+<p>MusicAu</p>
+<button onclick="reproducir('Beach Party')">▶ Reproducir</button>
+</div>
 
 </div>
 
+
+<h2>🎤 Artistas destacados</h2>
+
+<div class="artistas">
+
+<div class="artista">
+<div class="foto-artista">🎤</div>
+<p>Artista 1</p>
+</div>
+
+<div class="artista">
+<div class="foto-artista">🎶</div>
+<p>Artista 2</p>
+</div>
+
+<div class="artista">
+<div class="foto-artista">🎧</div>
+<p>Artista 3</p>
+</div>
+
+<div class="artista">
+<div class="foto-artista">⭐</div>
+<p>Artista 4</p>
+</div>
+
+</div>
+
+
+<h2>💿 Álbumes populares</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="portada">💿</div>
+<h3>Summer</h3>
+<p>MusicAu Collection</p>
+<button onclick="reproducir('Summer Album')">▶ Escuchar</button>
+</div>
+
+<div class="card">
+<div class="portada">🌴</div>
+<h3>Beach Hits</h3>
+<p>MusicAu Collection</p>
+<button onclick="reproducir('Beach Hits')">▶ Escuchar</button>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="reproductor">
+
+<button onclick="pausar()">▶</button>
+
+<div id="cancionActual">
+Selecciona una canción 🎵
+</div>
+
+</div>
+
+
 <footer>
-    © 2026 MusicWave
+
+<h3>MusicAu 🎵</h3>
+
+<p>Tu música, tu verano.</p>
+
+<p>© 2026 MusicAu</p>
+
 </footer>
+
 
 <script>
 
-function reproducir(cancion) {
-    alert("🎵 Reproduciendo: " + cancion);
+function reproducir(nombre){
+
+document.getElementById("cancionActual").innerText =
+"🎵 Reproduciendo: " + nombre;
+
 }
 
-function buscar() {
+function pausar(){
 
-    let texto = document
-        .getElementById("busqueda")
-        .value
-        .toLowerCase();
+document.getElementById("cancionActual").innerText =
+"⏸ Música pausada";
 
-    let canciones = document
-        .getElementById("lista")
-        .children;
+}
 
-    for (let i = 0; i < canciones.length; i++) {
+function buscar(){
 
-        let nombre = canciones[i]
-            .innerText
-            .toLowerCase();
+let texto =
+document.getElementById("busqueda").value.toLowerCase();
 
-        if (nombre.includes(texto)) {
-            canciones[i].style.display = "block";
-        } else {
-            canciones[i].style.display = "none";
-        }
-    }
+let canciones =
+document.getElementById("canciones").children;
+
+for(let i=0;i<canciones.length;i++){
+
+let contenido =
+canciones[i].innerText.toLowerCase();
+
+if(contenido.includes(texto)){
+canciones[i].style.display="";
+}else{
+canciones[i].style.display="none";
+}
+
+}
+
 }
 
 </script>
