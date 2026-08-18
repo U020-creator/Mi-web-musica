@@ -1,96 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para Melisa ❤️ | Nuestra Historia</title>
+<!-- =====================================================
+     INFORMACIÓN PARA GOOGLE
+===================================================== -->
 
-<meta name="description"
-content="Una pequeña parte de nuestra historia de amor. Un rincón del universo creado especialmente para Melisa, desde el 21 de diciembre de 2025.">
+<title>Melisa ❤️ | Nuestra historia</title>
 
-<meta name="author" content="Daniel">
+<meta
+    name="description"
+    content="Una pequeña parte de nuestra historia, creada con amor para Melisa. Desde el 21 de diciembre de 2025. ❤️"
+>
 
-<meta name="robots" content="index, follow">
+<meta
+    name="robots"
+    content="index, follow"
+>
 
-<link rel="canonical"
-href="https://u020-creator.github.io/Mi-web-musica/">
+<link
+    rel="canonical"
+    href="https://u020-creator.github.io/Mi-web-musica/"
+>
 
-<meta name="theme-color" content="#ff72b6">
+<meta
+    name="theme-color"
+    content="#ff72b6"
+>
+
 
 <!-- =====================================================
      OPEN GRAPH
-     Así se verá mejor al compartir el enlace
+     Para WhatsApp, Facebook, etc.
 ===================================================== -->
 
-<meta property="og:type" content="website">
+<meta
+    property="og:title"
+    content="Melisa ❤️ | Nuestra historia"
+>
 
-<meta property="og:title"
-content="Para Melisa ❤️ | Nuestra Historia">
+<meta
+    property="og:description"
+    content="Una pequeña parte de nuestra historia, creada con amor para Melisa. ❤️"
+>
 
-<meta property="og:description"
-content="Una pequeña parte de nuestra historia de amor, creada especialmente para Melisa. ❤️">
+<meta
+    property="og:url"
+    content="https://u020-creator.github.io/Mi-web-musica/"
+>
 
-<meta property="og:url"
-content="https://u020-creator.github.io/Mi-web-musica/">
+<meta
+    property="og:type"
+    content="website"
+>
 
-<meta property="og:site_name"
-content="Para Melisa ❤️">
+<meta
+    property="og:site_name"
+    content="Nuestra historia"
+>
 
 
 <!-- =====================================================
      TWITTER / X
 ===================================================== -->
 
-<meta name="twitter:card"
-content="summary">
+<meta
+    name="twitter:card"
+    content="summary_large_image"
+>
 
-<meta name="twitter:title"
-content="Para Melisa ❤️ | Nuestra Historia">
+<meta
+    name="twitter:title"
+    content="Melisa ❤️ | Nuestra historia"
+>
 
-<meta name="twitter:description"
-content="Una pequeña parte de nuestra historia de amor. ❤️">
+<meta
+    name="twitter:description"
+    content="Una pequeña parte de nuestra historia, creada con amor para Melisa. ❤️"
+>
 
 
 <!-- =====================================================
-     FAVICON
+     FUENTES
 ===================================================== -->
-
-<link rel="icon"
-href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E❤️%3C/text%3E%3C/svg%3E">
-
 
 <style>
 
+/* =========================================================
+   VARIABLES
+========================================================= */
+
 :root {
+
     --pink: #ff72b6;
+
     --pink-light: #ffb5da;
+
     --pink-soft: #ffd6eb;
+
     --purple: #b477ff;
+
     --deep: #100817;
+
     --deep-2: #190b24;
+
     --white: #fff8fc;
+
     --text: rgba(255,248,252,.88);
+
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
 
 html {
+
     scroll-behavior: smooth;
+
 }
 
+
 body {
+
     background:
-        radial-gradient(circle at 20% 10%, rgba(255,105,180,.18), transparent 28%),
-        radial-gradient(circle at 80% 30%, rgba(180,119,255,.14), transparent 30%),
-        radial-gradient(circle at 50% 80%, rgba(255,80,160,.10), transparent 35%),
-        linear-gradient(180deg, #100817 0%, #170a21 45%, #0d0713 100%);
+
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(255,105,180,.18),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(180,119,255,.14),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 80%,
+            rgba(255,80,160,.10),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            #100817 0%,
+            #170a21 45%,
+            #0d0713 100%
+        );
 
     color: var(--white);
 
@@ -102,7 +177,9 @@ body {
         sans-serif;
 
     overflow-x: hidden;
+
 }
+
 
 /* =========================================================
    ESTRELLAS
@@ -110,41 +187,72 @@ body {
 
 body::before,
 body::after {
+
     content: "";
+
     position: fixed;
+
     inset: 0;
+
     pointer-events: none;
+
     z-index: 0;
+
 }
 
+
 body::before {
+
     background-image:
-        radial-gradient(circle, rgba(255,255,255,.85) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,180,220,.65) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,.55) 1px, transparent 1px);
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.85) 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,180,220,.65) 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.55) 1px,
+            transparent 1px
+        );
 
     background-size:
+
         95px 95px,
         145px 145px,
         210px 210px;
 
     background-position:
+
         0 0,
         40px 80px,
         100px 30px;
 
     opacity: .38;
 
-    animation: starsMove 30s linear infinite;
+    animation:
+        starsMove 30s linear infinite;
+
 }
 
+
 body::after {
+
     background:
+
         radial-gradient(
             ellipse at 50% 20%,
             rgba(255,80,170,.11),
             transparent 55%
         ),
+
         radial-gradient(
             ellipse at 50% 70%,
             rgba(150,90,255,.08),
@@ -152,33 +260,45 @@ body::after {
         );
 
     filter: blur(20px);
+
 }
+
 
 @keyframes starsMove {
 
     from {
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
     }
 
     to {
-        transform: translateY(95px);
+
+        transform:
+            translateY(95px);
+
     }
 
 }
+
 
 /* =========================================================
    GALAXIAS
 ========================================================= */
 
 .galaxy {
+
     position: absolute;
 
     width: 500px;
+
     height: 180px;
 
     border-radius: 50%;
 
     background:
+
         radial-gradient(
             ellipse,
             rgba(255,130,195,.20),
@@ -193,38 +313,56 @@ body::after {
     transform: rotate(-20deg);
 
     pointer-events: none;
+
 }
+
 
 .galaxy.one {
+
     top: 12%;
+
     left: -180px;
+
 }
+
 
 .galaxy.two {
+
     top: 52%;
+
     right: -200px;
 
-    transform: rotate(25deg);
+    transform:
+        rotate(25deg);
+
 }
 
+
 .galaxy.three {
+
     bottom: 10%;
+
     left: 25%;
 
     opacity: .35;
+
 }
+
 
 /* =========================================================
    ESTRELLAS FUGACES
 ========================================================= */
 
 .shooting-star {
+
     position: fixed;
 
     width: 120px;
+
     height: 2px;
 
     background:
+
         linear-gradient(
             90deg,
             transparent,
@@ -232,80 +370,110 @@ body::after {
             transparent
         );
 
-    transform: rotate(-35deg);
+    transform:
+        rotate(-35deg);
 
     opacity: 0;
 
     z-index: 1;
 
     pointer-events: none;
+
 }
 
+
 .shooting-star:nth-child(1) {
+
     top: 15%;
+
     left: 10%;
 
     animation:
         shooting 8s 1s infinite;
+
 }
 
+
 .shooting-star:nth-child(2) {
+
     top: 42%;
+
     right: 5%;
 
     animation:
         shooting 10s 5s infinite;
+
 }
 
+
 .shooting-star:nth-child(3) {
+
     top: 72%;
+
     left: 35%;
 
     animation:
         shooting 12s 8s infinite;
+
 }
+
 
 @keyframes shooting {
 
     0% {
+
         transform:
             translate(0,0)
             rotate(-35deg);
 
         opacity: 0;
+
     }
 
     5% {
+
         opacity: 1;
+
     }
 
     20% {
+
         transform:
             translate(350px,220px)
             rotate(-35deg);
 
         opacity: 0;
+
     }
 
     100% {
+
         opacity: 0;
+
     }
 
 }
+
 
 /* =========================================================
    GLOBAL
 ========================================================= */
 
 section {
+
     position: relative;
+
     z-index: 2;
+
 }
 
+
 .section {
+
     min-height: 100vh;
 
-    padding: 110px 20px;
+    padding:
+        110px 20px;
 
     display: flex;
 
@@ -314,85 +482,128 @@ section {
     align-items: center;
 
     justify-content: center;
+
 }
+
 
 .container {
-    width: min(1050px, 100%);
+
+    width:
+        min(1050px, 100%);
 
     margin: auto;
+
 }
 
+
 .section-title {
+
     text-align: center;
 
     max-width: 750px;
 
-    margin: 0 auto 55px;
+    margin:
+        0 auto 55px;
+
 }
+
 
 .section-title span {
+
     display: block;
 
-    color: var(--pink-light);
+    color:
+        var(--pink-light);
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    letter-spacing: 4px;
+    letter-spacing:
+        4px;
 
-    font-size: .75rem;
+    font-size:
+        .75rem;
 
-    margin-bottom: 14px;
+    margin-bottom:
+        14px;
+
 }
 
+
 .section-title h2 {
+
     font-size:
         clamp(2rem, 5vw, 3.5rem);
 
-    line-height: 1.1;
+    line-height:
+        1.1;
 
-    margin-bottom: 20px;
+    margin-bottom:
+        20px;
+
 }
+
 
 .section-title p {
-    color: var(--text);
 
-    line-height: 1.8;
+    color:
+        var(--text);
+
+    line-height:
+        1.8;
+
 }
+
 
 /* =========================================================
    BOTONES
 ========================================================= */
 
 .next {
-    display: inline-flex;
 
-    align-items: center;
+    display:
+        inline-flex;
 
-    gap: 12px;
+    align-items:
+        center;
 
-    margin-top: 45px;
+    gap:
+        12px;
 
-    padding: 14px 23px;
+    margin-top:
+        45px;
+
+    padding:
+        14px 23px;
 
     border:
         1px solid rgba(255,255,255,.20);
 
-    border-radius: 100px;
+    border-radius:
+        100px;
 
-    color: white;
+    color:
+        white;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
     background:
         rgba(255,255,255,.07);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(12px);
 
-    transition: .35s ease;
+    transition:
+        .35s ease;
+
 }
 
+
 .next:hover {
-    transform: translateY(-5px);
+
+    transform:
+        translateY(-5px);
 
     background:
         rgba(255,105,180,.16);
@@ -402,68 +613,104 @@ section {
 
     box-shadow:
         0 15px 40px rgba(255,80,170,.15);
+
 }
 
+
 .arrow {
-    font-size: 1.2rem;
+
+    font-size:
+        1.2rem;
 
     animation:
         arrowMove 1.5s ease-in-out infinite;
+
 }
+
 
 @keyframes arrowMove {
 
     50% {
-        transform: translateY(4px);
+
+        transform:
+            translateY(4px);
+
     }
 
 }
+
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero {
-    min-height: 100vh;
 
-    text-align: center;
+    min-height:
+        100vh;
 
-    overflow: hidden;
+    text-align:
+        center;
+
+    overflow:
+        hidden;
+
 }
+
 
 .hero-content {
-    position: relative;
 
-    z-index: 3;
+    position:
+        relative;
 
-    width: min(900px, 100%);
+    z-index:
+        3;
 
-    margin: auto;
+    width:
+        min(900px, 100%);
+
+    margin:
+        auto;
+
 }
+
 
 .hero-small {
-    color: var(--pink-light);
 
-    letter-spacing: 5px;
+    color:
+        var(--pink-light);
 
-    text-transform: uppercase;
+    letter-spacing:
+        5px;
 
-    font-size: .72rem;
+    text-transform:
+        uppercase;
 
-    margin-bottom: 25px;
+    font-size:
+        .72rem;
+
+    margin-bottom:
+        25px;
+
 }
 
+
 .hero h1 {
+
     font-size:
         clamp(3rem, 10vw, 7.5rem);
 
-    line-height: .95;
+    line-height:
+        .95;
 
-    font-weight: 800;
+    font-weight:
+        800;
 
-    letter-spacing: -4px;
+    letter-spacing:
+        -4px;
 
     background:
+
         linear-gradient(
             120deg,
             #fff,
@@ -472,136 +719,199 @@ section {
             #fff
         );
 
-    background-size: 250% auto;
+    background-size:
+        250% auto;
 
-    -webkit-background-clip: text;
+    -webkit-background-clip:
+        text;
 
-    background-clip: text;
+    background-clip:
+        text;
 
-    color: transparent;
+    color:
+        transparent;
 
     animation:
         titleGlow 7s linear infinite;
+
 }
+
 
 @keyframes titleGlow {
 
     to {
+
         background-position:
             250% center;
+
     }
 
 }
 
-.hero-subtitle {
-    margin: 30px auto 0;
 
-    max-width: 620px;
+.hero-subtitle {
+
+    margin:
+        30px auto 0;
+
+    max-width:
+        620px;
 
     font-size:
         clamp(1rem, 2vw, 1.2rem);
 
-    line-height: 1.9;
+    line-height:
+        1.9;
 
     color:
         rgba(255,255,255,.75);
+
 }
 
-/* =========================================================
-   CORAZÓN PRINCIPAL
-========================================================= */
 
 .hero-heart {
-    margin: 38px auto 0;
 
-    width: 125px;
-    height: 125px;
+    margin:
+        38px auto 0;
 
-    position: relative;
+    width:
+        125px;
 
-    display: flex;
+    height:
+        125px;
 
-    align-items: center;
+    position:
+        relative;
 
-    justify-content: center;
+    display:
+        flex;
 
-    font-size: 5rem;
+    align-items:
+        center;
 
-    color: #ff70b5;
+    justify-content:
+        center;
+
+    font-size:
+        5rem;
+
+    color:
+        #ff70b5;
 
     text-shadow:
+
         0 0 15px rgba(255,80,170,.8),
+
         0 0 40px rgba(255,80,170,.45),
+
         0 0 80px rgba(255,80,170,.25);
 
     animation:
+
         heartBeat 2s ease-in-out infinite,
+
         heartFloat 5s ease-in-out infinite;
+
 }
 
+
 .hero-heart::before {
-    content: "";
 
-    position: absolute;
+    content:
+        "";
 
-    inset: 15px;
+    position:
+        absolute;
 
-    border-radius: 50%;
+    inset:
+        15px;
+
+    border-radius:
+        50%;
 
     background:
+
         radial-gradient(
             circle,
             rgba(255,110,190,.18),
             transparent 70%
         );
 
-    filter: blur(10px);
+    filter:
+        blur(10px);
+
 }
+
 
 @keyframes heartBeat {
 
     0%,100% {
-        transform: scale(1);
+
+        transform:
+            scale(1);
+
     }
 
     10% {
-        transform: scale(1.1);
+
+        transform:
+            scale(1.1);
+
     }
 
     20% {
-        transform: scale(1);
+
+        transform:
+            scale(1);
+
     }
 
     30% {
-        transform: scale(1.07);
+
+        transform:
+            scale(1.07);
+
     }
 
     40% {
-        transform: scale(1);
+
+        transform:
+            scale(1);
+
     }
 
 }
+
 
 @keyframes heartFloat {
 
     50% {
-        translate: 0 -8px;
+
+        translate:
+            0 -8px;
+
     }
 
 }
+
 
 /* =========================================================
    NOMBRES
 ========================================================= */
 
 .names-card {
-    width: min(850px, 100%);
 
-    padding: 55px 30px;
+    width:
+        min(850px, 100%);
 
-    border-radius: 35px;
+    padding:
+        55px 30px;
+
+    border-radius:
+        35px;
 
     background:
+
         linear-gradient(
             135deg,
             rgba(255,100,180,.12),
@@ -611,52 +921,80 @@ section {
     border:
         1px solid rgba(255,255,255,.15);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter:
+        blur(18px);
 
     box-shadow:
+
         0 30px 100px rgba(0,0,0,.35),
+
         inset 0 0 40px rgba(255,100,180,.04);
 
-    text-align: center;
+    text-align:
+        center;
+
 }
 
+
 .names {
+
     font-size:
         clamp(2rem, 6vw, 4.5rem);
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    line-height: 1.2;
+    line-height:
+        1.2;
 
-    color: white;
+    color:
+        white;
+
 }
+
 
 .names .and {
-    display: block;
 
-    margin: 12px 0;
+    display:
+        block;
 
-    font-family: Georgia, serif;
+    margin:
+        12px 0;
 
-    font-style: italic;
+    font-family:
+        Georgia, serif;
 
-    font-size: 1.4rem;
+    font-style:
+        italic;
 
-    color: var(--pink-light);
+    font-size:
+        1.4rem;
+
+    color:
+        var(--pink-light);
+
 }
+
 
 /* =========================================================
    CONTADOR
 ========================================================= */
 
 .counter-wrapper {
-    width: min(1000px, 100%);
+
+    width:
+        min(1000px, 100%);
+
 }
 
-.counter-card {
-    padding: 50px 25px;
 
-    border-radius: 35px;
+.counter-card {
+
+    padding:
+        50px 25px;
+
+    border-radius:
+        35px;
 
     background:
         rgba(255,255,255,.055);
@@ -664,38 +1002,59 @@ section {
     border:
         1px solid rgba(255,255,255,.13);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter:
+        blur(18px);
 
     box-shadow:
+
         0 30px 80px rgba(0,0,0,.35),
+
         inset 0 0 40px rgba(255,100,180,.03);
+
 }
+
 
 .counter-title {
-    text-align: center;
 
-    color: var(--pink-light);
+    text-align:
+        center;
 
-    margin-bottom: 35px;
+    color:
+        var(--pink-light);
 
-    font-size: 1.05rem;
+    margin-bottom:
+        35px;
+
+    font-size:
+        1.05rem;
+
 }
 
+
 .counter {
-    display: grid;
+
+    display:
+        grid;
 
     grid-template-columns:
         repeat(4, 1fr);
 
-    gap: 15px;
+    gap:
+        15px;
+
 }
 
+
 .time-box {
-    text-align: center;
 
-    padding: 25px 10px;
+    text-align:
+        center;
 
-    border-radius: 22px;
+    padding:
+        25px 10px;
+
+    border-radius:
+        22px;
 
     background:
         rgba(255,255,255,.06);
@@ -703,67 +1062,97 @@ section {
     border:
         1px solid rgba(255,255,255,.10);
 
-    transition: .3s ease;
+    transition:
+        .3s ease;
+
 }
 
+
 .time-box:hover {
-    transform: translateY(-6px);
+
+    transform:
+        translateY(-6px);
 
     background:
         rgba(255,100,180,.09);
+
 }
 
+
 .time-number {
-    display: block;
+
+    display:
+        block;
 
     font-size:
         clamp(2rem, 6vw, 3.6rem);
 
-    font-weight: 700;
+    font-weight:
+        700;
 
     background:
+
         linear-gradient(
             135deg,
             #fff,
             var(--pink-light)
         );
 
-    -webkit-background-clip: text;
+    -webkit-background-clip:
+        text;
 
-    background-clip: text;
+    background-clip:
+        text;
 
-    color: transparent;
+    color:
+        transparent;
+
 }
 
+
 .time-label {
-    display: block;
 
-    margin-top: 7px;
+    display:
+        block;
 
-    font-size: .7rem;
+    margin-top:
+        7px;
 
-    letter-spacing: 3px;
+    font-size:
+        .7rem;
 
-    text-transform: uppercase;
+    letter-spacing:
+        3px;
+
+    text-transform:
+        uppercase;
 
     color:
         rgba(255,255,255,.55);
+
 }
+
 
 /* =========================================================
    ESPACIO INTERACTIVO
 ========================================================= */
 
 .interactive-space {
-    width: min(850px, 100%);
 
-    min-height: 480px;
+    width:
+        min(850px, 100%);
 
-    position: relative;
+    min-height:
+        480px;
 
-    border-radius: 40px;
+    position:
+        relative;
+
+    border-radius:
+        40px;
 
     background:
+
         radial-gradient(
             circle at center,
             rgba(255,100,180,.15),
@@ -774,52 +1163,83 @@ section {
     border:
         1px solid rgba(255,255,255,.10);
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
+
 }
 
-.space-orbit {
-    position: absolute;
 
-    width: 330px;
-    height: 330px;
+.space-orbit {
+
+    position:
+        absolute;
+
+    width:
+        330px;
+
+    height:
+        330px;
 
     border:
         1px solid rgba(255,150,210,.18);
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     animation:
         orbitSpin 20s linear infinite;
+
 }
+
 
 .space-orbit.two {
-    width: 500px;
-    height: 180px;
 
-    transform: rotate(35deg);
+    width:
+        500px;
+
+    height:
+        180px;
+
+    transform:
+        rotate(35deg);
+
 }
 
+
 .space-core {
-    width: 115px;
-    height: 115px;
 
-    border-radius: 50%;
+    width:
+        115px;
 
-    display: flex;
+    height:
+        115px;
 
-    align-items: center;
+    border-radius:
+        50%;
 
-    justify-content: center;
+    display:
+        flex;
 
-    font-size: 3.5rem;
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        3.5rem;
 
     background:
+
         radial-gradient(
             circle,
             #ff9bca,
@@ -828,24 +1248,36 @@ section {
         );
 
     box-shadow:
+
         0 0 35px rgba(255,80,170,.6),
+
         0 0 100px rgba(255,80,170,.25);
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
     animation:
         corePulse 3s ease-in-out infinite;
 
-    z-index: 4;
+    z-index:
+        4;
+
 }
 
+
 .space-orb {
-    position: absolute;
 
-    width: 70px;
-    height: 70px;
+    position:
+        absolute;
 
-    border-radius: 50%;
+    width:
+        70px;
+
+    height:
+        70px;
+
+    border-radius:
+        50%;
 
     background:
         rgba(255,255,255,.08);
@@ -853,114 +1285,182 @@ section {
     border:
         1px solid rgba(255,255,255,.2);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    transition: .35s ease;
+    transition:
+        .35s ease;
 
-    color: var(--pink-soft);
+    color:
+        var(--pink-soft);
 
-    font-size: 1.3rem;
+    font-size:
+        1.3rem;
+
 }
 
+
 .space-orb:hover {
-    transform: scale(1.18);
+
+    transform:
+        scale(1.18);
 
     background:
         rgba(255,100,180,.16);
 
     box-shadow:
         0 0 30px rgba(255,100,180,.3);
+
 }
+
 
 .orb-one {
-    top: 18%;
-    left: 20%;
+
+    top:
+        18%;
+
+    left:
+        20%;
+
 }
+
 
 .orb-two {
-    top: 25%;
-    right: 17%;
+
+    top:
+        25%;
+
+    right:
+        17%;
+
 }
+
 
 .orb-three {
-    bottom: 17%;
-    left: 23%;
+
+    bottom:
+        17%;
+
+    left:
+        23%;
+
 }
+
 
 .orb-four {
-    bottom: 20%;
-    right: 22%;
+
+    bottom:
+        20%;
+
+    right:
+        22%;
+
 }
 
+
 .space-message {
-    position: absolute;
 
-    bottom: 35px;
+    position:
+        absolute;
 
-    left: 20px;
-    right: 20px;
+    bottom:
+        35px;
 
-    text-align: center;
+    left:
+        20px;
 
-    min-height: 28px;
+    right:
+        20px;
+
+    text-align:
+        center;
+
+    min-height:
+        28px;
 
     color:
         rgba(255,255,255,.82);
 
-    font-style: italic;
+    font-style:
+        italic;
 
     transition:
         opacity .3s ease;
+
 }
+
 
 @keyframes orbitSpin {
 
     to {
-        transform: rotate(360deg);
+
+        transform:
+            rotate(360deg);
+
     }
 
 }
+
 
 @keyframes corePulse {
 
     50% {
-        transform: scale(1.07);
+
+        transform:
+            scale(1.07);
+
     }
 
 }
+
 
 /* =========================================================
    RAZONES
 ========================================================= */
 
 .reason-box {
-    width: min(760px, 100%);
 
-    min-height: 250px;
+    width:
+        min(760px, 100%);
 
-    display: flex;
+    min-height:
+        250px;
 
-    flex-direction: column;
+    display:
+        flex;
 
-    align-items: center;
+    flex-direction:
+        column;
 
-    justify-content: center;
+    align-items:
+        center;
 
-    text-align: center;
+    justify-content:
+        center;
 
-    padding: 45px 30px;
+    text-align:
+        center;
 
-    border-radius: 35px;
+    padding:
+        45px 30px;
+
+    border-radius:
+        35px;
 
     background:
+
         linear-gradient(
             135deg,
             rgba(255,100,180,.10),
@@ -970,55 +1470,83 @@ section {
     border:
         1px solid rgba(255,255,255,.13);
 
-    backdrop-filter: blur(15px);
+    backdrop-filter:
+        blur(15px);
 
     box-shadow:
         0 30px 80px rgba(0,0,0,.3);
+
 }
+
 
 .reason-number {
-    color: var(--pink-light);
 
-    font-size: .75rem;
+    color:
+        var(--pink-light);
 
-    letter-spacing: 4px;
+    font-size:
+        .75rem;
 
-    text-transform: uppercase;
+    letter-spacing:
+        4px;
 
-    margin-bottom: 22px;
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        22px;
+
 }
 
+
 .reason-text {
-    font-family: Georgia, serif;
+
+    font-family:
+        Georgia, serif;
 
     font-size:
         clamp(1.4rem, 4vw, 2.2rem);
 
-    line-height: 1.5;
+    line-height:
+        1.5;
 
     transition:
         opacity .35s ease,
         transform .35s ease;
+
 }
+
 
 .reason-text.changing {
-    opacity: 0;
 
-    transform: translateY(12px);
+    opacity:
+        0;
+
+    transform:
+        translateY(12px);
+
 }
 
+
 .reason-button {
-    margin-top: 30px;
 
-    border: none;
+    margin-top:
+        30px;
 
-    padding: 13px 25px;
+    border:
+        none;
 
-    border-radius: 100px;
+    padding:
+        13px 25px;
 
-    color: white;
+    border-radius:
+        100px;
+
+    color:
+        white;
 
     background:
+
         linear-gradient(
             135deg,
             rgba(255,100,180,.35),
@@ -1028,63 +1556,91 @@ section {
     border:
         1px solid rgba(255,255,255,.15);
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    transition: .3s ease;
+    transition:
+        .3s ease;
+
 }
+
 
 .reason-button:hover {
-    transform: translateY(-3px);
+
+    transform:
+        translateY(-3px);
+
 }
+
 
 /* =========================================================
    CANCIÓN
 ========================================================= */
 
 .song-card {
-    width: min(800px, 100%);
 
-    padding: 45px 30px;
+    width:
+        min(800px, 100%);
 
-    border-radius: 35px;
+    padding:
+        45px 30px;
+
+    border-radius:
+        35px;
 
     background:
+
         radial-gradient(
             circle at top,
             rgba(255,100,180,.13),
             transparent 60%
         ),
+
         rgba(255,255,255,.05);
 
     border:
         1px solid rgba(255,255,255,.14);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter:
+        blur(18px);
 
-    text-align: center;
+    text-align:
+        center;
 
     box-shadow:
         0 30px 80px rgba(0,0,0,.35);
+
 }
 
+
 .song-circle {
-    width: 115px;
-    height: 115px;
 
-    margin: 0 auto 25px;
+    width:
+        115px;
 
-    border-radius: 50%;
+    height:
+        115px;
 
-    display: flex;
+    margin:
+        0 auto 25px;
 
-    align-items: center;
+    border-radius:
+        50%;
 
-    justify-content: center;
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
     border:
         1px solid rgba(255,255,255,.25);
 
     background:
+
         radial-gradient(
             circle,
             rgba(255,120,190,.25),
@@ -1096,60 +1652,94 @@ section {
 
     animation:
         musicFloat 4s ease-in-out infinite;
+
 }
 
+
 .song-circle::before {
-    content: "♥";
 
-    font-size: 3rem;
+    content:
+        "♥";
 
-    color: var(--pink-light);
+    font-size:
+        3rem;
+
+    color:
+        var(--pink-light);
 
     text-shadow:
         0 0 25px rgba(255,100,180,.7);
+
 }
+
 
 .song-card h3 {
-    font-size: 1.8rem;
 
-    margin-bottom: 12px;
+    font-size:
+        1.8rem;
+
+    margin-bottom:
+        12px;
+
 }
 
+
 .song-card p {
+
     color:
         rgba(255,255,255,.72);
 
-    line-height: 1.7;
+    line-height:
+        1.7;
+
 }
+
 
 .song-buttons {
-    display: flex;
 
-    justify-content: center;
+    display:
+        flex;
 
-    gap: 14px;
+    justify-content:
+        center;
 
-    flex-wrap: wrap;
+    gap:
+        14px;
 
-    margin-top: 30px;
+    flex-wrap:
+        wrap;
+
+    margin-top:
+        30px;
+
 }
 
+
 .song-button {
-    display: inline-flex;
 
-    align-items: center;
+    display:
+        inline-flex;
 
-    justify-content: center;
+    align-items:
+        center;
 
-    padding: 14px 24px;
+    justify-content:
+        center;
 
-    border-radius: 100px;
+    padding:
+        14px 24px;
 
-    text-decoration: none;
+    border-radius:
+        100px;
 
-    color: white;
+    text-decoration:
+        none;
+
+    color:
+        white;
 
     background:
+
         linear-gradient(
             135deg,
             #ff69ae,
@@ -1159,65 +1749,94 @@ section {
     box-shadow:
         0 10px 35px rgba(255,80,170,.2);
 
-    transition: .3s ease;
+    transition:
+        .3s ease;
+
 }
 
+
 .song-button:hover {
+
     transform:
         translateY(-4px)
         scale(1.02);
 
     box-shadow:
         0 15px 45px rgba(255,80,170,.35);
+
 }
 
+
 .qr {
-    margin: 35px auto 0;
 
-    width: 160px;
-    height: 160px;
+    margin:
+        35px auto 0;
 
-    padding: 10px;
+    width:
+        160px;
 
-    border-radius: 18px;
+    height:
+        160px;
 
-    background: white;
+    padding:
+        10px;
+
+    border-radius:
+        18px;
+
+    background:
+        white;
 
     box-shadow:
         0 15px 40px rgba(0,0,0,.3);
+
 }
+
 
 .qr img {
-    width: 100%;
-    height: 100%;
 
-    display: block;
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        block;
+
 }
+
 
 @keyframes musicFloat {
 
     50% {
+
         transform:
             translateY(-8px)
             rotate(4deg);
+
     }
 
 }
+
 
 /* =========================================================
    CARTA
 ========================================================= */
 
 .letter {
-    width: min(850px, 100%);
+
+    width:
+        min(850px, 100%);
 
     padding:
-        55px
-        clamp(25px, 6vw, 70px);
+        55px clamp(25px, 6vw, 70px);
 
-    border-radius: 35px;
+    border-radius:
+        35px;
 
     background:
+
         linear-gradient(
             145deg,
             rgba(255,255,255,.08),
@@ -1227,121 +1846,191 @@ section {
     border:
         1px solid rgba(255,255,255,.15);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter:
+        blur(18px);
 
     box-shadow:
         0 30px 90px rgba(0,0,0,.4);
+
 }
 
+
 .letter p {
+
     color:
         rgba(255,255,255,.82);
 
-    font-family: Georgia, serif;
+    font-family:
+        Georgia, serif;
 
-    font-size: 1.05rem;
+    font-size:
+        1.05rem;
 
-    line-height: 2;
+    line-height:
+        2;
 
-    margin-bottom: 22px;
+    margin-bottom:
+        22px;
+
 }
+
 
 .letter .signature {
-    margin-top: 35px;
 
-    text-align: right;
+    margin-top:
+        35px;
 
-    font-size: 1.25rem;
+    text-align:
+        right;
 
-    color: white;
+    font-size:
+        1.25rem;
+
+    color:
+        white;
+
 }
+
 
 .letter .signature span {
-    color: var(--pink-light);
+
+    color:
+        var(--pink-light);
+
 }
+
 
 /* =========================================================
    FINAL
 ========================================================= */
 
 .final {
-    min-height: 85vh;
 
-    text-align: center;
+    min-height:
+        85vh;
+
+    text-align:
+        center;
+
 }
 
-.final-heart {
-    font-size: 5rem;
 
-    color: var(--pink);
+.final-heart {
+
+    font-size:
+        5rem;
+
+    color:
+        var(--pink);
 
     text-shadow:
+
         0 0 20px rgba(255,100,180,.7),
+
         0 0 60px rgba(255,100,180,.35);
 
     animation:
         heartBeat 2s infinite;
+
 }
 
-.final h2 {
-    margin-top: 25px;
 
-    font-family: Georgia, serif;
+.final h2 {
+
+    margin-top:
+        25px;
+
+    font-family:
+        Georgia, serif;
 
     font-size:
         clamp(2.5rem, 7vw, 5rem);
 
-    line-height: 1.1;
+    line-height:
+        1.1;
+
 }
 
-.final-message {
-    max-width: 650px;
 
-    margin: 25px auto 0;
+.final-message {
+
+    max-width:
+        650px;
+
+    margin:
+        25px auto 0;
 
     color:
         rgba(255,255,255,.72);
 
-    line-height: 1.9;
+    line-height:
+        1.9;
+
 }
+
 
 .final-signature {
-    margin-top: 50px;
 
-    font-family: Georgia, serif;
+    margin-top:
+        50px;
 
-    font-size: 1.35rem;
+    font-family:
+        Georgia, serif;
 
-    line-height: 2;
+    font-size:
+        1.35rem;
 
-    color: white;
+    line-height:
+        2;
+
+    color:
+        white;
+
 }
+
 
 .final-signature strong {
-    color: var(--pink-light);
 
-    font-size: 1.5rem;
+    color:
+        var(--pink-light);
+
+    font-size:
+        1.5rem;
+
 }
+
 
 /* =========================================================
    SCROLL REVEAL
 ========================================================= */
 
 .reveal {
-    opacity: 0;
 
-    transform: translateY(45px);
+    opacity:
+        0;
+
+    transform:
+        translateY(45px);
 
     transition:
+
         opacity 1s ease,
+
         transform 1s cubic-bezier(.2,.8,.2,1);
+
 }
+
 
 .reveal.visible {
-    opacity: 1;
 
-    transform: translateY(0);
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
 }
+
 
 /* =========================================================
    MOBILE
@@ -1350,59 +2039,100 @@ section {
 @media (max-width: 800px) {
 
     .section {
-        padding: 90px 18px;
+
+        padding:
+            90px 18px;
+
     }
 
     .hero h1 {
-        letter-spacing: -2px;
+
+        letter-spacing:
+            -2px;
+
     }
 
     .counter {
+
         grid-template-columns:
             repeat(2, 1fr);
+
     }
 
     .interactive-space {
-        min-height: 430px;
+
+        min-height:
+            430px;
+
     }
 
     .space-orbit {
-        width: 270px;
-        height: 270px;
+
+        width:
+            270px;
+
+        height:
+            270px;
+
     }
 
     .space-orbit.two {
-        width: 380px;
-        height: 150px;
+
+        width:
+            380px;
+
+        height:
+            150px;
+
     }
 
     .orb-one {
-        left: 8%;
+
+        left:
+            8%;
+
     }
 
     .orb-two {
-        right: 8%;
+
+        right:
+            8%;
+
     }
 
     .orb-three {
-        left: 10%;
+
+        left:
+            10%;
+
     }
 
     .orb-four {
-        right: 10%;
+
+        right:
+            10%;
+
     }
 
     .letter {
-        padding: 40px 24px;
+
+        padding:
+            40px 24px;
+
     }
 
     .letter p {
-        font-size: 1rem;
 
-        line-height: 1.85;
+        font-size:
+            1rem;
+
+        line-height:
+            1.85;
+
     }
 
 }
+
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -1421,6 +2151,7 @@ section {
 
         transition-duration:
             .01ms !important;
+
     }
 
 }
@@ -1428,6 +2159,7 @@ section {
 </style>
 
 </head>
+
 
 <body>
 
@@ -1455,12 +2187,15 @@ section {
 
 <section
     class="section hero"
-    id="inicio">
+    id="inicio"
+>
 
     <div class="hero-content">
 
         <div class="hero-small">
+
             Para alguien muy especial
+
         </div>
 
         <h1>
@@ -1474,8 +2209,8 @@ section {
         <p class="hero-subtitle">
 
             Desde que llegaste a mi vida,
-            algunas cosas simplemente
-            dejaron de sentirse igual.
+            algunas cosas simplemente dejaron
+            de sentirse igual.
 
             Esta pequeña parte del universo
             la hice pensando en ti.
@@ -1484,7 +2219,8 @@ section {
 
         <a
             href="#historia"
-            class="next">
+            class="next"
+        >
 
             Comenzar nuestra historia
 
@@ -1505,7 +2241,8 @@ section {
 
 <section
     class="section"
-    id="historia">
+    id="historia"
+>
 
     <div class="container">
 
@@ -1521,10 +2258,8 @@ section {
 
             <p>
 
-                Y desde aquel
-                21 de diciembre de 2025,
-                cada día comenzó a tener
-                un significado diferente.
+                Y desde aquel 21 de diciembre de 2025,
+                cada día comenzó a tener un significado diferente.
 
             </p>
 
@@ -1552,7 +2287,8 @@ section {
 
             <a
                 href="#contador"
-                class="next">
+                class="next"
+            >
 
                 Ver cuánto tiempo llevamos
 
@@ -1575,7 +2311,8 @@ section {
 
 <section
     class="section"
-    id="contador">
+    id="contador"
+>
 
     <div class="container counter-wrapper">
 
@@ -1611,15 +2348,13 @@ section {
 
             <div class="counter">
 
-
                 <div class="time-box">
 
                     <span
                         id="days"
-                        class="time-number">
-
+                        class="time-number"
+                    >
                         0
-
                     </span>
 
                     <span class="time-label">
@@ -1633,10 +2368,9 @@ section {
 
                     <span
                         id="hours"
-                        class="time-number">
-
+                        class="time-number"
+                    >
                         0
-
                     </span>
 
                     <span class="time-label">
@@ -1650,10 +2384,9 @@ section {
 
                     <span
                         id="minutes"
-                        class="time-number">
-
+                        class="time-number"
+                    >
                         0
-
                     </span>
 
                     <span class="time-label">
@@ -1667,10 +2400,9 @@ section {
 
                     <span
                         id="seconds"
-                        class="time-number">
-
+                        class="time-number"
+                    >
                         0
-
                     </span>
 
                     <span class="time-label">
@@ -1688,7 +2420,8 @@ section {
 
             <a
                 href="#universo"
-                class="next">
+                class="next"
+            >
 
                 Hay algo que quiero mostrarte
 
@@ -1711,7 +2444,8 @@ section {
 
 <section
     class="section"
-    id="universo">
+    id="universo"
+>
 
     <div class="container">
 
@@ -1727,8 +2461,8 @@ section {
 
             <p>
 
-                Cada una guarda una pequeña
-                frase que quiero decirte.
+                Cada una guarda una pequeña frase
+                que quiero decirte.
 
             </p>
 
@@ -1744,7 +2478,8 @@ section {
 
             <div
                 class="space-core"
-                onclick="showSpaceMessage(0)">
+                onclick="showSpaceMessage(0)"
+            >
 
                 ♥
 
@@ -1753,7 +2488,8 @@ section {
 
             <button
                 class="space-orb orb-one"
-                onclick="showSpaceMessage(1)">
+                onclick="showSpaceMessage(1)"
+            >
 
                 ✦
 
@@ -1762,7 +2498,8 @@ section {
 
             <button
                 class="space-orb orb-two"
-                onclick="showSpaceMessage(2)">
+                onclick="showSpaceMessage(2)"
+            >
 
                 ✧
 
@@ -1771,7 +2508,8 @@ section {
 
             <button
                 class="space-orb orb-three"
-                onclick="showSpaceMessage(3)">
+                onclick="showSpaceMessage(3)"
+            >
 
                 ·
 
@@ -1780,7 +2518,8 @@ section {
 
             <button
                 class="space-orb orb-four"
-                onclick="showSpaceMessage(4)">
+                onclick="showSpaceMessage(4)"
+            >
 
                 ✦
 
@@ -1789,7 +2528,8 @@ section {
 
             <div
                 id="spaceMessage"
-                class="space-message">
+                class="space-message"
+            >
 
                 Toca una de las estrellas
 
@@ -1802,7 +2542,8 @@ section {
 
             <a
                 href="#razones"
-                class="next">
+                class="next"
+            >
 
                 Hay más que quiero decirte
 
@@ -1825,7 +2566,8 @@ section {
 
 <section
     class="section"
-    id="razones">
+    id="razones"
+>
 
     <div class="container">
 
@@ -1841,8 +2583,7 @@ section {
 
             <p>
 
-                Y aun así siento que nunca
-                serían suficientes.
+                Y aun así siento que nunca serían suficientes.
 
             </p>
 
@@ -1853,7 +2594,8 @@ section {
 
             <div
                 id="reasonNumber"
-                class="reason-number">
+                class="reason-number"
+            >
 
                 Razón 1
 
@@ -1862,7 +2604,8 @@ section {
 
             <div
                 id="reasonText"
-                class="reason-text">
+                class="reason-text"
+            >
 
                 Porque contigo puedo ser yo mismo.
 
@@ -1871,7 +2614,8 @@ section {
 
             <button
                 class="reason-button"
-                onclick="nextReason()">
+                onclick="nextReason()"
+            >
 
                 Otra razón
 
@@ -1884,7 +2628,8 @@ section {
 
             <a
                 href="#cancion"
-                class="next">
+                class="next"
+            >
 
                 Hay algo que quiero que escuches
 
@@ -1907,7 +2652,8 @@ section {
 
 <section
     class="section"
-    id="cancion">
+    id="cancion"
+>
 
     <div class="container">
 
@@ -1923,10 +2669,8 @@ section {
 
             <p>
 
-                Hay canciones que terminan
-                guardando recuerdos,
-                y esta ahora guarda
-                uno de los nuestros.
+                Hay canciones que terminan guardando recuerdos,
+                y esta ahora guarda uno de los nuestros.
 
             </p>
 
@@ -1954,7 +2698,8 @@ section {
                     class="song-button"
                     href="https://www.youtube.com/watch?v=TF-nDMnTARM"
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                >
 
                     Escuchar la canción
 
@@ -1967,16 +2712,21 @@ section {
 
                 <img
                     src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DTF-nDMnTARM"
-                    alt="Código QR para escuchar A la velocidad de la luz">
+                    alt="Código QR para escuchar la canción"
+                >
 
             </div>
 
 
             <p
-                style="margin-top:18px;font-size:.8rem;">
+                style="
+                    margin-top:18px;
+                    font-size:.8rem;
+                "
+            >
 
-                Escanea el código para abrir
-                directamente la canción.
+                Escanea el código
+                para abrir directamente la canción.
 
             </p>
 
@@ -1987,7 +2737,8 @@ section {
 
             <a
                 href="#carta"
-                class="next">
+                class="next"
+            >
 
                 Ahora quiero decirte algo
 
@@ -2010,7 +2761,8 @@ section {
 
 <section
     class="section"
-    id="carta">
+    id="carta"
+>
 
     <div class="container">
 
@@ -2032,36 +2784,30 @@ section {
 
             <p>
 
-                Melisa, a veces pienso en todo
-                lo que hemos vivido desde aquel
-                21 de diciembre de 2025 y me cuesta
-                creer cuánto puede cambiar una vida
-                cuando aparece la persona correcta.
+                Melisa, a veces pienso en todo lo que hemos vivido
+                desde aquel 21 de diciembre de 2025 y me cuesta creer
+                cuánto puede cambiar una vida cuando aparece la persona
+                correcta.
 
             </p>
 
 
             <p>
 
-                No quiero que esta página sea
-                solamente algo bonito que puedas
-                mirar una vez y después olvidar.
-                Quiero que sea un pequeño lugar
-                al que puedas volver cuando quieras
-                recordar cuánto te quiero y cuánto
-                significas para mí.
+                No quiero que esta página sea solamente algo bonito
+                que puedas mirar una vez y después olvidar. Quiero que
+                sea un pequeño lugar al que puedas volver cuando quieras
+                recordar cuánto te quiero y cuánto significas para mí.
 
             </p>
 
 
             <p>
 
-                Me gusta pensar en cada conversación,
-                cada momento, cada risa, cada abrazo
-                y hasta en esas pequeñas cosas que
-                quizás para otras personas no
-                significarían nada, pero que para mí
-                terminan siendo recuerdos que quiero
+                Me gusta pensar en cada conversación, cada momento,
+                cada risa, cada abrazo y hasta en esas pequeñas cosas
+                que quizás para otras personas no significarían nada,
+                pero que para mí terminan siendo recuerdos que quiero
                 guardar.
 
             </p>
@@ -2069,26 +2815,22 @@ section {
 
             <p>
 
-                Me encanta la forma en que poco a poco
-                te convertiste en alguien tan importante
-                para mí. Llegaste a formar parte de mis
-                pensamientos, de mis días y de todos
-                esos pequeños planes que uno empieza
-                a imaginar cuando realmente quiere
-                compartir su vida con alguien.
+                Me encanta la forma en que poco a poco te convertiste
+                en alguien tan importante para mí. Llegaste a formar
+                parte de mis pensamientos, de mis días y de todos esos
+                pequeños planes que uno empieza a imaginar cuando
+                realmente quiere compartir su vida con alguien.
 
             </p>
 
 
             <p>
 
-                Sé que no todo tiene que ser perfecto.
-                Sé que habrá días difíciles, momentos
-                en los que podamos pensar diferente
-                y situaciones que tendremos que aprender
-                a superar juntos. Pero incluso sabiendo
-                eso, hay algo que tengo muy claro:
-                quiero seguir construyendo nuestra
+                Sé que no todo tiene que ser perfecto. Sé que habrá
+                días difíciles, momentos en los que podamos pensar
+                diferente y situaciones que tendremos que aprender a
+                superar juntos. Pero incluso sabiendo eso, hay algo que
+                tengo muy claro: quiero seguir construyendo nuestra
                 historia contigo.
 
             </p>
@@ -2096,43 +2838,37 @@ section {
 
             <p>
 
-                Quiero seguir acumulando conversaciones,
-                viajes, abrazos, risas y momentos que
-                algún día podamos mirar hacia atrás y
-                decir que todo valió la pena.
+                Quiero seguir acumulando conversaciones, viajes,
+                abrazos, risas y momentos que algún día podamos
+                mirar hacia atrás y decir que todo valió la pena.
 
             </p>
 
 
             <p>
 
-                Gracias por existir, por estar conmigo
-                y por permitir que una parte de tu
-                historia se mezcle con la mía.
-                Gracias por cada momento que hemos
-                compartido y por todos los que todavía
-                nos quedan por vivir.
+                Gracias por existir, por estar conmigo y por permitir
+                que una parte de tu historia se mezcle con la mía.
+                Gracias por cada momento que hemos compartido y por
+                todos los que todavía nos quedan por vivir.
 
             </p>
 
 
             <p>
 
-                Y si algún día dudas de lo importante
-                que eres para mí, vuelve a este pequeño
-                lugar. Mira el contador y recuerda que
-                detrás de cada detalle de esta página
-                hay alguien que decidió hacerla
-                solamente para ti.
+                Y si algún día dudas de lo importante que eres para mí,
+                vuelve a este pequeño lugar. Mira el contador y recuerda
+                que detrás de cada detalle de esta página hay alguien
+                que decidió hacerla solamente para ti.
 
             </p>
 
 
             <p>
 
-                Te amo por quien eres, por cómo me haces
-                sentir y por todo aquello que todavía
-                nos queda por descubrir juntos.
+                Te amo por quien eres, por cómo me haces sentir y por
+                todo aquello que todavía nos queda por descubrir juntos.
 
             </p>
 
@@ -2156,7 +2892,8 @@ section {
 
             <a
                 href="#final"
-                class="next">
+                class="next"
+            >
 
                 Una última cosa
 
@@ -2179,7 +2916,8 @@ section {
 
 <section
     class="section final"
-    id="final">
+    id="final"
+>
 
     <div class="container">
 
@@ -2225,12 +2963,13 @@ section {
 
 <script>
 
+
 /* =========================================================
    CONTADOR
 ========================================================= */
 
 const startDate =
-    new Date("2025-12-21T00:00:00-03:00");
+    new Date("2025-12-21T00:00:00");
 
 
 function updateCounter() {
@@ -2286,23 +3025,27 @@ function updateCounter() {
         );
 
 
-    document.getElementById("days")
-        .textContent =
+    document.getElementById(
+        "days"
+    ).textContent =
         days.toLocaleString("es-CL");
 
 
-    document.getElementById("hours")
-        .textContent =
+    document.getElementById(
+        "hours"
+    ).textContent =
         String(hours).padStart(2, "0");
 
 
-    document.getElementById("minutes")
-        .textContent =
+    document.getElementById(
+        "minutes"
+    ).textContent =
         String(minutes).padStart(2, "0");
 
 
-    document.getElementById("seconds")
-        .textContent =
+    document.getElementById(
+        "seconds"
+    ).textContent =
         String(seconds).padStart(2, "0");
 
 }
@@ -2315,6 +3058,7 @@ setInterval(
     updateCounter,
     1000
 );
+
 
 
 /* =========================================================
@@ -2337,7 +3081,9 @@ const spaceMessages = [
 
 
 const spaceMessage =
-    document.getElementById("spaceMessage");
+    document.getElementById(
+        "spaceMessage"
+    );
 
 
 function showSpaceMessage(index) {
@@ -2357,6 +3103,7 @@ function showSpaceMessage(index) {
     }, 250);
 
 }
+
 
 
 /* =========================================================
@@ -2388,11 +3135,15 @@ let reasonIndex = 0;
 
 
 const reasonText =
-    document.getElementById("reasonText");
+    document.getElementById(
+        "reasonText"
+    );
 
 
 const reasonNumber =
-    document.getElementById("reasonNumber");
+    document.getElementById(
+        "reasonNumber"
+    );
 
 
 function nextReason() {
@@ -2408,8 +3159,7 @@ function nextReason() {
 
 
         if (
-            reasonIndex >=
-            reasons.length
+            reasonIndex >= reasons.length
         ) {
 
             reasonIndex = 0;
@@ -2433,6 +3183,7 @@ function nextReason() {
     }, 350);
 
 }
+
 
 
 /* =========================================================
@@ -2484,6 +3235,7 @@ revealElements.forEach(
 );
 
 
+
 /* =========================================================
    SCROLL SUAVE
 ========================================================= */
@@ -2492,45 +3244,45 @@ document
     .querySelectorAll(
         'a[href^="#"]'
     )
-    .forEach(link => {
+    .forEach(
+        link => {
 
-        link.addEventListener(
-            "click",
-            function(event) {
+            link.addEventListener(
+                "click",
+                function(event) {
 
-                const target =
-                    document.querySelector(
-                        this.getAttribute("href")
-                    );
+                    const target =
+                        document.querySelector(
+                            this.getAttribute("href")
+                        );
 
 
-                if (!target) {
+                    if (!target) return;
 
-                    return;
+
+                    event.preventDefault();
+
+
+                    target.scrollIntoView({
+
+                        behavior:
+                            "smooth",
+
+                        block:
+                            "start"
+
+                    });
 
                 }
+            );
 
-
-                event.preventDefault();
-
-
-                target.scrollIntoView({
-
-                    behavior:
-                        "smooth",
-
-                    block:
-                        "start"
-
-                });
-
-            }
-        );
-
-    });
+        }
+    );
 
 
 </script>
 
+
 </body>
+
 </html>
