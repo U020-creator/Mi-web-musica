@@ -1563,101 +1563,560 @@ section {
 
 @media (max-width: 800px) {
 
+    /* =========================================================
+   RESPONSIVE MEJORADO
+========================================================= */
+
+/* PC GRANDE */
+@media (min-width: 1400px) {
+
     .section {
+        padding: 130px 30px;
+    }
 
-        padding:
-            90px 18px;
-
+    .container {
+        width: min(1150px, 100%);
     }
 
     .hero h1 {
-
-        letter-spacing:
-            -2px;
-
+        font-size: clamp(5rem, 8vw, 8rem);
     }
 
-    .counter {
+    .hero-subtitle {
+        max-width: 720px;
+        font-size: 1.25rem;
+    }
 
-        grid-template-columns:
-            repeat(2, 1fr);
-
+    .names-card {
+        padding: 70px 45px;
     }
 
     .interactive-space {
-
-        min-height:
-            430px;
-
-    }
-
-    .space-orbit {
-
-        width:
-            270px;
-
-        height:
-            270px;
-
-    }
-
-    .space-orbit.two {
-
-        width:
-            380px;
-
-        height:
-            150px;
-
-    }
-
-    .orb-one {
-
-        left:
-            8%;
-
-    }
-
-    .orb-two {
-
-        right:
-            8%;
-
-    }
-
-    .orb-three {
-
-        left:
-            10%;
-
-    }
-
-    .orb-four {
-
-        right:
-            10%;
-
-    }
-
-    .letter {
-
-        padding:
-            40px 24px;
-
-    }
-
-    .letter p {
-
-        font-size:
-            1rem;
-
-        line-height:
-            1.85;
-
+        min-height: 540px;
     }
 
 }
 
+
+/* PC / NOTEBOOK */
+@media (min-width: 1025px) and (max-width: 1399px) {
+
+    .section {
+        padding: 110px 25px;
+    }
+
+    .container {
+        width: min(1050px, 100%);
+    }
+
+    .hero h1 {
+        font-size: clamp(4.5rem, 8vw, 7rem);
+    }
+
+}
+
+
+/* TABLETS */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .section {
+        padding: 95px 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(4rem, 10vw, 6rem);
+    }
+
+    .hero-subtitle {
+        max-width: 650px;
+    }
+
+    .counter {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+
+    .time-box {
+        padding: 22px 8px;
+    }
+
+    .interactive-space {
+        min-height: 480px;
+    }
+
+    .space-orbit {
+        width: 300px;
+        height: 300px;
+    }
+
+    .space-orbit.two {
+        width: 450px;
+        height: 170px;
+    }
+
+}
+
+
+/* CELULARES */
+@media (max-width: 768px) {
+
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .section {
+        min-height: auto;
+        padding: 80px 16px;
+    }
+
+    .section-title {
+        margin-bottom: 38px;
+        padding: 0 5px;
+    }
+
+    .section-title span {
+        letter-spacing: 3px;
+        font-size: .68rem;
+    }
+
+    .section-title h2 {
+        font-size: clamp(1.9rem, 8vw, 2.8rem);
+        line-height: 1.12;
+    }
+
+    .section-title p {
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+        padding: 70px 18px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-small {
+        font-size: .65rem;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 15vw, 5rem);
+        letter-spacing: -2px;
+        line-height: .98;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-subtitle {
+        width: 100%;
+        max-width: 520px;
+        margin-top: 25px;
+        font-size: .98rem;
+        line-height: 1.75;
+    }
+
+    .hero-heart {
+        width: 105px;
+        height: 105px;
+        font-size: 4rem;
+        margin-top: 30px;
+    }
+
+    .next {
+        max-width: 100%;
+        padding: 13px 19px;
+        margin-top: 32px;
+        font-size: .88rem;
+        text-align: center;
+    }
+
+
+    /* NOMBRES */
+
+    .names-card {
+        width: 100%;
+        padding: 38px 18px;
+        border-radius: 28px;
+    }
+
+    .names {
+        font-size: clamp(1.8rem, 9vw, 3.2rem);
+        line-height: 1.15;
+        overflow-wrap: anywhere;
+    }
+
+    .names .and {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+
+
+    /* CONTADOR */
+
+    .counter-card {
+        width: 100%;
+        padding: 35px 14px;
+        border-radius: 28px;
+    }
+
+    .counter-title {
+        font-size: .9rem;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+    .counter {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .time-box {
+        min-width: 0;
+        padding: 20px 7px;
+        border-radius: 18px;
+    }
+
+    .time-number {
+        font-size: clamp(1.9rem, 10vw, 3rem);
+    }
+
+    .time-label {
+        font-size: .6rem;
+        letter-spacing: 2px;
+    }
+
+
+    /* UNIVERSO */
+
+    .interactive-space {
+        width: 100%;
+        min-height: 400px;
+        border-radius: 28px;
+    }
+
+    .space-orbit {
+        width: 235px;
+        height: 235px;
+    }
+
+    .space-orbit.two {
+        width: 320px;
+        height: 130px;
+    }
+
+    .space-core {
+        width: 90px;
+        height: 90px;
+        font-size: 2.7rem;
+    }
+
+    .space-orb {
+        width: 55px;
+        height: 55px;
+        font-size: 1rem;
+    }
+
+    .orb-one {
+        top: 13%;
+        left: 7%;
+    }
+
+    .orb-two {
+        top: 18%;
+        right: 7%;
+    }
+
+    .orb-three {
+        bottom: 15%;
+        left: 8%;
+    }
+
+    .orb-four {
+        bottom: 16%;
+        right: 8%;
+    }
+
+    .space-message {
+        bottom: 25px;
+        font-size: .88rem;
+        line-height: 1.5;
+    }
+
+
+    /* RAZONES */
+
+    .reason-box {
+        width: 100%;
+        min-height: 260px;
+        padding: 35px 20px;
+        border-radius: 28px;
+    }
+
+    .reason-text {
+        font-size: clamp(1.3rem, 6vw, 1.8rem);
+        line-height: 1.45;
+    }
+
+    .reason-number {
+        font-size: .65rem;
+        letter-spacing: 3px;
+    }
+
+    .reason-button {
+        padding: 12px 21px;
+    }
+
+
+    /* CANCIÓN */
+
+    .song-card {
+        width: 100%;
+        padding: 38px 20px;
+        border-radius: 28px;
+    }
+
+    .song-circle {
+        width: 95px;
+        height: 95px;
+    }
+
+    .song-circle::before {
+        font-size: 2.5rem;
+    }
+
+    .song-card h3 {
+        font-size: 1.5rem;
+        line-height: 1.25;
+    }
+
+    .song-card p {
+        font-size: .92rem;
+    }
+
+    .song-button {
+        width: 100%;
+        max-width: 300px;
+        padding: 13px 20px;
+    }
+
+    .qr {
+        width: 145px;
+        height: 145px;
+    }
+
+
+    /* CARTA */
+
+    .letter {
+        width: 100%;
+        padding: 35px 20px;
+        border-radius: 28px;
+    }
+
+    .letter p {
+        font-size: .98rem;
+        line-height: 1.85;
+        margin-bottom: 19px;
+    }
+
+    .letter .signature {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+
+    /* FINAL */
+
+    .final {
+        min-height: 80svh;
+        padding-bottom: 100px;
+    }
+
+    .final-heart {
+        font-size: 4rem;
+    }
+
+    .final h2 {
+        font-size: clamp(2.3rem, 10vw, 3.8rem);
+        line-height: 1.08;
+    }
+
+    .final-message {
+        font-size: .95rem;
+        line-height: 1.75;
+    }
+
+    .final-signature {
+        margin-top: 35px;
+        font-size: 1.15rem;
+    }
+
+}
+
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 480px) {
+
+    .section {
+        padding: 70px 13px;
+    }
+
+    .hero {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 16vw, 4.2rem);
+    }
+
+    .hero-small {
+        font-size: .6rem;
+        letter-spacing: 2.5px;
+    }
+
+    .hero-subtitle {
+        font-size: .92rem;
+    }
+
+    .hero-heart {
+        width: 90px;
+        height: 90px;
+        font-size: 3.5rem;
+    }
+
+    .section-title h2 {
+        font-size: clamp(1.75rem, 8vw, 2.4rem);
+    }
+
+    .section-title p {
+        font-size: .9rem;
+    }
+
+    .names-card {
+        padding: 32px 14px;
+    }
+
+    .names {
+        font-size: clamp(1.65rem, 9vw, 2.7rem);
+    }
+
+    .counter-card {
+        padding: 30px 10px;
+    }
+
+    .time-box {
+        padding: 18px 5px;
+    }
+
+    .time-number {
+        font-size: clamp(1.7rem, 10vw, 2.6rem);
+    }
+
+    .time-label {
+        font-size: .55rem;
+        letter-spacing: 1.5px;
+    }
+
+    .interactive-space {
+        min-height: 370px;
+    }
+
+    .space-orbit {
+        width: 205px;
+        height: 205px;
+    }
+
+    .space-orbit.two {
+        width: 285px;
+        height: 115px;
+    }
+
+    .space-core {
+        width: 78px;
+        height: 78px;
+        font-size: 2.3rem;
+    }
+
+    .space-orb {
+        width: 50px;
+        height: 50px;
+    }
+
+    .space-message {
+        left: 12px;
+        right: 12px;
+        bottom: 18px;
+        font-size: .8rem;
+    }
+
+    .reason-box {
+        min-height: 250px;
+        padding: 30px 16px;
+    }
+
+    .reason-text {
+        font-size: 1.25rem;
+    }
+
+    .song-card {
+        padding: 32px 16px;
+    }
+
+    .song-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .letter {
+        padding: 30px 17px;
+    }
+
+    .letter p {
+        font-size: .94rem;
+        line-height: 1.8;
+    }
+
+    .final h2 {
+        font-size: clamp(2.1rem, 10vw, 3rem);
+    }
+
+}
+
+
+/* PANTALLAS MUY BAJAS */
+@media (max-height: 700px) and (max-width: 768px) {
+
+    .hero {
+        min-height: 100svh;
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .hero-heart {
+        margin-top: 20px;
+    }
+
+    .hero-subtitle {
+        margin-top: 18px;
+    }
+
+    .next {
+        margin-top: 22px;
+    }
+
+}
 @media (prefers-reduced-motion: reduce) {
 
     *,
