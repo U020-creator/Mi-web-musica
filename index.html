@@ -10,7 +10,9 @@
 
 <meta name="description" content="Una pequeña parte de nuestra historia, creada con amor para Melisa. Desde el 21 de diciembre de 2025. ❤️">
 <meta name="robots" content="index, follow">
+
 <link rel="canonical" href="https://u020-creator.github.io/Mi-web-musica/">
+
 <meta name="theme-color" content="#ff72b6">
 
 <meta property="og:title" content="Melisa ❤️ | Nuestra historia">
@@ -103,6 +105,7 @@ body::before{
         100px 30px;
 
     opacity:.38;
+
     animation:starsMove 30s linear infinite;
 }
 
@@ -110,12 +113,20 @@ body::after{
     background:
         radial-gradient(ellipse at 50% 20%,rgba(255,80,170,.11),transparent 55%),
         radial-gradient(ellipse at 50% 70%,rgba(150,90,255,.08),transparent 60%);
+
     filter:blur(20px);
 }
 
 @keyframes starsMove{
-    from{transform:translateY(0)}
-    to{transform:translateY(95px)}
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(95px);
+    }
+
 }
 
 /* =========================================================
@@ -124,8 +135,10 @@ body::after{
 
 .galaxy{
     position:absolute;
+
     width:500px;
     height:180px;
+
     border-radius:50%;
 
     background:
@@ -137,7 +150,9 @@ body::after{
         );
 
     filter:blur(18px);
+
     opacity:.7;
+
     pointer-events:none;
 }
 
@@ -165,6 +180,7 @@ body::after{
 
 .shooting-star{
     position:fixed;
+
     width:120px;
     height:2px;
 
@@ -177,43 +193,63 @@ body::after{
         );
 
     transform:rotate(-35deg);
+
     opacity:0;
+
     z-index:1;
+
     pointer-events:none;
 }
 
-.shooting-star:nth-child(1){
+/* CORREGIDO:
+   Se utilizan clases independientes en vez de
+   :nth-child(), que estaba contando todos los hijos del body.
+*/
+
+.shooting-one{
     top:15%;
     left:10%;
-    animation:shooting 8s 1s infinite;
+
+    animation:
+        shooting 8s 1s infinite;
 }
 
-.shooting-star:nth-child(2){
+.shooting-two{
     top:42%;
     right:5%;
-    animation:shooting 10s 5s infinite;
+
+    animation:
+        shooting 10s 5s infinite;
 }
 
-.shooting-star:nth-child(3){
+.shooting-three{
     top:72%;
     left:35%;
-    animation:shooting 12s 8s infinite;
+
+    animation:
+        shooting 12s 8s infinite;
 }
 
 @keyframes shooting{
+
     0%{
         transform:translate(0,0) rotate(-35deg);
         opacity:0;
     }
 
-    5%{opacity:1}
+    5%{
+        opacity:1;
+    }
 
     20%{
         transform:translate(350px,220px) rotate(-35deg);
         opacity:0;
     }
 
-    100%{opacity:0}
+    100%{
+        opacity:0;
+    }
+
 }
 
 /* =========================================================
@@ -227,6 +263,7 @@ section{
 
 .section{
     min-height:100vh;
+
     padding:110px 20px;
 
     display:flex;
@@ -242,50 +279,66 @@ section{
 
 .section-title{
     text-align:center;
+
     max-width:750px;
+
     margin:0 auto 55px;
 }
 
 .section-title span{
     display:block;
+
     color:var(--pink-light);
+
     text-transform:uppercase;
+
     letter-spacing:4px;
+
     font-size:.75rem;
+
     margin-bottom:14px;
 }
 
 .section-title h2{
     font-size:clamp(2rem,5vw,3.5rem);
+
     line-height:1.1;
+
     margin-bottom:20px;
 }
 
 .section-title p{
     color:var(--text);
+
     line-height:1.8;
 }
 
 /* =========================================================
-   BOTONES
+   BOTONES / ENLACES
 ========================================================= */
 
 .next{
     display:inline-flex;
+
     align-items:center;
+
     gap:12px;
 
     margin-top:45px;
+
     padding:14px 23px;
 
     border:1px solid rgba(255,255,255,.20);
+
     border-radius:100px;
 
     color:white;
+
     text-decoration:none;
 
     background:rgba(255,255,255,.07);
 
+    -webkit-backdrop-filter:blur(12px);
     backdrop-filter:blur(12px);
 
     transition:.35s ease;
@@ -293,18 +346,28 @@ section{
 
 .next:hover{
     transform:translateY(-5px);
+
     background:rgba(255,105,180,.16);
+
     border-color:rgba(255,160,210,.4);
-    box-shadow:0 15px 40px rgba(255,80,170,.15);
+
+    box-shadow:
+        0 15px 40px rgba(255,80,170,.15);
 }
 
 .arrow{
     font-size:1.2rem;
-    animation:arrowMove 1.5s ease-in-out infinite;
+
+    animation:
+        arrowMove 1.5s ease-in-out infinite;
 }
 
 @keyframes arrowMove{
-    50%{transform:translateY(4px)}
+
+    50%{
+        transform:translateY(4px);
+    }
+
 }
 
 /* =========================================================
@@ -313,29 +376,41 @@ section{
 
 .hero{
     min-height:100vh;
+
     text-align:center;
+
     overflow:hidden;
 }
 
 .hero-content{
     position:relative;
+
     z-index:3;
+
     width:min(900px,100%);
+
     margin:auto;
 }
 
 .hero-small{
     color:var(--pink-light);
+
     letter-spacing:5px;
+
     text-transform:uppercase;
+
     font-size:.72rem;
+
     margin-bottom:25px;
 }
 
 .hero h1{
     font-size:clamp(3rem,10vw,7.5rem);
+
     line-height:.95;
+
     font-weight:800;
+
     letter-spacing:-4px;
 
     background:
@@ -351,35 +426,48 @@ section{
 
     -webkit-background-clip:text;
     background-clip:text;
+
     color:transparent;
 
-    animation:titleGlow 7s linear infinite;
+    animation:
+        titleGlow 7s linear infinite;
 }
 
 @keyframes titleGlow{
-    to{background-position:250% center}
+
+    to{
+        background-position:250% center;
+    }
+
 }
 
 .hero-subtitle{
     margin:30px auto 0;
+
     max-width:620px;
+
     font-size:clamp(1rem,2vw,1.2rem);
+
     line-height:1.9;
+
     color:rgba(255,255,255,.75);
 }
 
 .hero-heart{
     margin:38px auto 0;
+
     width:125px;
     height:125px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     position:relative;
 
     font-size:5rem;
+
     color:#ff70b5;
 
     text-shadow:
@@ -394,8 +482,11 @@ section{
 
 .hero-heart::before{
     content:"";
+
     position:absolute;
+
     inset:15px;
+
     border-radius:50%;
 
     background:
@@ -409,15 +500,35 @@ section{
 }
 
 @keyframes heartBeat{
-    0%,100%{transform:scale(1)}
-    10%{transform:scale(1.1)}
-    20%{transform:scale(1)}
-    30%{transform:scale(1.07)}
-    40%{transform:scale(1)}
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    10%{
+        transform:scale(1.1);
+    }
+
+    20%{
+        transform:scale(1);
+    }
+
+    30%{
+        transform:scale(1.07);
+    }
+
+    40%{
+        transform:scale(1);
+    }
+
 }
 
 @keyframes heartFloat{
-    50%{translate:0 -8px}
+
+    50%{
+        transform:translateY(-8px);
+    }
+
 }
 
 /* =========================================================
@@ -426,7 +537,9 @@ section{
 
 .names-card{
     width:min(850px,100%);
+
     padding:55px 30px;
+
     border-radius:35px;
 
     background:
@@ -438,6 +551,7 @@ section{
 
     border:1px solid rgba(255,255,255,.15);
 
+    -webkit-backdrop-filter:blur(18px);
     backdrop-filter:blur(18px);
 
     box-shadow:
@@ -449,18 +563,25 @@ section{
 
 .names{
     font-size:clamp(2rem,6vw,4.5rem);
+
     font-weight:700;
+
     line-height:1.2;
+
     color:white;
 }
 
 .names .and{
     display:block;
+
     margin:12px 0;
 
     font-family:Georgia,serif;
+
     font-style:italic;
+
     font-size:1.4rem;
+
     color:var(--pink-light);
 }
 
@@ -474,12 +595,14 @@ section{
 
 .counter-card{
     padding:50px 25px;
+
     border-radius:35px;
 
     background:rgba(255,255,255,.055);
 
     border:1px solid rgba(255,255,255,.13);
 
+    -webkit-backdrop-filter:blur(18px);
     backdrop-filter:blur(18px);
 
     box-shadow:
@@ -489,20 +612,27 @@ section{
 
 .counter-title{
     text-align:center;
+
     color:var(--pink-light);
+
     margin-bottom:35px;
+
     font-size:1.05rem;
 }
 
 .counter{
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:15px;
 }
 
 .time-box{
     text-align:center;
+
     padding:25px 10px;
+
     border-radius:22px;
 
     background:rgba(255,255,255,.06);
@@ -514,6 +644,7 @@ section{
 
 .time-box:hover{
     transform:translateY(-6px);
+
     background:rgba(255,100,180,.09);
 }
 
@@ -521,6 +652,7 @@ section{
     display:block;
 
     font-size:clamp(2rem,6vw,3.6rem);
+
     font-weight:700;
 
     background:
@@ -532,15 +664,19 @@ section{
 
     -webkit-background-clip:text;
     background-clip:text;
+
     color:transparent;
 }
 
 .time-label{
     display:block;
+
     margin-top:7px;
 
     font-size:.7rem;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
 
     color:rgba(255,255,255,.55);
@@ -552,6 +688,7 @@ section{
 
 .interactive-space{
     width:min(850px,100%);
+
     min-height:480px;
 
     position:relative;
@@ -571,24 +708,30 @@ section{
     overflow:hidden;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 }
 
 .space-orbit{
     position:absolute;
+
     width:330px;
     height:330px;
 
     border:1px solid rgba(255,150,210,.18);
+
     border-radius:50%;
 
-    animation:orbitSpin 20s linear infinite;
+    animation:
+        orbitSpin 20s linear infinite;
 }
 
 .space-orbit.two{
     width:500px;
     height:180px;
+
     transform:rotate(35deg);
 }
 
@@ -596,9 +739,12 @@ section{
     width:115px;
     height:115px;
 
+    border:none;
+
     border-radius:50%;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -618,9 +764,12 @@ section{
 
     cursor:pointer;
 
-    animation:corePulse 3s ease-in-out infinite;
+    animation:
+        corePulse 3s ease-in-out infinite;
 
     z-index:4;
+
+    color:white;
 }
 
 .space-orb{
@@ -635,9 +784,11 @@ section{
 
     border:1px solid rgba(255,255,255,.2);
 
+    -webkit-backdrop-filter:blur(10px);
     backdrop-filter:blur(10px);
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -646,23 +797,49 @@ section{
     transition:.35s ease;
 
     color:var(--pink-soft);
+
     font-size:1.3rem;
 }
 
-.space-orb:hover{
+.space-orb:hover,
+.space-orb:focus-visible,
+.space-core:hover,
+.space-core:focus-visible{
     transform:scale(1.18);
+
     background:rgba(255,100,180,.16);
-    box-shadow:0 0 30px rgba(255,100,180,.3);
+
+    box-shadow:
+        0 0 30px rgba(255,100,180,.3);
+
+    outline:none;
 }
 
-.orb-one{top:18%;left:20%}
-.orb-two{top:25%;right:17%}
-.orb-three{bottom:17%;left:23%}
-.orb-four{bottom:20%;right:22%}
+.orb-one{
+    top:18%;
+    left:20%;
+}
+
+.orb-two{
+    top:25%;
+    right:17%;
+}
+
+.orb-three{
+    bottom:17%;
+    left:23%;
+}
+
+.orb-four{
+    bottom:20%;
+    right:22%;
+}
 
 .space-message{
     position:absolute;
+
     bottom:35px;
+
     left:20px;
     right:20px;
 
@@ -678,11 +855,19 @@ section{
 }
 
 @keyframes orbitSpin{
-    to{transform:rotate(360deg)}
+
+    to{
+        transform:rotate(360deg);
+    }
+
 }
 
 @keyframes corePulse{
-    50%{transform:scale(1.07)}
+
+    50%{
+        transform:scale(1.07);
+    }
+
 }
 
 /* =========================================================
@@ -691,11 +876,15 @@ section{
 
 .reason-box{
     width:min(760px,100%);
+
     min-height:250px;
 
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
     justify-content:center;
 
     text-align:center;
@@ -713,16 +902,22 @@ section{
 
     border:1px solid rgba(255,255,255,.13);
 
+    -webkit-backdrop-filter:blur(15px);
     backdrop-filter:blur(15px);
 
-    box-shadow:0 30px 80px rgba(0,0,0,.3);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.3);
 }
 
 .reason-number{
     color:var(--pink-light);
+
     font-size:.75rem;
+
     letter-spacing:4px;
+
     text-transform:uppercase;
+
     margin-bottom:22px;
 }
 
@@ -740,6 +935,7 @@ section{
 
 .reason-text.changing{
     opacity:0;
+
     transform:translateY(12px);
 }
 
@@ -768,12 +964,15 @@ section{
     transition:.3s ease;
 }
 
-.reason-button:hover{
+.reason-button:hover,
+.reason-button:focus-visible{
     transform:translateY(-3px);
+
+    outline:none;
 }
 
 /* =========================================================
-   NUEVA SECCIÓN CANCIÓN
+   CANCIÓN
 ========================================================= */
 
 .music-section{
@@ -798,6 +997,7 @@ section{
 
     border:1px solid rgba(255,255,255,.15);
 
+    -webkit-backdrop-filter:blur(20px);
     backdrop-filter:blur(20px);
 
     box-shadow:
@@ -825,6 +1025,7 @@ section{
 
 .music-content{
     position:relative;
+
     z-index:2;
 
     display:grid;
@@ -843,6 +1044,7 @@ section{
     border-radius:30px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -861,7 +1063,8 @@ section{
         0 20px 60px rgba(255,80,170,.25),
         inset 0 0 30px rgba(255,255,255,.12);
 
-    animation:coverFloat 5s ease-in-out infinite;
+    animation:
+        coverFloat 5s ease-in-out infinite;
 }
 
 .music-cover::before{
@@ -893,9 +1096,11 @@ section{
 }
 
 @keyframes coverFloat{
+
     50%{
         transform:translateY(-8px) rotate(1deg);
     }
+
 }
 
 .music-info small{
@@ -1018,8 +1223,12 @@ section{
 }
 
 .music-main-button:hover,
-.music-qr-button:hover{
+.music-qr-button:hover,
+.music-main-button:focus-visible,
+.music-qr-button:focus-visible{
     transform:translateY(-4px);
+
+    outline:none;
 }
 
 .qr-area{
@@ -1041,10 +1250,12 @@ section{
 .qr-area.show{
     display:block;
 
-    animation:qrAppear .5s ease;
+    animation:
+        qrAppear .5s ease;
 }
 
 @keyframes qrAppear{
+
     from{
         opacity:0;
         transform:translateY(10px);
@@ -1054,6 +1265,7 @@ section{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
 .qr-box{
@@ -1075,11 +1287,13 @@ section{
 .qr-box img{
     width:100%;
     height:100%;
+
     display:block;
 }
 
 .qr-area p{
     color:rgba(255,255,255,.6);
+
     font-size:.8rem;
 }
 
@@ -1103,6 +1317,7 @@ section{
 
     border:1px solid rgba(255,255,255,.15);
 
+    -webkit-backdrop-filter:blur(18px);
     backdrop-filter:blur(18px);
 
     box-shadow:
@@ -1136,7 +1351,7 @@ section{
 }
 
 /* =========================================================
-   NUEVO FINAL
+   FINAL
 ========================================================= */
 
 .final{
@@ -1223,7 +1438,8 @@ section{
 
     border:1px solid rgba(255,150,210,.18);
 
-    animation:finalRing 4s ease-out infinite;
+    animation:
+        finalRing 4s ease-out infinite;
 }
 
 .final-heart-wrapper::before{
@@ -1239,6 +1455,7 @@ section{
 }
 
 @keyframes finalRing{
+
     0%{
         opacity:0;
         transform:scale(.7);
@@ -1252,6 +1469,7 @@ section{
         opacity:0;
         transform:scale(1.15);
     }
+
 }
 
 .final-heart{
@@ -1268,7 +1486,8 @@ section{
         0 0 50px rgba(255,100,180,.5),
         0 0 100px rgba(255,100,180,.25);
 
-    animation:heartBeat 2s infinite;
+    animation:
+        heartBeat 2s infinite;
 }
 
 .final h2{
@@ -1294,7 +1513,8 @@ section{
 
     color:transparent;
 
-    animation:titleGlow 7s linear infinite;
+    animation:
+        titleGlow 7s linear infinite;
 }
 
 .final-message{
@@ -1399,6 +1619,7 @@ section{
 
 .reveal.visible{
     opacity:1;
+
     transform:translateY(0);
 }
 
@@ -1430,6 +1651,7 @@ section{
         width:190px;
         height:190px;
     }
+
 }
 
 /* =========================================================
@@ -1440,16 +1662,19 @@ section{
 
     .section{
         min-height:auto;
+
         padding:80px 16px;
     }
 
     .section-title{
         margin-bottom:38px;
+
         padding:0 5px;
     }
 
     .section-title span{
         letter-spacing:3px;
+
         font-size:.68rem;
     }
 
@@ -1459,6 +1684,7 @@ section{
 
     .section-title p{
         font-size:.95rem;
+
         line-height:1.7;
     }
 
@@ -1466,34 +1692,42 @@ section{
 
     .hero{
         min-height:100svh;
+
         padding:70px 18px;
     }
 
     .hero-small{
         font-size:.65rem;
+
         letter-spacing:3px;
     }
 
     .hero h1{
         font-size:clamp(3rem,15vw,5rem);
+
         letter-spacing:-2px;
     }
 
     .hero-subtitle{
         font-size:.98rem;
+
         line-height:1.75;
     }
 
     .hero-heart{
         width:105px;
         height:105px;
+
         font-size:4rem;
     }
 
     .next{
         max-width:100%;
+
         padding:13px 19px;
+
         font-size:.88rem;
+
         text-align:center;
     }
 
@@ -1501,6 +1735,7 @@ section{
 
     .names-card{
         padding:38px 18px;
+
         border-radius:28px;
     }
 
@@ -1512,16 +1747,20 @@ section{
 
     .counter-card{
         padding:35px 14px;
+
         border-radius:28px;
     }
 
     .counter{
-        grid-template-columns:repeat(2,minmax(0,1fr));
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
         gap:10px;
     }
 
     .time-box{
         padding:20px 7px;
+
         border-radius:18px;
     }
 
@@ -1531,6 +1770,7 @@ section{
 
     .time-label{
         font-size:.6rem;
+
         letter-spacing:2px;
     }
 
@@ -1538,6 +1778,7 @@ section{
 
     .interactive-space{
         min-height:400px;
+
         border-radius:28px;
     }
 
@@ -1554,12 +1795,14 @@ section{
     .space-core{
         width:90px;
         height:90px;
+
         font-size:2.7rem;
     }
 
     .space-orb{
         width:55px;
         height:55px;
+
         font-size:1rem;
     }
 
@@ -1585,7 +1828,9 @@ section{
 
     .space-message{
         bottom:25px;
+
         font-size:.88rem;
+
         line-height:1.5;
     }
 
@@ -1593,7 +1838,9 @@ section{
 
     .reason-box{
         min-height:260px;
+
         padding:35px 20px;
+
         border-radius:28px;
     }
 
@@ -1605,19 +1852,24 @@ section{
 
     .music-card{
         padding:28px 20px;
+
         border-radius:28px;
     }
 
     .music-content{
         grid-template-columns:1fr;
+
         text-align:center;
+
         gap:28px;
     }
 
     .music-cover{
         width:175px;
         height:175px;
+
         margin:auto;
+
         border-radius:27px;
     }
 
@@ -1632,6 +1884,7 @@ section{
 
     .music-description{
         margin:auto;
+
         font-size:.92rem;
     }
 
@@ -1648,11 +1901,13 @@ section{
 
     .letter{
         padding:35px 20px;
+
         border-radius:28px;
     }
 
     .letter p{
         font-size:.98rem;
+
         line-height:1.85;
     }
 
@@ -1660,12 +1915,14 @@ section{
 
     .final{
         min-height:100svh;
+
         padding:80px 18px 100px;
     }
 
     .final-heart-wrapper{
         width:150px;
         height:150px;
+
         margin-bottom:28px;
     }
 
@@ -1684,11 +1941,13 @@ section{
 
     .final-message{
         font-size:.95rem;
+
         line-height:1.8;
     }
 
     .final-date{
         font-size:.6rem;
+
         letter-spacing:2px;
     }
 
@@ -1699,8 +1958,10 @@ section{
 
     .final-signature{
         margin-top:40px;
+
         font-size:1.05rem;
     }
+
 }
 
 /* =========================================================
@@ -1724,6 +1985,7 @@ section{
 
     .hero-small{
         font-size:.6rem;
+
         letter-spacing:2.5px;
     }
 
@@ -1734,6 +1996,7 @@ section{
     .hero-heart{
         width:90px;
         height:90px;
+
         font-size:3.5rem;
     }
 
@@ -1774,6 +2037,7 @@ section{
     .space-core{
         width:78px;
         height:78px;
+
         font-size:2.3rem;
     }
 
@@ -1788,6 +2052,7 @@ section{
 
     .reason-box{
         min-height:250px;
+
         padding:30px 16px;
     }
 
@@ -1814,6 +2079,7 @@ section{
 
     .letter p{
         font-size:.94rem;
+
         line-height:1.8;
     }
 
@@ -1824,6 +2090,7 @@ section{
     .final-heart{
         font-size:4.5rem;
     }
+
 }
 
 /* =========================================================
@@ -1835,11 +2102,16 @@ section{
     *,
     *::before,
     *::after{
+
         animation-duration:.01ms !important;
+
         animation-iteration-count:1 !important;
+
         scroll-behavior:auto !important;
+
         transition-duration:.01ms !important;
     }
+
 }
 
 </style>
@@ -1856,9 +2128,10 @@ section{
 <div class="galaxy two"></div>
 <div class="galaxy three"></div>
 
-<div class="shooting-star"></div>
-<div class="shooting-star"></div>
-<div class="shooting-star"></div>
+<!-- CORREGIDO: clases individuales -->
+<div class="shooting-star shooting-one"></div>
+<div class="shooting-star shooting-two"></div>
+<div class="shooting-star shooting-three"></div>
 
 
 <!-- =====================================================
@@ -1877,7 +2150,7 @@ section{
             Melisa Daniela Ochoa Salazar
         </h1>
 
-        <div class="hero-heart">
+        <div class="hero-heart" aria-hidden="true">
             ♥
         </div>
 
@@ -2102,39 +2375,51 @@ section{
         <div class="interactive-space reveal">
 
             <div class="space-orbit"></div>
+
             <div class="space-orbit two"></div>
 
-            <div
+            <!-- CORREGIDO: ahora es un botón -->
+            <button
+                type="button"
                 class="space-core"
                 onclick="showSpaceMessage(0)"
+                aria-label="Mostrar mensaje de amor"
             >
                 ♥
-            </div>
+            </button>
 
             <button
+                type="button"
                 class="space-orb orb-one"
                 onclick="showSpaceMessage(1)"
+                aria-label="Mostrar mensaje 1"
             >
                 ✦
             </button>
 
             <button
+                type="button"
                 class="space-orb orb-two"
                 onclick="showSpaceMessage(2)"
+                aria-label="Mostrar mensaje 2"
             >
                 ✧
             </button>
 
             <button
+                type="button"
                 class="space-orb orb-three"
                 onclick="showSpaceMessage(3)"
+                aria-label="Mostrar mensaje 3"
             >
                 ·
             </button>
 
             <button
+                type="button"
                 class="space-orb orb-four"
                 onclick="showSpaceMessage(4)"
+                aria-label="Mostrar mensaje 4"
             >
                 ✦
             </button>
@@ -2142,6 +2427,7 @@ section{
             <div
                 id="spaceMessage"
                 class="space-message"
+                aria-live="polite"
             >
                 Toca una de las estrellas
             </div>
@@ -2195,11 +2481,16 @@ section{
                 Razón 1
             </div>
 
-            <div id="reasonText" class="reason-text">
+            <div
+                id="reasonText"
+                class="reason-text"
+                aria-live="polite"
+            >
                 Porque contigo puedo ser yo mismo.
             </div>
 
             <button
+                type="button"
                 class="reason-button"
                 onclick="nextReason()"
             >
@@ -2257,10 +2548,12 @@ section{
 
             <div class="music-content">
 
-
                 <!-- PORTADA -->
 
-                <div class="music-cover"></div>
+                <div
+                    class="music-cover"
+                    aria-label="Portada de nuestra canción"
+                ></div>
 
 
                 <!-- INFORMACIÓN -->
@@ -2319,8 +2612,11 @@ section{
                         </a>
 
                         <button
+                            type="button"
                             class="music-qr-button"
                             onclick="toggleQR()"
+                            aria-controls="qrArea"
+                            aria-expanded="false"
                         >
 
                             ♢ Mostrar QR
@@ -2334,7 +2630,7 @@ section{
             </div>
 
 
-            <!-- QR OCULTO -->
+            <!-- QR -->
 
             <div
                 id="qrArea"
@@ -2346,6 +2642,7 @@ section{
                     <img
                         src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DTF-nDMnTARM"
                         alt="Código QR para escuchar A la velocidad de la luz"
+                        loading="lazy"
                     >
 
                 </div>
@@ -2528,7 +2825,10 @@ section{
 
         <div class="final-heart-wrapper">
 
-            <div class="final-heart">
+            <div
+                class="final-heart"
+                aria-hidden="true"
+            >
                 ♥
             </div>
 
@@ -2597,8 +2897,13 @@ section{
    CONTADOR
 ========================================================= */
 
+/*
+   Fecha de inicio:
+   21 de diciembre de 2025 a las 00:00:00
+*/
+
 const startDate =
-    new Date("2025-12-21T00:00:00");
+    new Date(2025, 11, 21, 0, 0, 0);
 
 function updateCounter(){
 
@@ -2606,19 +2911,27 @@ function updateCounter(){
         new Date();
 
     let difference =
-        now - startDate;
+        now.getTime() - startDate.getTime();
 
     if(difference < 0){
         difference = 0;
     }
 
     const second = 1000;
-    const minute = second * 60;
-    const hour = minute * 60;
-    const day = hour * 24;
+
+    const minute =
+        second * 60;
+
+    const hour =
+        minute * 60;
+
+    const day =
+        hour * 24;
 
     const days =
-        Math.floor(difference / day);
+        Math.floor(
+            difference / day
+        );
 
     const hours =
         Math.floor(
@@ -2635,17 +2948,48 @@ function updateCounter(){
             (difference % minute) / second
         );
 
-    document.getElementById("days").textContent =
-        days.toLocaleString("es-CL");
 
-    document.getElementById("hours").textContent =
-        String(hours).padStart(2,"0");
+    const daysElement =
+        document.getElementById("days");
 
-    document.getElementById("minutes").textContent =
-        String(minutes).padStart(2,"0");
+    const hoursElement =
+        document.getElementById("hours");
 
-    document.getElementById("seconds").textContent =
-        String(seconds).padStart(2,"0");
+    const minutesElement =
+        document.getElementById("minutes");
+
+    const secondsElement =
+        document.getElementById("seconds");
+
+
+    if(daysElement){
+
+        daysElement.textContent =
+            days.toLocaleString("es-CL");
+
+    }
+
+    if(hoursElement){
+
+        hoursElement.textContent =
+            String(hours).padStart(2,"0");
+
+    }
+
+    if(minutesElement){
+
+        minutesElement.textContent =
+            String(minutes).padStart(2,"0");
+
+    }
+
+    if(secondsElement){
+
+        secondsElement.textContent =
+            String(seconds).padStart(2,"0");
+
+    }
+
 }
 
 updateCounter();
@@ -2674,12 +3018,26 @@ const spaceMessages = [
 
 ];
 
+
 const spaceMessage =
     document.getElementById("spaceMessage");
 
+
 function showSpaceMessage(index){
 
+    if(!spaceMessage){
+        return;
+    }
+
+    if(
+        index < 0 ||
+        index >= spaceMessages.length
+    ){
+        return;
+    }
+
     spaceMessage.style.opacity = "0";
+
 
     setTimeout(() => {
 
@@ -2690,6 +3048,7 @@ function showSpaceMessage(index){
             "1";
 
     },250);
+
 }
 
 
@@ -2717,7 +3076,9 @@ const reasons = [
 
 ];
 
+
 let reasonIndex = 0;
+
 
 const reasonText =
     document.getElementById("reasonText");
@@ -2725,15 +3086,26 @@ const reasonText =
 const reasonNumber =
     document.getElementById("reasonNumber");
 
+
 function nextReason(){
 
+    if(
+        !reasonText ||
+        !reasonNumber
+    ){
+        return;
+    }
+
     reasonText.classList.add("changing");
+
 
     setTimeout(() => {
 
         reasonIndex++;
 
-        if(reasonIndex >= reasons.length){
+        if(
+            reasonIndex >= reasons.length
+        ){
             reasonIndex = 0;
         }
 
@@ -2743,9 +3115,12 @@ function nextReason(){
         reasonNumber.textContent =
             "Razón " + (reasonIndex + 1);
 
-        reasonText.classList.remove("changing");
+        reasonText.classList.remove(
+            "changing"
+        );
 
     },350);
+
 }
 
 
@@ -2761,19 +3136,34 @@ function toggleQR(){
     const button =
         document.querySelector(".music-qr-button");
 
+
+    if(!qr){
+        return;
+    }
+
+
     qr.classList.toggle("show");
 
-    if(qr.classList.contains("show")){
+
+    const isVisible =
+        qr.classList.contains("show");
+
+
+    if(button){
 
         button.textContent =
-            "× Ocultar QR";
+            isVisible
+                ? "× Ocultar QR"
+                : "♢ Mostrar QR";
 
-    }else{
 
-        button.textContent =
-            "♢ Mostrar QR";
+        button.setAttribute(
+            "aria-expanded",
+            String(isVisible)
+        );
 
     }
+
 }
 
 
@@ -2784,36 +3174,64 @@ function toggleQR(){
 const revealElements =
     document.querySelectorAll(".reveal");
 
-const observer =
-    new IntersectionObserver(
 
-        (entries) => {
+if("IntersectionObserver" in window){
 
-            entries.forEach(entry => {
+    const observer =
+        new IntersectionObserver(
 
-                if(entry.isIntersecting){
+            (entries) => {
 
-                    entry.target.classList.add(
-                        "visible"
-                    );
+                entries.forEach(entry => {
 
-                }
+                    if(entry.isIntersecting){
 
-            });
+                        entry.target.classList.add(
+                            "visible"
+                        );
 
-        },
+                        /*
+                           Una vez visible, dejamos
+                           de observar el elemento.
+                        */
 
-        {
-            threshold:.12
-        }
+                        observer.unobserve(
+                            entry.target
+                        );
 
-    );
+                    }
 
-revealElements.forEach(element => {
+                });
 
-    observer.observe(element);
+            },
 
-});
+            {
+                threshold:.12
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+}else{
+
+    /*
+       Compatibilidad para navegadores
+       que no soporten IntersectionObserver.
+    */
+
+    revealElements.forEach(element => {
+
+        element.classList.add("visible");
+
+    });
+
+}
 
 
 /* =========================================================
@@ -2828,18 +3246,38 @@ document
             "click",
             function(event){
 
+                const href =
+                    this.getAttribute("href");
+
+
+                if(
+                    !href ||
+                    href === "#"
+                ){
+                    return;
+                }
+
+
                 const target =
                     document.querySelector(
-                        this.getAttribute("href")
+                        href
                     );
 
-                if(!target) return;
+
+                if(!target){
+                    return;
+                }
+
 
                 event.preventDefault();
 
+
                 target.scrollIntoView({
+
                     behavior:"smooth",
+
                     block:"start"
+
                 });
 
             }
@@ -2850,4 +3288,5 @@ document
 </script>
 
 </body>
+
 </html>
