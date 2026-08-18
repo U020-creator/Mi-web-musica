@@ -33,10 +33,8 @@
     content="#ff72b6"
 >
 
-
 <!-- =====================================================
      OPEN GRAPH
-     Para WhatsApp, Facebook, etc.
 ===================================================== -->
 
 <meta
@@ -64,7 +62,6 @@
     content="Nuestra historia"
 >
 
-
 <!-- =====================================================
      TWITTER / X
 ===================================================== -->
@@ -84,633 +81,284 @@
     content="Una pequeña parte de nuestra historia, creada con amor para Melisa. ❤️"
 >
 
-
-<!-- =====================================================
-     FUENTES
-===================================================== -->
-
 <style>
 
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root {
-
     --pink: #ff72b6;
-
     --pink-light: #ffb5da;
-
     --pink-soft: #ffd6eb;
-
     --purple: #b477ff;
-
     --deep: #100817;
-
     --deep-2: #190b24;
-
     --white: #fff8fc;
-
     --text: rgba(255,248,252,.88);
-
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
-
 body {
-
     background:
-
-        radial-gradient(
-            circle at 20% 10%,
-            rgba(255,105,180,.18),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 80% 30%,
-            rgba(180,119,255,.14),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 50% 80%,
-            rgba(255,80,160,.10),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            180deg,
-            #100817 0%,
-            #170a21 45%,
-            #0d0713 100%
-        );
-
+        radial-gradient(circle at 20% 10%, rgba(255,105,180,.18), transparent 28%),
+        radial-gradient(circle at 80% 30%, rgba(180,119,255,.14), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(255,80,160,.10), transparent 35%),
+        linear-gradient(180deg, #100817 0%, #170a21 45%, #0d0713 100%);
     color: var(--white);
-
     font-family:
         "Segoe UI",
         system-ui,
         -apple-system,
         BlinkMacSystemFont,
         sans-serif;
-
     overflow-x: hidden;
-
 }
-
-
-/* =========================================================
-   ESTRELLAS
-========================================================= */
 
 body::before,
 body::after {
-
     content: "";
-
     position: fixed;
-
     inset: 0;
-
     pointer-events: none;
-
     z-index: 0;
-
 }
 
-
 body::before {
-
     background-image:
-
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.85) 1px,
-            transparent 1px
-        ),
-
-        radial-gradient(
-            circle,
-            rgba(255,180,220,.65) 1px,
-            transparent 1px
-        ),
-
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.55) 1px,
-            transparent 1px
-        );
-
+        radial-gradient(circle, rgba(255,255,255,.85) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,180,220,.65) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,.55) 1px, transparent 1px);
     background-size:
-
         95px 95px,
         145px 145px,
         210px 210px;
-
     background-position:
-
         0 0,
         40px 80px,
         100px 30px;
-
     opacity: .38;
-
-    animation:
-        starsMove 30s linear infinite;
-
+    animation: starsMove 30s linear infinite;
 }
-
 
 body::after {
-
     background:
-
-        radial-gradient(
-            ellipse at 50% 20%,
-            rgba(255,80,170,.11),
-            transparent 55%
-        ),
-
-        radial-gradient(
-            ellipse at 50% 70%,
-            rgba(150,90,255,.08),
-            transparent 60%
-        );
-
+        radial-gradient(ellipse at 50% 20%, rgba(255,80,170,.11), transparent 55%),
+        radial-gradient(ellipse at 50% 70%, rgba(150,90,255,.08), transparent 60%);
     filter: blur(20px);
-
 }
-
 
 @keyframes starsMove {
-
     from {
-
-        transform:
-            translateY(0);
-
+        transform: translateY(0);
     }
-
     to {
-
-        transform:
-            translateY(95px);
-
+        transform: translateY(95px);
     }
-
 }
 
-
-/* =========================================================
-   GALAXIAS
-========================================================= */
-
 .galaxy {
-
     position: absolute;
-
     width: 500px;
-
     height: 180px;
-
     border-radius: 50%;
-
     background:
-
         radial-gradient(
             ellipse,
             rgba(255,130,195,.20),
             rgba(190,100,255,.10),
             transparent 70%
         );
-
     filter: blur(18px);
-
     opacity: .7;
-
     transform: rotate(-20deg);
-
     pointer-events: none;
-
 }
-
 
 .galaxy.one {
-
     top: 12%;
-
     left: -180px;
-
 }
-
 
 .galaxy.two {
-
     top: 52%;
-
     right: -200px;
-
-    transform:
-        rotate(25deg);
-
+    transform: rotate(25deg);
 }
-
 
 .galaxy.three {
-
     bottom: 10%;
-
     left: 25%;
-
     opacity: .35;
-
 }
 
-
-/* =========================================================
-   ESTRELLAS FUGACES
-========================================================= */
-
 .shooting-star {
-
     position: fixed;
-
     width: 120px;
-
     height: 2px;
-
     background:
-
         linear-gradient(
             90deg,
             transparent,
             rgba(255,255,255,.95),
             transparent
         );
-
-    transform:
-        rotate(-35deg);
-
+    transform: rotate(-35deg);
     opacity: 0;
-
     z-index: 1;
-
     pointer-events: none;
-
 }
-
 
 .shooting-star:nth-child(1) {
-
     top: 15%;
-
     left: 10%;
-
-    animation:
-        shooting 8s 1s infinite;
-
+    animation: shooting 8s 1s infinite;
 }
-
 
 .shooting-star:nth-child(2) {
-
     top: 42%;
-
     right: 5%;
-
-    animation:
-        shooting 10s 5s infinite;
-
+    animation: shooting 10s 5s infinite;
 }
-
 
 .shooting-star:nth-child(3) {
-
     top: 72%;
-
     left: 35%;
-
-    animation:
-        shooting 12s 8s infinite;
-
+    animation: shooting 12s 8s infinite;
 }
-
 
 @keyframes shooting {
-
     0% {
-
-        transform:
-            translate(0,0)
-            rotate(-35deg);
-
+        transform: translate(0,0) rotate(-35deg);
         opacity: 0;
-
     }
-
     5% {
-
         opacity: 1;
-
     }
-
     20% {
-
-        transform:
-            translate(350px,220px)
-            rotate(-35deg);
-
+        transform: translate(350px,220px) rotate(-35deg);
         opacity: 0;
-
     }
-
     100% {
-
         opacity: 0;
-
     }
-
 }
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
 
 section {
-
     position: relative;
-
     z-index: 2;
-
 }
-
 
 .section {
-
     min-height: 100vh;
-
-    padding:
-        110px 20px;
-
+    padding: 110px 20px;
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
 }
-
 
 .container {
-
-    width:
-        min(1050px, 100%);
-
+    width: min(1050px, 100%);
     margin: auto;
-
 }
-
 
 .section-title {
-
     text-align: center;
-
     max-width: 750px;
-
-    margin:
-        0 auto 55px;
-
+    margin: 0 auto 55px;
 }
-
 
 .section-title span {
-
     display: block;
-
-    color:
-        var(--pink-light);
-
-    text-transform:
-        uppercase;
-
-    letter-spacing:
-        4px;
-
-    font-size:
-        .75rem;
-
-    margin-bottom:
-        14px;
-
+    color: var(--pink-light);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: .75rem;
+    margin-bottom: 14px;
 }
-
 
 .section-title h2 {
-
-    font-size:
-        clamp(2rem, 5vw, 3.5rem);
-
-    line-height:
-        1.1;
-
-    margin-bottom:
-        20px;
-
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
-
 
 .section-title p {
-
-    color:
-        var(--text);
-
-    line-height:
-        1.8;
-
+    color: var(--text);
+    line-height: 1.8;
 }
-
-
-/* =========================================================
-   BOTONES
-========================================================= */
 
 .next {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    gap:
-        12px;
-
-    margin-top:
-        45px;
-
-    padding:
-        14px 23px;
-
-    border:
-        1px solid rgba(255,255,255,.20);
-
-    border-radius:
-        100px;
-
-    color:
-        white;
-
-    text-decoration:
-        none;
-
-    background:
-        rgba(255,255,255,.07);
-
-    backdrop-filter:
-        blur(12px);
-
-    transition:
-        .35s ease;
-
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 45px;
+    padding: 14px 23px;
+    border: 1px solid rgba(255,255,255,.20);
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    background: rgba(255,255,255,.07);
+    backdrop-filter: blur(12px);
+    transition: .35s ease;
 }
-
 
 .next:hover {
-
-    transform:
-        translateY(-5px);
-
-    background:
-        rgba(255,105,180,.16);
-
-    border-color:
-        rgba(255,160,210,.4);
-
-    box-shadow:
-        0 15px 40px rgba(255,80,170,.15);
-
+    transform: translateY(-5px);
+    background: rgba(255,105,180,.16);
+    border-color: rgba(255,160,210,.4);
+    box-shadow: 0 15px 40px rgba(255,80,170,.15);
 }
-
 
 .arrow {
-
-    font-size:
-        1.2rem;
-
-    animation:
-        arrowMove 1.5s ease-in-out infinite;
-
+    font-size: 1.2rem;
+    animation: arrowMove 1.5s ease-in-out infinite;
 }
-
 
 @keyframes arrowMove {
-
     50% {
-
-        transform:
-            translateY(4px);
-
+        transform: translateY(4px);
     }
-
 }
-
-
-/* =========================================================
-   HERO
-========================================================= */
 
 .hero {
-
-    min-height:
-        100vh;
-
-    text-align:
-        center;
-
-    overflow:
-        hidden;
-
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
 }
-
 
 .hero-content {
-
-    position:
-        relative;
-
-    z-index:
-        3;
-
-    width:
-        min(900px, 100%);
-
-    margin:
-        auto;
-
+    position: relative;
+    z-index: 3;
+    width: min(900px, 100%);
+    margin: auto;
 }
-
 
 .hero-small {
-
-    color:
-        var(--pink-light);
-
-    letter-spacing:
-        5px;
-
-    text-transform:
-        uppercase;
-
-    font-size:
-        .72rem;
-
-    margin-bottom:
-        25px;
-
+    color: var(--pink-light);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: .72rem;
+    margin-bottom: 25px;
 }
 
+/* CAMBIO 1 */
+.hero-small {
+    font-size: clamp(.65rem, 2vw, .9rem);
+}
 
 .hero h1 {
-
-    font-size:
-        clamp(3rem, 10vw, 7.5rem);
-
-    line-height:
-        .95;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        -4px;
-
+    font-size: clamp(3rem, 10vw, 7.5rem);
+    line-height: .95;
+    font-weight: 800;
+    letter-spacing: -4px;
     background:
-
         linear-gradient(
             120deg,
             #fff,
@@ -718,1440 +366,628 @@ section {
             #ff77b9,
             #fff
         );
-
-    background-size:
-        250% auto;
-
-    -webkit-background-clip:
-        text;
-
-    background-clip:
-        text;
-
-    color:
-        transparent;
-
-    animation:
-        titleGlow 7s linear infinite;
-
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: titleGlow 7s linear infinite;
 }
-
 
 @keyframes titleGlow {
-
     to {
-
-        background-position:
-            250% center;
-
+        background-position: 250% center;
     }
-
 }
-
 
 .hero-subtitle {
-
-    margin:
-        30px auto 0;
-
-    max-width:
-        620px;
-
-    font-size:
-        clamp(1rem, 2vw, 1.2rem);
-
-    line-height:
-        1.9;
-
-    color:
-        rgba(255,255,255,.75);
-
+    margin: 30px auto 0;
+    max-width: 620px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.9;
+    color: rgba(255,255,255,.75);
 }
-
 
 .hero-heart {
-
-    margin:
-        38px auto 0;
-
-    width:
-        125px;
-
-    height:
-        125px;
-
-    position:
-        relative;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    font-size:
-        5rem;
-
-    color:
-        #ff70b5;
-
+    margin: 38px auto 0;
+    width: 125px;
+    height: 125px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: #ff70b5;
     text-shadow:
-
         0 0 15px rgba(255,80,170,.8),
-
         0 0 40px rgba(255,80,170,.45),
-
         0 0 80px rgba(255,80,170,.25);
-
     animation:
-
         heartBeat 2s ease-in-out infinite,
-
         heartFloat 5s ease-in-out infinite;
-
 }
 
-
 .hero-heart::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        15px;
-
-    border-radius:
-        50%;
-
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border-radius: 50%;
     background:
-
         radial-gradient(
             circle,
             rgba(255,110,190,.18),
             transparent 70%
         );
-
-    filter:
-        blur(10px);
-
+    filter: blur(10px);
 }
-
 
 @keyframes heartBeat {
-
     0%,100% {
-
-        transform:
-            scale(1);
-
+        transform: scale(1);
     }
-
     10% {
-
-        transform:
-            scale(1.1);
-
+        transform: scale(1.1);
     }
-
     20% {
-
-        transform:
-            scale(1);
-
+        transform: scale(1);
     }
-
     30% {
-
-        transform:
-            scale(1.07);
-
+        transform: scale(1.07);
     }
-
     40% {
-
-        transform:
-            scale(1);
-
+        transform: scale(1);
     }
-
 }
-
 
 @keyframes heartFloat {
-
     50% {
-
-        translate:
-            0 -8px;
-
+        translate: 0 -8px;
     }
-
 }
 
-
-/* =========================================================
-   NOMBRES
-========================================================= */
-
 .names-card {
-
-    width:
-        min(850px, 100%);
-
-    padding:
-        55px 30px;
-
-    border-radius:
-        35px;
-
+    width: min(850px, 100%);
+    padding: 55px 30px;
+    border-radius: 35px;
     background:
-
         linear-gradient(
             135deg,
             rgba(255,100,180,.12),
             rgba(160,90,255,.08)
         );
-
-    border:
-        1px solid rgba(255,255,255,.15);
-
-    backdrop-filter:
-        blur(18px);
-
+    border: 1px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(18px);
     box-shadow:
-
         0 30px 100px rgba(0,0,0,.35),
-
         inset 0 0 40px rgba(255,100,180,.04);
-
-    text-align:
-        center;
-
+    text-align: center;
 }
-
 
 .names {
-
-    font-size:
-        clamp(2rem, 6vw, 4.5rem);
-
-    font-weight:
-        700;
-
-    line-height:
-        1.2;
-
-    color:
-        white;
-
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
 }
-
 
 .names .and {
-
-    display:
-        block;
-
-    margin:
-        12px 0;
-
-    font-family:
-        Georgia, serif;
-
-    font-style:
-        italic;
-
-    font-size:
-        1.4rem;
-
-    color:
-        var(--pink-light);
-
+    display: block;
+    margin: 12px 0;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--pink-light);
 }
-
-
-/* =========================================================
-   CONTADOR
-========================================================= */
 
 .counter-wrapper {
-
-    width:
-        min(1000px, 100%);
-
+    width: min(1000px, 100%);
 }
-
 
 .counter-card {
-
-    padding:
-        50px 25px;
-
-    border-radius:
-        35px;
-
-    background:
-        rgba(255,255,255,.055);
-
-    border:
-        1px solid rgba(255,255,255,.13);
-
-    backdrop-filter:
-        blur(18px);
-
+    padding: 50px 25px;
+    border-radius: 35px;
+    background: rgba(255,255,255,.055);
+    border: 1px solid rgba(255,255,255,.13);
+    backdrop-filter: blur(18px);
     box-shadow:
-
         0 30px 80px rgba(0,0,0,.35),
-
         inset 0 0 40px rgba(255,100,180,.03);
-
 }
-
 
 .counter-title {
-
-    text-align:
-        center;
-
-    color:
-        var(--pink-light);
-
-    margin-bottom:
-        35px;
-
-    font-size:
-        1.05rem;
-
+    text-align: center;
+    color: var(--pink-light);
+    margin-bottom: 35px;
+    font-size: 1.05rem;
 }
-
 
 .counter {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap:
-        15px;
-
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
-
 
 .time-box {
-
-    text-align:
-        center;
-
-    padding:
-        25px 10px;
-
-    border-radius:
-        22px;
-
-    background:
-        rgba(255,255,255,.06);
-
-    border:
-        1px solid rgba(255,255,255,.10);
-
-    transition:
-        .3s ease;
-
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 22px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.10);
+    transition: .3s ease;
 }
-
 
 .time-box:hover {
-
-    transform:
-        translateY(-6px);
-
-    background:
-        rgba(255,100,180,.09);
-
+    transform: translateY(-6px);
+    background: rgba(255,100,180,.09);
 }
 
-
 .time-number {
-
-    display:
-        block;
-
-    font-size:
-        clamp(2rem, 6vw, 3.6rem);
-
-    font-weight:
-        700;
-
+    display: block;
+    font-size: clamp(2rem, 6vw, 3.6rem);
+    font-weight: 700;
     background:
-
         linear-gradient(
             135deg,
             #fff,
             var(--pink-light)
         );
-
-    -webkit-background-clip:
-        text;
-
-    background-clip:
-        text;
-
-    color:
-        transparent;
-
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
-
 
 .time-label {
-
-    display:
-        block;
-
-    margin-top:
-        7px;
-
-    font-size:
-        .7rem;
-
-    letter-spacing:
-        3px;
-
-    text-transform:
-        uppercase;
-
-    color:
-        rgba(255,255,255,.55);
-
+    display: block;
+    margin-top: 7px;
+    font-size: .7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.55);
 }
 
-
-/* =========================================================
-   ESPACIO INTERACTIVO
-========================================================= */
-
 .interactive-space {
-
-    width:
-        min(850px, 100%);
-
-    min-height:
-        480px;
-
-    position:
-        relative;
-
-    border-radius:
-        40px;
-
+    width: min(850px, 100%);
+    min-height: 480px;
+    position: relative;
+    border-radius: 40px;
     background:
-
         radial-gradient(
             circle at center,
             rgba(255,100,180,.15),
             rgba(120,70,180,.08),
             transparent 65%
         );
-
-    border:
-        1px solid rgba(255,255,255,.10);
-
-    overflow:
-        hidden;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
+    border: 1px solid rgba(255,255,255,.10);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 
 .space-orbit {
-
-    position:
-        absolute;
-
-    width:
-        330px;
-
-    height:
-        330px;
-
-    border:
-        1px solid rgba(255,150,210,.18);
-
-    border-radius:
-        50%;
-
-    animation:
-        orbitSpin 20s linear infinite;
-
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border: 1px solid rgba(255,150,210,.18);
+    border-radius: 50%;
+    animation: orbitSpin 20s linear infinite;
 }
-
 
 .space-orbit.two {
-
-    width:
-        500px;
-
-    height:
-        180px;
-
-    transform:
-        rotate(35deg);
-
+    width: 500px;
+    height: 180px;
+    transform: rotate(35deg);
 }
 
-
 .space-core {
-
-    width:
-        115px;
-
-    height:
-        115px;
-
-    border-radius:
-        50%;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    font-size:
-        3.5rem;
-
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
     background:
-
         radial-gradient(
             circle,
             #ff9bca,
             #ff5da8 45%,
             rgba(255,80,170,.1) 70%
         );
-
     box-shadow:
-
         0 0 35px rgba(255,80,170,.6),
-
         0 0 100px rgba(255,80,170,.25);
-
-    cursor:
-        pointer;
-
-    animation:
-        corePulse 3s ease-in-out infinite;
-
-    z-index:
-        4;
-
+    cursor: pointer;
+    animation: corePulse 3s ease-in-out infinite;
+    z-index: 4;
 }
-
 
 .space-orb {
-
-    position:
-        absolute;
-
-    width:
-        70px;
-
-    height:
-        70px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(255,255,255,.08);
-
-    border:
-        1px solid rgba(255,255,255,.2);
-
-    backdrop-filter:
-        blur(10px);
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    cursor:
-        pointer;
-
-    transition:
-        .35s ease;
-
-    color:
-        var(--pink-soft);
-
-    font-size:
-        1.3rem;
-
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .35s ease;
+    color: var(--pink-soft);
+    font-size: 1.3rem;
 }
-
 
 .space-orb:hover {
-
-    transform:
-        scale(1.18);
-
-    background:
-        rgba(255,100,180,.16);
-
-    box-shadow:
-        0 0 30px rgba(255,100,180,.3);
-
+    transform: scale(1.18);
+    background: rgba(255,100,180,.16);
+    box-shadow: 0 0 30px rgba(255,100,180,.3);
 }
-
 
 .orb-one {
-
-    top:
-        18%;
-
-    left:
-        20%;
-
+    top: 18%;
+    left: 20%;
 }
-
 
 .orb-two {
-
-    top:
-        25%;
-
-    right:
-        17%;
-
+    top: 25%;
+    right: 17%;
 }
-
 
 .orb-three {
-
-    bottom:
-        17%;
-
-    left:
-        23%;
-
+    bottom: 17%;
+    left: 23%;
 }
-
 
 .orb-four {
-
-    bottom:
-        20%;
-
-    right:
-        22%;
-
+    bottom: 20%;
+    right: 22%;
 }
-
 
 .space-message {
-
-    position:
-        absolute;
-
-    bottom:
-        35px;
-
-    left:
-        20px;
-
-    right:
-        20px;
-
-    text-align:
-        center;
-
-    min-height:
-        28px;
-
-    color:
-        rgba(255,255,255,.82);
-
-    font-style:
-        italic;
-
-    transition:
-        opacity .3s ease;
-
+    position: absolute;
+    bottom: 35px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    min-height: 28px;
+    color: rgba(255,255,255,.82);
+    font-style: italic;
+    transition: opacity .3s ease;
 }
-
 
 @keyframes orbitSpin {
-
     to {
-
-        transform:
-            rotate(360deg);
-
+        transform: rotate(360deg);
     }
-
 }
-
 
 @keyframes corePulse {
-
     50% {
-
-        transform:
-            scale(1.07);
-
+        transform: scale(1.07);
     }
-
 }
 
-
-/* =========================================================
-   RAZONES
-========================================================= */
-
 .reason-box {
-
-    width:
-        min(760px, 100%);
-
-    min-height:
-        250px;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    padding:
-        45px 30px;
-
-    border-radius:
-        35px;
-
+    width: min(760px, 100%);
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 45px 30px;
+    border-radius: 35px;
     background:
-
         linear-gradient(
             135deg,
             rgba(255,100,180,.10),
             rgba(150,90,255,.07)
         );
-
-    border:
-        1px solid rgba(255,255,255,.13);
-
-    backdrop-filter:
-        blur(15px);
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.3);
-
+    border: 1px solid rgba(255,255,255,.13);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 30px 80px rgba(0,0,0,.3);
 }
-
 
 .reason-number {
-
-    color:
-        var(--pink-light);
-
-    font-size:
-        .75rem;
-
-    letter-spacing:
-        4px;
-
-    text-transform:
-        uppercase;
-
-    margin-bottom:
-        22px;
-
+    color: var(--pink-light);
+    font-size: .75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
 }
-
 
 .reason-text {
-
-    font-family:
-        Georgia, serif;
-
-    font-size:
-        clamp(1.4rem, 4vw, 2.2rem);
-
-    line-height:
-        1.5;
-
-    transition:
-        opacity .35s ease,
-        transform .35s ease;
-
+    font-family: Georgia, serif;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    line-height: 1.5;
+    transition: opacity .35s ease, transform .35s ease;
 }
-
 
 .reason-text.changing {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(12px);
-
+    opacity: 0;
+    transform: translateY(12px);
 }
 
-
 .reason-button {
-
-    margin-top:
-        30px;
-
-    border:
-        none;
-
-    padding:
-        13px 25px;
-
-    border-radius:
-        100px;
-
-    color:
-        white;
-
+    margin-top: 30px;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 100px;
+    color: white;
     background:
-
         linear-gradient(
             135deg,
             rgba(255,100,180,.35),
             rgba(170,90,255,.3)
         );
-
-    border:
-        1px solid rgba(255,255,255,.15);
-
-    cursor:
-        pointer;
-
-    transition:
-        .3s ease;
-
+    border: 1px solid rgba(255,255,255,.15);
+    cursor: pointer;
+    transition: .3s ease;
 }
-
 
 .reason-button:hover {
-
-    transform:
-        translateY(-3px);
-
+    transform: translateY(-3px);
 }
 
-
-/* =========================================================
-   CANCIÓN
-========================================================= */
-
 .song-card {
-
-    width:
-        min(800px, 100%);
-
-    padding:
-        45px 30px;
-
-    border-radius:
-        35px;
-
+    width: min(800px, 100%);
+    padding: 45px 30px;
+    border-radius: 35px;
     background:
-
         radial-gradient(
             circle at top,
             rgba(255,100,180,.13),
             transparent 60%
         ),
-
         rgba(255,255,255,.05);
-
-    border:
-        1px solid rgba(255,255,255,.14);
-
-    backdrop-filter:
-        blur(18px);
-
-    text-align:
-        center;
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.35);
-
+    border: 1px solid rgba(255,255,255,.14);
+    backdrop-filter: blur(18px);
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(0,0,0,.35);
 }
 
-
 .song-circle {
-
-    width:
-        115px;
-
-    height:
-        115px;
-
-    margin:
-        0 auto 25px;
-
-    border-radius:
-        50%;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border:
-        1px solid rgba(255,255,255,.25);
-
+    width: 115px;
+    height: 115px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,.25);
     background:
-
         radial-gradient(
             circle,
             rgba(255,120,190,.25),
             rgba(130,80,180,.10)
         );
-
-    box-shadow:
-        0 0 35px rgba(255,100,180,.20);
-
-    animation:
-        musicFloat 4s ease-in-out infinite;
-
+    box-shadow: 0 0 35px rgba(255,100,180,.20);
+    animation: musicFloat 4s ease-in-out infinite;
 }
-
 
 .song-circle::before {
-
-    content:
-        "♥";
-
-    font-size:
-        3rem;
-
-    color:
-        var(--pink-light);
-
-    text-shadow:
-        0 0 25px rgba(255,100,180,.7);
-
+    content: "♥";
+    font-size: 3rem;
+    color: var(--pink-light);
+    text-shadow: 0 0 25px rgba(255,100,180,.7);
 }
-
 
 .song-card h3 {
-
-    font-size:
-        1.8rem;
-
-    margin-bottom:
-        12px;
-
+    font-size: 1.8rem;
+    margin-bottom: 12px;
 }
-
 
 .song-card p {
-
-    color:
-        rgba(255,255,255,.72);
-
-    line-height:
-        1.7;
-
+    color: rgba(255,255,255,.72);
+    line-height: 1.7;
 }
-
 
 .song-buttons {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    gap:
-        14px;
-
-    flex-wrap:
-        wrap;
-
-    margin-top:
-        30px;
-
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
-
 .song-button {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    padding:
-        14px 24px;
-
-    border-radius:
-        100px;
-
-    text-decoration:
-        none;
-
-    color:
-        white;
-
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    color: white;
     background:
-
         linear-gradient(
             135deg,
             #ff69ae,
             #b46cff
         );
-
-    box-shadow:
-        0 10px 35px rgba(255,80,170,.2);
-
-    transition:
-        .3s ease;
-
+    box-shadow: 0 10px 35px rgba(255,80,170,.2);
+    transition: .3s ease;
 }
-
 
 .song-button:hover {
-
-    transform:
-        translateY(-4px)
-        scale(1.02);
-
-    box-shadow:
-        0 15px 45px rgba(255,80,170,.35);
-
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 45px rgba(255,80,170,.35);
 }
-
 
 .qr {
-
-    margin:
-        35px auto 0;
-
-    width:
-        160px;
-
-    height:
-        160px;
-
-    padding:
-        10px;
-
-    border-radius:
-        18px;
-
-    background:
-        white;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.3);
-
+    margin: 35px auto 0;
+    width: 160px;
+    height: 160px;
+    padding: 10px;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,.3);
 }
-
 
 .qr img {
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-    display:
-        block;
-
+    width: 100%;
+    height: 100%;
+    display: block;
 }
-
 
 @keyframes musicFloat {
-
     50% {
-
-        transform:
-            translateY(-8px)
-            rotate(4deg);
-
+        transform: translateY(-8px) rotate(4deg);
     }
-
 }
 
-
-/* =========================================================
-   CARTA
-========================================================= */
-
 .letter {
-
-    width:
-        min(850px, 100%);
-
-    padding:
-        55px clamp(25px, 6vw, 70px);
-
-    border-radius:
-        35px;
-
+    width: min(850px, 100%);
+    padding: 55px clamp(25px, 6vw, 70px);
+    border-radius: 35px;
     background:
-
         linear-gradient(
             145deg,
             rgba(255,255,255,.08),
             rgba(255,100,180,.06)
         );
-
-    border:
-        1px solid rgba(255,255,255,.15);
-
-    backdrop-filter:
-        blur(18px);
-
-    box-shadow:
-        0 30px 90px rgba(0,0,0,.4);
-
+    border: 1px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 30px 90px rgba(0,0,0,.4);
 }
-
 
 .letter p {
-
-    color:
-        rgba(255,255,255,.82);
-
-    font-family:
-        Georgia, serif;
-
-    font-size:
-        1.05rem;
-
-    line-height:
-        2;
-
-    margin-bottom:
-        22px;
-
+    color: rgba(255,255,255,.82);
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 22px;
 }
-
 
 .letter .signature {
-
-    margin-top:
-        35px;
-
-    text-align:
-        right;
-
-    font-size:
-        1.25rem;
-
-    color:
-        white;
-
+    margin-top: 35px;
+    text-align: right;
+    font-size: 1.25rem;
+    color: white;
 }
-
 
 .letter .signature span {
-
-    color:
-        var(--pink-light);
-
+    color: var(--pink-light);
 }
-
-
-/* =========================================================
-   FINAL
-========================================================= */
 
 .final {
-
-    min-height:
-        85vh;
-
-    text-align:
-        center;
-
+    min-height: 85vh;
+    text-align: center;
 }
-
 
 .final-heart {
-
-    font-size:
-        5rem;
-
-    color:
-        var(--pink);
-
+    font-size: 5rem;
+    color: var(--pink);
     text-shadow:
-
         0 0 20px rgba(255,100,180,.7),
-
         0 0 60px rgba(255,100,180,.35);
-
-    animation:
-        heartBeat 2s infinite;
-
+    animation: heartBeat 2s infinite;
 }
-
 
 .final h2 {
-
-    margin-top:
-        25px;
-
-    font-family:
-        Georgia, serif;
-
-    font-size:
-        clamp(2.5rem, 7vw, 5rem);
-
-    line-height:
-        1.1;
-
+    margin-top: 25px;
+    font-family: Georgia, serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 1.1;
 }
-
 
 .final-message {
-
-    max-width:
-        650px;
-
-    margin:
-        25px auto 0;
-
-    color:
-        rgba(255,255,255,.72);
-
-    line-height:
-        1.9;
-
+    max-width: 650px;
+    margin: 25px auto 0;
+    color: rgba(255,255,255,.72);
+    line-height: 1.9;
 }
-
 
 .final-signature {
-
-    margin-top:
-        50px;
-
-    font-family:
-        Georgia, serif;
-
-    font-size:
-        1.35rem;
-
-    line-height:
-        2;
-
-    color:
-        white;
-
+    margin-top: 50px;
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    line-height: 2;
+    color: white;
 }
-
 
 .final-signature strong {
-
-    color:
-        var(--pink-light);
-
-    font-size:
-        1.5rem;
-
+    color: var(--pink-light);
+    font-size: 1.5rem;
 }
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
 
 .reveal {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(45px);
-
+    opacity: 0;
+    transform: translateY(45px);
     transition:
-
         opacity 1s ease,
-
         transform 1s cubic-bezier(.2,.8,.2,1);
-
 }
-
 
 .reveal.visible {
-
-    opacity:
-        1;
-
-    transform:
-        translateY(0);
-
+    opacity: 1;
+    transform: translateY(0);
 }
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
 @media (max-width: 800px) {
 
     .section {
-
-        padding:
-            90px 18px;
-
+        padding: 90px 18px;
     }
 
     .hero h1 {
-
-        letter-spacing:
-            -2px;
-
+        letter-spacing: -2px;
     }
 
     .counter {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .interactive-space {
-
-        min-height:
-            430px;
-
+        min-height: 430px;
     }
 
     .space-orbit {
-
-        width:
-            270px;
-
-        height:
-            270px;
-
+        width: 270px;
+        height: 270px;
     }
 
     .space-orbit.two {
-
-        width:
-            380px;
-
-        height:
-            150px;
-
+        width: 380px;
+        height: 150px;
     }
 
     .orb-one {
-
-        left:
-            8%;
-
+        left: 8%;
     }
 
     .orb-two {
-
-        right:
-            8%;
-
+        right: 8%;
     }
 
     .orb-three {
-
-        left:
-            10%;
-
+        left: 10%;
     }
 
     .orb-four {
-
-        right:
-            10%;
-
+        right: 10%;
     }
 
     .letter {
-
-        padding:
-            40px 24px;
-
+        padding: 40px 24px;
     }
 
     .letter p {
-
-        font-size:
-            1rem;
-
-        line-height:
-            1.85;
-
+        font-size: 1rem;
+        line-height: 1.85;
     }
 
 }
-
 
 @media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,
     *::after {
-
-        animation-duration:
-            .01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        scroll-behavior:
-            auto !important;
-
-        transition-duration:
-            .01ms !important;
-
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
     }
 
 }
@@ -2160,42 +996,22 @@ section {
 
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
-     DECORACIÓN
-===================================================== -->
-
 <div class="galaxy one"></div>
-
 <div class="galaxy two"></div>
-
 <div class="galaxy three"></div>
 
 <div class="shooting-star"></div>
-
+<div class="shooting-star"></div>
 <div class="shooting-star"></div>
 
-<div class="shooting-star"></div>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section
-    class="section hero"
-    id="inicio"
->
+<section class="section hero" id="inicio">
 
     <div class="hero-content">
 
         <div class="hero-small">
-
-            Para alguien muy especial
-
+            Melisa Daniela Ochoa Salazar
         </div>
 
         <h1>
@@ -2217,10 +1033,7 @@ section {
 
         </p>
 
-        <a
-            href="#historia"
-            class="next"
-        >
+        <a href="#historia" class="next">
 
             Comenzar nuestra historia
 
@@ -2234,15 +1047,7 @@ section {
 
 </section>
 
-
-<!-- =====================================================
-     HISTORIA
-===================================================== -->
-
-<section
-    class="section"
-    id="historia"
->
+<section class="section" id="historia">
 
     <div class="container">
 
@@ -2265,12 +1070,11 @@ section {
 
         </div>
 
-
         <div class="names-card reveal">
 
             <div class="names">
 
-                Melisa Daniela Ochoa Salazar
+                Melisa
 
                 <span class="and">
                     y
@@ -2282,13 +1086,9 @@ section {
 
         </div>
 
-
         <div style="text-align:center">
 
-            <a
-                href="#contador"
-                class="next"
-            >
+            <a href="#contador" class="next">
 
                 Ver cuánto tiempo llevamos
 
@@ -2304,15 +1104,7 @@ section {
 
 </section>
 
-
-<!-- =====================================================
-     CONTADOR
-===================================================== -->
-
-<section
-    class="section"
-    id="contador"
->
+<section class="section" id="contador">
 
     <div class="container counter-wrapper">
 
@@ -2335,7 +1127,6 @@ section {
 
         </div>
 
-
         <div class="counter-card reveal">
 
             <div class="counter-title">
@@ -2345,15 +1136,11 @@ section {
 
             </div>
 
-
             <div class="counter">
 
                 <div class="time-box">
 
-                    <span
-                        id="days"
-                        class="time-number"
-                    >
+                    <span id="days" class="time-number">
                         0
                     </span>
 
@@ -2363,13 +1150,9 @@ section {
 
                 </div>
 
-
                 <div class="time-box">
 
-                    <span
-                        id="hours"
-                        class="time-number"
-                    >
+                    <span id="hours" class="time-number">
                         0
                     </span>
 
@@ -2379,13 +1162,9 @@ section {
 
                 </div>
 
-
                 <div class="time-box">
 
-                    <span
-                        id="minutes"
-                        class="time-number"
-                    >
+                    <span id="minutes" class="time-number">
                         0
                     </span>
 
@@ -2395,13 +1174,9 @@ section {
 
                 </div>
 
-
                 <div class="time-box">
 
-                    <span
-                        id="seconds"
-                        class="time-number"
-                    >
+                    <span id="seconds" class="time-number">
                         0
                     </span>
 
@@ -2415,13 +1190,9 @@ section {
 
         </div>
 
-
         <div style="text-align:center">
 
-            <a
-                href="#universo"
-                class="next"
-            >
+            <a href="#universo" class="next">
 
                 Hay algo que quiero mostrarte
 
@@ -2437,15 +1208,7 @@ section {
 
 </section>
 
-
-<!-- =====================================================
-     UNIVERSO INTERACTIVO
-===================================================== -->
-
-<section
-    class="section"
-    id="universo"
->
+<section class="section" id="universo">
 
     <div class="container">
 
@@ -2468,82 +1231,40 @@ section {
 
         </div>
 
-
         <div class="interactive-space reveal">
 
             <div class="space-orbit"></div>
-
             <div class="space-orbit two"></div>
 
-
-            <div
-                class="space-core"
-                onclick="showSpaceMessage(0)"
-            >
-
+            <div class="space-core" onclick="showSpaceMessage(0)">
                 ♥
-
             </div>
 
-
-            <button
-                class="space-orb orb-one"
-                onclick="showSpaceMessage(1)"
-            >
-
+            <button class="space-orb orb-one" onclick="showSpaceMessage(1)">
                 ✦
-
             </button>
 
-
-            <button
-                class="space-orb orb-two"
-                onclick="showSpaceMessage(2)"
-            >
-
+            <button class="space-orb orb-two" onclick="showSpaceMessage(2)">
                 ✧
-
             </button>
 
-
-            <button
-                class="space-orb orb-three"
-                onclick="showSpaceMessage(3)"
-            >
-
+            <button class="space-orb orb-three" onclick="showSpaceMessage(3)">
                 ·
-
             </button>
 
-
-            <button
-                class="space-orb orb-four"
-                onclick="showSpaceMessage(4)"
-            >
-
+            <button class="space-orb orb-four" onclick="showSpaceMessage(4)">
                 ✦
-
             </button>
 
-
-            <div
-                id="spaceMessage"
-                class="space-message"
-            >
-
+            <div id="spaceMessage" class="space-message">
                 Toca una de las estrellas
-
             </div>
 
         </div>
 
-
         <div style="text-align:center">
 
-            <a
-                href="#razones"
-                class="next"
-            >
+            <a href="#razones" class="next">
 
                 Hay más que quiero decirte
 
@@ -2559,15 +1280,7 @@ section {
 
 </section>
 
-
-<!-- =====================================================
-     RAZONES
-===================================================== -->
-
-<section
-    class="section"
-    id="razones"
->
+<section class="section" id="razones">
 
     <div class="container">
 
@@ -2589,47 +1302,25 @@ section {
 
         </div>
 
-
         <div class="reason-box reveal">
 
-            <div
-                id="reasonNumber"
-                class="reason-number"
-            >
-
+            <div id="reasonNumber" class="reason-number">
                 Razón 1
-
             </div>
 
-
-            <div
-                id="reasonText"
-                class="reason-text"
-            >
-
+            <div id="reasonText" class="reason-text">
                 Porque contigo puedo ser yo mismo.
-
             </div>
 
-
-            <button
-                class="reason-button"
-                onclick="nextReason()"
-            >
-
+            <button class="reason-button" onclick="nextReason()">
                 Otra razón
-
             </button>
 
         </div>
 
-
         <div style="text-align:center">
 
-            <a
-                href="#cancion"
-                class="next"
-            >
+            <a href="#cancion" class="next">
 
                 Hay algo que quiero que escuches
 
@@ -2645,15 +1336,7 @@ section {
 
 </section>
 
-
-<!-- =====================================================
-     CANCIÓN
-===================================================== -->
-
-<section
-    class="section"
-    id="cancion"
->
+<section class="section" id="cancion">
 
     <div class="container">
 
@@ -2676,21 +1359,17 @@ section {
 
         </div>
 
-
         <div class="song-card reveal">
 
             <div class="song-circle"></div>
-
 
             <h3>
                 A la velocidad de la luz
             </h3>
 
-
             <p>
                 Una canción que me recuerda a ti
             </p>
-
 
             <div class="song-buttons">
 
@@ -2707,7 +1386,6 @@ section {
 
             </div>
 
-
             <div class="qr">
 
                 <img
@@ -2716,7 +1394,6 @@ section {
                 >
 
             </div>
-
 
             <p
                 style="
@@ -2732,13 +1409,9 @@ section {
 
         </div>
 
-
         <div style="text-align:center">
 
-            <a
-                href="#carta"
-                class="next"
-            >
+            <a href="#carta" class="next">
 
                 Ahora quiero decirte algo
 
@@ -2754,15 +1427,7 @@ section {
 
 </section>
 
-
-<!-- =====================================================
-     CARTA
-===================================================== -->
-
-<section
-    class="section"
-    id="carta"
->
+<section class="section" id="carta">
 
     <div class="container">
 
@@ -2778,9 +1443,7 @@ section {
 
         </div>
 
-
         <div class="letter reveal">
-
 
             <p>
 
@@ -2791,7 +1454,6 @@ section {
 
             </p>
 
-
             <p>
 
                 No quiero que esta página sea solamente algo bonito
@@ -2800,7 +1462,6 @@ section {
                 recordar cuánto te quiero y cuánto significas para mí.
 
             </p>
-
 
             <p>
 
@@ -2812,7 +1473,6 @@ section {
 
             </p>
 
-
             <p>
 
                 Me encanta la forma en que poco a poco te convertiste
@@ -2822,7 +1482,6 @@ section {
                 realmente quiere compartir su vida con alguien.
 
             </p>
-
 
             <p>
 
@@ -2835,7 +1494,6 @@ section {
 
             </p>
 
-
             <p>
 
                 Quiero seguir acumulando conversaciones, viajes,
@@ -2843,7 +1501,6 @@ section {
                 mirar hacia atrás y decir que todo valió la pena.
 
             </p>
-
 
             <p>
 
@@ -2854,7 +1511,6 @@ section {
 
             </p>
 
-
             <p>
 
                 Y si algún día dudas de lo importante que eres para mí,
@@ -2864,14 +1520,12 @@ section {
 
             </p>
 
-
             <p>
 
                 Te amo por quien eres, por cómo me haces sentir y por
                 todo aquello que todavía nos queda por descubrir juntos.
 
             </p>
-
 
             <div class="signature">
 
@@ -2887,13 +1541,9 @@ section {
 
         </div>
 
-
         <div style="text-align:center">
 
-            <a
-                href="#final"
-                class="next"
-            >
+            <a href="#final" class="next">
 
                 Una última cosa
 
@@ -2909,15 +1559,7 @@ section {
 
 </section>
 
-
-<!-- =====================================================
-     FINAL
-===================================================== -->
-
-<section
-    class="section final"
-    id="final"
->
+<section class="section final" id="final">
 
     <div class="container">
 
@@ -2925,11 +1567,9 @@ section {
             ♥
         </div>
 
-
         <h2>
             Siempre te elegiría a ti
         </h2>
-
 
         <p class="final-message">
 
@@ -2938,7 +1578,6 @@ section {
             encontrándose con el tuyo.
 
         </p>
-
 
         <div class="final-signature">
 
@@ -2956,21 +1595,10 @@ section {
 
 </section>
 
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
-
-
-/* =========================================================
-   CONTADOR
-========================================================= */
 
 const startDate =
     new Date("2025-12-21T00:00:00");
-
 
 function updateCounter() {
 
@@ -2980,13 +1608,9 @@ function updateCounter() {
     let difference =
         now - startDate;
 
-
     if (difference < 0) {
-
         difference = 0;
-
     }
-
 
     const second =
         1000;
@@ -3000,48 +1624,40 @@ function updateCounter() {
     const day =
         hour * 24;
 
-
     const days =
         Math.floor(
             difference / day
         );
-
 
     const hours =
         Math.floor(
             (difference % day) / hour
         );
 
-
     const minutes =
         Math.floor(
             (difference % hour) / minute
         );
-
 
     const seconds =
         Math.floor(
             (difference % minute) / second
         );
 
-
     document.getElementById(
         "days"
     ).textContent =
         days.toLocaleString("es-CL");
-
 
     document.getElementById(
         "hours"
     ).textContent =
         String(hours).padStart(2, "0");
 
-
     document.getElementById(
         "minutes"
     ).textContent =
         String(minutes).padStart(2, "0");
-
 
     document.getElementById(
         "seconds"
@@ -3050,20 +1666,12 @@ function updateCounter() {
 
 }
 
-
 updateCounter();
-
 
 setInterval(
     updateCounter,
     1000
 );
-
-
-
-/* =========================================================
-   FRASES DEL ESPACIO
-========================================================= */
 
 const spaceMessages = [
 
@@ -3079,18 +1687,15 @@ const spaceMessages = [
 
 ];
 
-
 const spaceMessage =
     document.getElementById(
         "spaceMessage"
     );
 
-
 function showSpaceMessage(index) {
 
     spaceMessage.style.opacity =
         "0";
-
 
     setTimeout(() => {
 
@@ -3103,12 +1708,6 @@ function showSpaceMessage(index) {
     }, 250);
 
 }
-
-
-
-/* =========================================================
-   RAZONES
-========================================================= */
 
 const reasons = [
 
@@ -3130,21 +1729,17 @@ const reasons = [
 
 ];
 
-
 let reasonIndex = 0;
-
 
 const reasonText =
     document.getElementById(
         "reasonText"
     );
 
-
 const reasonNumber =
     document.getElementById(
         "reasonNumber"
     );
-
 
 function nextReason() {
 
@@ -3152,11 +1747,9 @@ function nextReason() {
         "changing"
     );
 
-
     setTimeout(() => {
 
         reasonIndex++;
-
 
         if (
             reasonIndex >= reasons.length
@@ -3166,15 +1759,12 @@ function nextReason() {
 
         }
 
-
         reasonText.textContent =
             reasons[reasonIndex];
-
 
         reasonNumber.textContent =
             "Razón " +
             (reasonIndex + 1);
-
 
         reasonText.classList.remove(
             "changing"
@@ -3184,17 +1774,10 @@ function nextReason() {
 
 }
 
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
 const revealElements =
     document.querySelectorAll(
         ".reveal"
     );
-
 
 const observer =
     new IntersectionObserver(
@@ -3225,7 +1808,6 @@ const observer =
 
     );
 
-
 revealElements.forEach(
     element => {
 
@@ -3233,12 +1815,6 @@ revealElements.forEach(
 
     }
 );
-
-
-
-/* =========================================================
-   SCROLL SUAVE
-========================================================= */
 
 document
     .querySelectorAll(
@@ -3256,12 +1832,9 @@ document
                             this.getAttribute("href")
                         );
 
-
                     if (!target) return;
 
-
                     event.preventDefault();
-
 
                     target.scrollIntoView({
 
@@ -3279,9 +1852,7 @@ document
         }
     );
 
-
 </script>
-
 
 </body>
 
